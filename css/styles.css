@@ -1,0 +1,37 @@
+h1 {
+  font-size: 9vmin;
+  font-family: Raleway;
+  font-weight: 200; }
+
+h4 {
+  font-size: 5vh;
+  font-family: Raleway;
+  font-weight: 400; }
+
+p {
+  font-size: 1.1vw;
+  font-family: Open Sans; }
+
+i#linkedin:hover {
+  color: #0177B5; }
+i#github:hover {
+  color: black; }
+i#email:hover {
+  color: #3949ab; }
+
+.hero-header {
+  display: flex;
+  min-height: 60vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #bdbdbd; }
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+/*# sourceMappingURL=styles.css.map */
