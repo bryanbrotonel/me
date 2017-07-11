@@ -1,3 +1,4 @@
+var $window = $(window);
 var typed = new Typed('#typed', {
   stringsElement: '#typed-strings',
   typeSpeed: 25,
@@ -6,13 +7,12 @@ var typed = new Typed('#typed', {
   smartBackspace: true,
   backDelay: 800,
   onComplete: (self) => {
+    $('#typed').animateCss('bounce')
     document.getElementById("typed").onclick = function() {
-      $('#typed').animateCss('pulse')
+      $('#typed').animateCss('bounce')
     };
   }
 });
-
-
 
 $.fn.extend({
   animateCss: function(animationName) {
