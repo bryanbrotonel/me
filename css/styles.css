@@ -16,7 +16,7 @@ h4 {
   font-weight: 400;
   line-height: 200%; }
 
-p {
+p, span {
   font-size: 14px;
   font-family: Open Sans; }
 
@@ -45,7 +45,6 @@ i#email {
   width: 100%;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   background-color: #3949ab; }
 
 .footer {
