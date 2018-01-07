@@ -1,2 +1,0 @@
-# bryanbrotonel
-personal website
