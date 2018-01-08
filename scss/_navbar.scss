@@ -5,14 +5,13 @@
   @include sans-serif-font;
   @include transition-all;
   .navbar-brand {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $primary;
-    @include sans-serif-font;
-    &:focus,
-    &:hover {
-      color: darken($primary, .1);
+    img {
+      -webkit-filter: invert(100%);
     }
+    // font-weight: 700;
+    // text-transform: uppercase;
+    // color: $primary;
+    // @include sans-serif-font;
   }
   .navbar-nav {
     > li.nav-item {
@@ -59,10 +58,14 @@
       border-bottom: 1px solid fade-out($gray-900, .9);
       background-color: $white;
       .navbar-brand {
+        img {
+          -webkit-filter: invert(0%);
+        }
         color: $primary;
         &:focus,
         &:hover {
-          color: darken($primary, .1);
+          // color: darken($primary, .1);
+          -webkit-filter: invert(30%);
         }
       }
       .navbar-nav > li.nav-item > a.nav-link,
