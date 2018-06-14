@@ -1,0 +1,28 @@
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600; // Base Font
+$base-font-weight: $regular;
+$base-font-size: 13px;
+$base-line-height: 1.4; // Headings
+$header-font-weight: $bold;
+
+@import "modules/all";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: $secondary-colour;
+  color: whitesmoke;
+}
+
+.row {
+  margin: 0;
+}
+
+.middle-align {
+  align-items: center;
+  justify-content: center;
+}
+
+@import "components/all"

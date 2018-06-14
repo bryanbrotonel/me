@@ -1,8 +1,15 @@
-@import "variables.scss";
-@import "mixins.scss";
-@import "global.scss";
-@import "navbar.scss";
-@import "masthead.scss";
-@import "skills.scss";
-@import "portfolio.scss";
-@import "bootstrap-overrides.scss";
+// sass --watch scss:css
+
+// Base partial
+@import "partials/base";
+
+// Partials
+@import "partials/typography";
+@import "partials/grids";
+
+// @import "variables.scss";
+// @import "mixins.scss";
+// @import "global.scss";
+// @import "navbar.scss";
+// @import "masthead.scss";
+// @import "portfolio.scss";

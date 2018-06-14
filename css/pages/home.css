@@ -1,0 +1,22 @@
+.banner {
+  position: relative;
+  height: 60vh;
+  border: solid #7b6cf6 10px;
+  background: linear-gradient(rgba(36, 30, 146, 0.95), rgba(36, 30, 146, 0.95)), url("https://source.unsplash.com/OqtafYT5kTw/1392x1024") no-repeat center left scroll; }
+  .banner div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .banner h4 {
+    font-family: "Roboto", sans-serif;
+    color: #8971e1; }
+
+.work-row {
+  background-color: #7b6cf6;
+  border: solid #e5a5ff 3px;
+  margin: 40px 0;
+  min-height: 30vh; }
+  .work-row div[class^="col-"] {
+    margin: 0 auto; }
+
+/*# sourceMappingURL=home.css.map */

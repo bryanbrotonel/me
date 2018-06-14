@@ -1,0 +1,16 @@
+// Header typography
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: $base-font-size + $heading-scale * (6 - $i);
+    font-family: "Lato", sans-serif;
+    font-weight: $header-font-weight;
+  }
+}
+
+// Body typography
+body {
+  font-family: $body-font;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: $regular;
+}
