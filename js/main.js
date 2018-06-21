@@ -1,62 +1,53 @@
-(function($) {
-  // START OF CREATIVE TEMPLATE
-  "use strict"; // Start of use strict
+$.fn.extend({
+  animateCss: function(animationName, callback) {
+    var animationEnd = (function(el) {
+      var animations = {
+        animation: 'animationend',
+        OAnimation: 'oAnimationEnd',
+        MozAnimation: 'mozAnimationEnd',
+        WebkitAnimation: 'webkitAnimationEnd'
+      };
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 57)
-        }, 1000, "easeInOutExpo");
-        return false;
+      for (var t in animations) {
+        if (el.style[t] !== undefined) {
+          return animations[t];
+        }
       }
-    }
-  });
+    })(document.createElement('div'));
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
+    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).removeClass('animated ' + animationName);
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 57
-  });
+      if (typeof callback === 'function')
+        callback();
+      }
+    );
 
-  // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-    }
-  };
-  // Collapse now if page is not at top
-  navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
+    return this;
+  }
+});
 
-  // Scroll reveal calls
-  window.sr = ScrollReveal();
-  sr.reveal('.sr-icons', {
-    duration: 600,
-    scale: 0.3,
-    distance: '0px'
-  }, 200);
-  sr.reveal('.sr-work', {
-    duration: 1000,
-    delay: 100
-  });
-  sr.reveal('.sr-contact', {
-    duration: 600,
-    scale: 0.3,
-    distance: '0px'
-  }, 300);
+window.sr = ScrollReveal();
+sr.reveal('.work-item', {
+  duration: 500,
+  distance: '3px',
+  mobile: true,
+  scale: 0.98
+}, 150);
 
-  // END OF CREATIVE TEMPLATE
+var typed = new Typed(".typed", {
+  strings: [
+    "I make websites", "I make beautiful websites", "I make clean websites", "I make responsive websites", "I make websites for you"
+  ],
+  typeSpeed: 40,
+  backSpeed: 35,
+  startDelay: 1200,
+  backDelay: 2500,
+  showCursor: false,
+  contentType: 'h1',
+  smartBackspace: true // Default value
+});
 
-})(jQuery); // End of use strict
+$('.fa-2x').hover(function() {
+  $(this).animateCss('pulse');
+});

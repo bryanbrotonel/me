@@ -1,22 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto");
 .banner {
-  position: relative;
-  height: 60vh;
-  border: solid #7b6cf6 10px;
-  background: linear-gradient(rgba(36, 30, 146, 0.95), rgba(36, 30, 146, 0.95)), url("https://source.unsplash.com/OqtafYT5kTw/1392x1024") no-repeat center left scroll; }
+  align-items: center;
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  background-color: #f3f3f3; }
   .banner div {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); }
-  .banner h4 {
-    font-family: "Roboto", sans-serif;
-    color: #8971e1; }
+    text-align: center; }
 
-.work-row {
-  background-color: #7b6cf6;
-  border: solid #e5a5ff 3px;
-  margin: 40px 0;
-  min-height: 30vh; }
-  .work-row div[class^="col-"] {
-    margin: 0 auto; }
+.banner-title {
+  font-weight: 800; }
+
+.work-item {
+  width: 100%;
+  margin: 30px 0; }
+
+.work-section {
+  background-color: #2185d5;
+  color: white;
+  padding: 30px 0; }
+  .work-section hr {
+    background-color: #303841;
+    width: 25%;
+    height: 5px;
+    margin-left: 0;
+    text-align: left; }
+
+.work-content {
+  min-height: 50vh;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.work-item-byforte .work-image {
+  height: 100%;
+  width: 100%;
+  background: url("https://source.unsplash.com/zNRITe8NPqY/640x480") no-repeat top left; }
+
+.work-item-newnew .work-image {
+  height: 100%;
+  width: 100%;
+  background: url("https://source.unsplash.com/OqtafYT5kTw/640x480") no-repeat top left; }
+
+@media (min-width: 576px) {
+  .work-content {
+    padding: 50px; } }
+.about-section {
+  background-color: #3a4750;
+  color: white;
+  padding: 30px 0; }
+
+.about-icons a {
+  color: #1f252a;
+  padding: 7.5px; }
+  .about-icons a :hover {
+    color: #0f1114; }
 
 /*# sourceMappingURL=home.css.map */

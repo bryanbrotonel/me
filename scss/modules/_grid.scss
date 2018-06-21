@@ -1,0 +1,33 @@
+@mixin home-content($flex: 1) {
+  flex: $flex;
+  display: flex;
+  flex-direction: column;
+}
+// Breakpoint Mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+  @if $mq2 == false {
+    @media ($maxmin: $mq01) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $mq01) and (max-width: $mq2) {
+      @content;
+    }
+  }
+}
+@mixin work-item() {
+  width: 100%;
+  margin: 30px 0;
+}
+@mixin work-content() {
+  border: 1px black solid;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin work-image($url) {
+  height: 100%;
+  width: 100%;
+  background: url($url) no-repeat top left;
+}

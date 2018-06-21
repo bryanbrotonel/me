@@ -1,55 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto");
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #5432d3;
-  color: whitesmoke; }
+  background-color: #FAFAFA;
+  color: #000000; }
 
-.row {
-  margin: 0; }
-
-.middle-align {
-  align-items: center;
-  justify-content: center; }
-
-h1 {
-  font-size: 65px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600; }
-
-h2 {
-  font-size: 57px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600; }
-
-h3 {
-  font-size: 49px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600; }
-
-h4 {
-  font-size: 41px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600; }
-
-h5 {
-  font-size: 33px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600; }
-
-h6 {
-  font-size: 25px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600; }
+.navbar-logo {
+  width: 50px;
+  height: auto; }
 
 body {
+  font-family: "Lato", sans-serif; }
+  body {
+    font-size: 20px; }
+
+h1,
+h2,
+h3 {
   font-family: "Roboto", sans-serif;
-  font-size: 25px;
-  line-height: 1.4;
-  font-weight: 400; }
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 45px; }
+@media (min-width: 400px) and (max-width: 1000px) {
+  h1 {
+    font-size: calc( 45px + 9 * (100vw - 400px) / 600 ); } }
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 54px; } }
+
+h2 {
+  font-size: 40px; }
+@media (min-width: 400px) and (max-width: 1000px) {
+  h2 {
+    font-size: calc( 40px + 9 * (100vw - 400px) / 600 ); } }
+@media (min-width: 1000px) {
+  h2 {
+    font-size: 49px; } }
+
+h3 {
+  font-size: 35px; }
+@media (min-width: 400px) and (max-width: 1000px) {
+  h3 {
+    font-size: calc( 35px + 9 * (100vw - 400px) / 600 ); } }
+@media (min-width: 1000px) {
+  h3 {
+    font-size: 44px; } }
+
+h4 {
+  font-size: 30px; }
+@media (min-width: 400px) and (max-width: 1000px) {
+  h4 {
+    font-size: calc( 30px + 9 * (100vw - 400px) / 600 ); } }
+@media (min-width: 1000px) {
+  h4 {
+    font-size: 39px; } }
+
+h5 {
+  font-size: 25px; }
+@media (min-width: 400px) and (max-width: 1000px) {
+  h5 {
+    font-size: calc( 25px + 9 * (100vw - 400px) / 600 ); } }
+@media (min-width: 1000px) {
+  h5 {
+    font-size: 34px; } }
+
+h6 {
+  font-size: 20px; }
+@media (min-width: 400px) and (max-width: 1000px) {
+  h6 {
+    font-size: calc( 20px + 9 * (100vw - 400px) / 600 ); } }
+@media (min-width: 1000px) {
+  h6 {
+    font-size: 29px; } }
+
+.section-title {
+  font-weight: 800;
+  text-align: center; }
+  .section-title {
+    font-size: 53px; }
+  @media (min-width: 400px) and (max-width: 1000px) {
+    .section-title {
+      font-size: calc( 53px + 8 * (100vw - 400px) / 600 ); } }
+  @media (min-width: 1000px) {
+    .section-title {
+      font-size: 61px; } }
+
+.typed {
+  display: inline; }
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+.row {
+  margin: 0; }
 
 /*# sourceMappingURL=app.css.map */
