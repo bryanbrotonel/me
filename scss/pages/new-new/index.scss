@@ -1,0 +1,22 @@
+@import "./../../modules/all"; // START OF BANNER
+
+body {
+  background-color: $secondary-colour;
+  color: white;
+}
+
+body .container {
+  margin: 75px auto;
+}
+
+.work-page-title {
+  @include work-page-title();
+}
+
+.work-page-content {
+  @include work-page-content();
+}
+
+.footer {
+  @include footer(auto, auto, 10vh);
+}

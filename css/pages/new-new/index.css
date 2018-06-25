@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto");
+body {
+  background-color: #f98b60;
+  color: white; }
+
+body .container {
+  margin: 75px auto; }
+
+.work-page-title {
+  margin-bottom: 50px;
+  text-align: center; }
+  .work-page-title :nth-child(2) {
+    color: #ffe084; }
+
+.work-page-content {
+  margin: 0 auto;
+  text-align: justify; }
+  .work-page-content h3 {
+    margin-top: 5vh; }
+  @media (min-width: 992px) {
+    .work-page-content {
+      margin: auto 250px; } }
+
+.footer {
+  text-align: center;
+  margin-bottom: 10vh; }
+  .footer a {
+    color: auto;
+    padding: 7.5px; }
+    .footer a :hover {
+      color: auto; }
+
+/*# sourceMappingURL=index.css.map */

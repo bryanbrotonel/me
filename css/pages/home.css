@@ -4,23 +4,27 @@
   display: flex;
   height: 95vh;
   justify-content: center;
-  background-color: #f3f3f3; }
+  color: white;
+  background-color: #ea5959; }
   .banner div {
     text-align: center; }
 
 .banner-title {
   font-weight: 800; }
 
+.banner-arrow {
+  position: absolute;
+  bottom: 7.5vh; }
+
 .work-item {
-  width: 100%;
-  margin: 30px 0; }
+  width: 100%; }
 
 .work-section {
-  background-color: #2185d5;
+  background-color: #f98b60;
   color: white;
   padding: 30px 0; }
   .work-section hr {
-    background-color: #303841;
+    background-color: #ffe084;
     width: 25%;
     height: 5px;
     margin-left: 0;
@@ -36,25 +40,28 @@
 .work-item-byforte .work-image {
   height: 100%;
   width: 100%;
-  background: url("https://source.unsplash.com/zNRITe8NPqY/640x480") no-repeat top left; }
+  background: linear-gradient(rgba(249, 139, 96, 0.5), rgba(249, 139, 96, 0.5)), url("https://source.unsplash.com/zNRITe8NPqY/640x480") no-repeat top left; }
 
 .work-item-newnew .work-image {
   height: 100%;
   width: 100%;
-  background: url("https://source.unsplash.com/OqtafYT5kTw/640x480") no-repeat top left; }
+  background: linear-gradient(rgba(249, 139, 96, 0.5), rgba(249, 139, 96, 0.5)), url("https://source.unsplash.com/OqtafYT5kTw/640x480") no-repeat top left; }
 
 @media (min-width: 576px) {
   .work-content {
     padding: 50px; } }
 .about-section {
-  background-color: #3a4750;
+  background-color: #ffc057;
   color: white;
   padding: 30px 0; }
 
-.about-icons a {
-  color: #1f252a;
-  padding: 7.5px; }
-  .about-icons a :hover {
-    color: #0f1114; }
+.footer {
+  text-align: center;
+  margin-bottom: 0vh; }
+  .footer a {
+    color: #ea5959;
+    padding: 7.5px; }
+    .footer a :hover {
+      color: #f98b60; }
 
 /*# sourceMappingURL=home.css.map */

@@ -5,7 +5,8 @@
   display: flex;
   height: 95vh;
   justify-content: center;
-  background-color: $quaternary-colour;
+  color: white;
+  background-color: $primary-colour;
 
   div {
     text-align: center;
@@ -15,21 +16,26 @@
 .banner-title {
   font-weight: $extra-bold;
 }
+
+.banner-arrow {
+  position: absolute;
+  bottom: 7.5vh;
+}
 // END OF BANNER
 // START OF WORK SECTION
 
 .work-item {
   width: 100%;
-  margin: 30px 0;
+  // margin: 30px 0;
 }
 
 .work-section {
-  background-color: $primary-colour;
+  background-color: $secondary-colour;
   color: white;
   padding: 30px 0;
 
   hr {
-    background-color: $tertiary-colour;
+    background-color: $quaternary-colour;
     width: 25%;
     height: 5px;
     margin-left: 0;
@@ -61,19 +67,12 @@
 // START OF ABOUT SECTION
 
 .about-section {
-  background-color: $secondary-colour;
+  background-color: $tertiary-colour;
   color: white;
   padding: 30px 0;
 }
 
-.about-icons {
-  a {
-    color: #1f252a;
-    padding: 7.5px;
-
-    :hover {
-      color: #0f1114;
-    }
-  }
+.footer {
+  @include footer($primary-colour, $secondary-colour)
 }
 // END OF ABOUT SECTION

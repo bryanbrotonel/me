@@ -9,6 +9,9 @@ $extra-bold: 800;
 $font-lock-min:  400px !default;
 $font-lock-max: 1000px !default;
 
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
 //  font-size
 @mixin font-size(
   $min,                         // font-size
@@ -37,4 +40,14 @@ $font-lock-max: 1000px !default;
 //  strip units helper function
 @function num($input){
   @return $input/($input * 0 + 1);
+}
+
+
+@mixin work-page-title() {
+  margin-bottom: 50px;
+  text-align: center;
+
+  :nth-child(2) {
+    color: $quaternary-colour;
+  }
 }

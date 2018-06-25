@@ -6,6 +6,7 @@ body {
 h1,
 h2,
 h3 {
+  font-weight: bold;
   font-family: $header-font-family;
   text-transform: uppercase;
 }
@@ -34,12 +35,21 @@ h6 {
   @include font-size(20px, 29px);
 }
 
+#{$a-tags-hover},
+#{$a-tags} {
+  color: inherit;
+}
+
 .section-title {
   @include font-size(53px, 61px);
-  font-weight: $extra-bold;
+  font-weight: bold;
   text-align: center;
 }
 
 .typed {
   display: inline;
+}
+
+.about-icons a {
+  text-decoration: none;
 }
