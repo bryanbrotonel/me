@@ -1,0 +1,31 @@
+.footer {
+  text-align: center;
+  margin-bottom: 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  :hover {
+    .footer-icon {
+      color: black;
+    }
+  }
+}
+
+.footer-icon {
+  padding: 7.5px;
+}
+@media (min-width: 576px) {
+  .footer-icons {
+    #{$a-tags-hover},
+    #{$a-tags} {
+      color: tint($black, 42%);
+    }
+  }
+}
+
+
+.copyright-text {
+  color: $secondary-colour;
+}

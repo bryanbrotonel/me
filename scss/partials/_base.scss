@@ -2,12 +2,10 @@
 $light: 100;
 $regular: 400;
 $bold: 600; // Base Font
-
 $base-font-weight: $regular;
 $base-font-size: 13px;
 $base-line-height: 1.4; // Headings
 $header-font-weight: $bold;
-
 @import "../modules/all";
 
 body {
@@ -17,4 +15,36 @@ body {
   color: $black;
 }
 
+.hv-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h-center {
+  margin: 0 auto;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  div[class^="col"] {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  div[class^="col"] {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /*default so you don't need this*/
+  div[class^="col"] {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 @import "components/all"
