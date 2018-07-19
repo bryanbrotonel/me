@@ -1,4 +1,6 @@
-@import "./../modules/all"; // START OF BANNER
+@import "./../modules/all";
+
+// START OF BANNER
 
 .banner {
   align-items: center;
@@ -37,16 +39,11 @@
 .work-item:hover .work-content {
   @include backgroundScale(1.05);
 }
-// start
-/* Global Styling */
-/* Image zoom on hover + Overlay colour */
 
 .work-wrapper {
   margin-bottom: 20px;
   color: black;
-
   min-width: 350px;
-
   @media (min-width: 1200px) {
     margin-bottom: 0;
   }
@@ -55,22 +52,16 @@
 .work-image-wrapper {
   height: 250px;
   width: 100%;
-  border: 1px solid $primary-colour;
+  max-width: 400px;
   margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  display: inline-block;
+  cursor: pointer;
 }
 
-// .work-image-wrapper {
-//   overflow: hidden;
-//   position: relative;
-//   float: left;
-//   display: inline-block;
-//   cursor: pointer;
-//   width: 20%;
-//   width: 250px;
-//   height: 250px;
-// }
-
-.child {
+.work-image {
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -89,19 +80,19 @@
   }
 }
 
-.work-wrapper:focus .child,
-.work-wrapper:hover .child {
+.work-image-wrapper:focus .work-image,
+.work-image-wrapper:hover .work-image {
   @include backgroundScale(1.05);
 }
 
-.work-wrapper:focus .child:before,
-.work-wrapper:focus a,
-.work-wrapper:hover .child:before,
-.work-wrapper:hover a {
+.work-image-wrapper:focus .work-image:before,
+.work-image-wrapper:focus a,
+.work-image-wrapper:hover .work-image:before,
+.work-image-wrapper:hover a {
   display: block;
 }
 
-.child:before {
+.work-image:before {
   content: "";
   display: none;
   height: 100%;
@@ -111,7 +102,25 @@
   left: 0;
 }
 
+// START OF WORK PHOTOS
+.byforte-background {
+  background-image: url("https://source.unsplash.com/Yy4sN6QzboU/1600x900");
+}
+
+.newnew-background {
+  background-image: url("https://source.unsplash.com/XUdIi04ohps/1600x900");
+}
+
+.fyndit-background {
+  background-image: url("https://source.unsplash.com/NHSnBQyE7RE/1600x900");
+}
+
+// END OF WORK PHOTOS
+// END OF WORK SECTION
+
+
 // GROW
+
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;

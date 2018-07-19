@@ -14,21 +14,17 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
   <!-- Animate CSS -->
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
 
   <!-- Fontawesome CSS-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-  <!-- Emoji.css -->
-  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
-
+  <!-- Emoji.css
+  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'> -->
 
   <!-- Custom styles -->
   <link href="css/app.css" rel="stylesheet">
-  <link href="css/pages/home.css" rel="stylesheet">
+  <link href="css/pages/index.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="img/logo.png" />
@@ -38,8 +34,8 @@
 <body>
 
   <div class="banner">
-    <div class="container animated bounce">
-      <h1 class="banner-title">Bryan Brotonel</h1>
+    <div class="container banner-content" style="display:none">
+      <h1>Bryan Brotonel</h1>
       <h5>Front-end web developer</h5>
     </div>
     <a id="banner-arrow" href="#work" class="banner-arrow js-scroll-trigger">
@@ -47,44 +43,46 @@
     </a>
   </div>
 
-
   <div id="work" class="section">
     <h2 class="section-title">WORK</h2>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center work-section">
       <div class="col-8 col-md-5 col-lg-3 work-wrapper">
         <div class="work-image-wrapper h-center">
-          <p>By Forte</p>
+          <canvas class="work-image byforte-background"></canvas>
         </div>
         <div>
           <h5>By Forte</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis incidunt, consectetur debitis dolore delectus, distinctio odit dolores.</p>
+          <p>By Forte is a streetwear brand started by a friend and I. What started as a school project turned into a passion project.</p>
+          <a href="https://byforte.store" target="_blank" rel="noopener noreferrer">Read More</a>
         </div>
       </div>
       <div class="col-8 col-md-5 col-lg-3 work-wrapper">
         <div class="work-image-wrapper h-center">
-          <p>New New</p>
+          <canvas class="work-image newnew-background"></canvas>
         </div>
         <div>
           <h5>New New</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quas deserunt fuga fugiat explicabo sit voluptates modi libero, numquam.</p>
+          <p>New New is a webage I've created to showcase my passion for music. It promotes upcomming artists that I discover everyday.</p>
+          <a href="https://new-new.herokuapp.com" target="_blank" rel="noopener noreferrer">Read More</a>
         </div>
       </div>
       <div class="w-100 d-none d-md-block d-lg-none"></div>
       <div class="col-8 col-md-5 col-lg-3 work-wrapper">
         <div class="work-image-wrapper h-center">
-          <p>Fyndit</p>
+          <canvas class="work-image fyndit-background"></canvas>
         </div>
         <div>
           <h5>Fyndit</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque fuga, optio non quibusdam debitis, consequatur at reprehenderit consequuntur quae libero.</p>
+          <p>Fyndit is an Android application in collaboration the City of New Westminster. It helps promote the city by highlighting small businesses.</p>
+          <a href="https://github.com/bryanbrotonel/Fyndit" target="_blank" rel="noopener noreferrer">Read More</a>
         </div>
       </div>
     </div>
   </div>
 
 
-  <div class="section">
+  <div class="section about-section">
     <div class="container">
       <h2 class="section-title">ABOUT</h2>
       <div class="row justify-content-md-center">
