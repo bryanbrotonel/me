@@ -43,7 +43,7 @@
 .work-wrapper {
   margin-bottom: 20px;
   color: black;
-  min-width: 350px;
+  min-width: 400px;
   @media (min-width: 1200px) {
     margin-bottom: 0;
   }
@@ -52,7 +52,6 @@
 .work-image-wrapper {
   height: 250px;
   width: 100%;
-  max-width: 400px;
   margin-bottom: 10px;
   overflow: hidden;
   position: relative;
