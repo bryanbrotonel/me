@@ -1,0 +1,15 @@
+$byforte-background: "https://source.unsplash.com/Yy4sN6QzboU/1600x900";
+$newnew-background: "https://source.unsplash.com/XUdIi04ohps/1600x900";
+$fydnit-backgrond: "https://source.unsplash.com/NHSnBQyE7RE/1600x900";
+
+@mixin work-masthead($imageURL) {
+  height: 75vh;
+  color: white;
+  /* top, transparent $black-tint, faked with gradient */
+  background:linear-gradient($black-tint, $black-tint),
+  /* bottom, image */
+  url($imageURL);
+
+  background-size: cover;
+  background-position: center;
+}

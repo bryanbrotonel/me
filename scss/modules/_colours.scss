@@ -10,6 +10,7 @@ $secondary-colour: #F2D0A4;
 $tertiary-colour: #ffc057;
 $quaternary-colour: #ffe084;
 $primary-tint: rgba($secondary-colour, .5);
+$black-tint: rgba($black, .5);
 
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
