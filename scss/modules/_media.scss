@@ -4,6 +4,7 @@ $fydnit-backgrond: "https://source.unsplash.com/NHSnBQyE7RE/1600x900";
 
 @mixin work-masthead($imageURL) {
   height: 75vh;
+  margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
   background:linear-gradient($black-tint, $black-tint),
