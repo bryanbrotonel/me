@@ -62,6 +62,11 @@ body {
   body {
     font-size: 20px; }
 
+h6 {
+  font-weight: bold;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase; }
+
 h5 {
   font-weight: bold;
   font-family: "Roboto Condensed", sans-serif;

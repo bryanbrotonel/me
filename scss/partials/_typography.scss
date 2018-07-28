@@ -2,8 +2,8 @@ body {
   @include font-size(20px);
   font-family: $base-font-family;
 }
-@for $i from 1 through 5 {
-  h#{6 - $i} {
+@for $i from 1 through 6 {
+  h#{7 - $i} {
     font-weight: bold;
     font-family: $header-font-family;
     text-transform: uppercase;

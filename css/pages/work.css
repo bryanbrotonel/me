@@ -16,6 +16,8 @@
   background: linear-gradient(rgba(38, 38, 38, 0.5), rgba(38, 38, 38, 0.5)), url("https://source.unsplash.com/Yy4sN6QzboU/1600x900");
   background-size: cover;
   background-position: center; }
+  .byforte-masthead h1 {
+    font-size: 4em; }
 
 .newnew-masthead {
   height: 75vh;
@@ -25,6 +27,8 @@
   background: linear-gradient(rgba(38, 38, 38, 0.5), rgba(38, 38, 38, 0.5)), url("https://source.unsplash.com/XUdIi04ohps/1600x900");
   background-size: cover;
   background-position: center; }
+  .newnew-masthead h1 {
+    font-size: 4em; }
 
 .fyndit-masthead {
   height: 75vh;
@@ -34,6 +38,8 @@
   background: linear-gradient(rgba(38, 38, 38, 0.5), rgba(38, 38, 38, 0.5)), url("https://source.unsplash.com/NHSnBQyE7RE/1600x900");
   background-size: cover;
   background-position: center; }
+  .fyndit-masthead h1 {
+    font-size: 4em; }
 
 .work-item:focus .work-content,
 .work-item:hover .work-content {
