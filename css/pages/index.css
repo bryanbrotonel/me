@@ -2,7 +2,7 @@
 .banner {
   align-items: center;
   display: flex;
-  height: 95vh;
+  height: 100vh;
   justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/mdoPthuhr6Q/1600x900") center;
   -webkit-background-size: cover;
@@ -16,7 +16,7 @@
 
 .banner-arrow {
   position: absolute;
-  bottom: 7.5vh; }
+  top: 90vh; }
 
 @media (min-width: 576px) {
   .banner {

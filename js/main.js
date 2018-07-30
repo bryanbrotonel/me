@@ -51,10 +51,6 @@ $.fn.extend({
   }
 });
 
-$('.banner-arrow').hover(function() {
-  $(this).animateCss('bounce');
-});
-
 // Sroll to SECTION
 // Smooth scrolling using jQuery easing
 $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {

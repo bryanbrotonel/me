@@ -10,6 +10,9 @@
 
   <title>Bryan Brotonel | New New</title>
 
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
+
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
@@ -31,60 +34,97 @@
 
 <body>
 
-  <div class="newnew-masthead hv-center">
-    <div class="text-center">
-      <h1>NEW NEW</h1>
-      <h6>For the culture</h6>
+  <div class="uk-offcanvas-content">
+    <!-- The whole page content goes here -->
+
+    <nav class="navbar navbar-dark ">
+      <a class="navbar-brand" href="#">Logo</a>
+      <!-- This is a button toggling the off-canvas -->
+      <span class="menu-icon" uk-toggle="target: #my-id" uk-icon="icon: menu; ratio: 2"></span>
+    </nav>
+
+    <div class="newnew-masthead hv-center">
+      <div class="text-center">
+        <h1>NEW NEW</h1>
+        <h6>For the culture</h6>
+      </div>
     </div>
-  </div>
 
-  <div class="container">
     <div class="container">
-      <div class="content-section">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam ipsa autem, reiciendis natus consectetur explicabo nihil nostrum esse ducimus voluptate magnam reprehenderit rerum non, et officia repudiandae dolore optio!</p>
+      <div class="container">
+        <div class="content-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam ipsa autem, reiciendis natus consectetur explicabo nihil nostrum esse ducimus voluptate magnam reprehenderit rerum non, et officia repudiandae dolore optio!</p>
 
-        <img src="https://source.unsplash.com/Udu9NgiNFk8/1600x900" alt="Image 1">
+          <img src="https://source.unsplash.com/Udu9NgiNFk8/1600x900" alt="Image 1">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam ipsa autem, reiciendis natus consectetur explicabo nihil nostrum esse ducimus voluptate magnam reprehenderit rerum non, et officia repudiandae dolore optio!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam ipsa autem, reiciendis natus consectetur explicabo nihil nostrum esse ducimus voluptate magnam reprehenderit rerum non, et officia repudiandae dolore optio!</p>
 
-        <img src="https://source.unsplash.com/ZdWo8KdGJno/400x500" alt="Image 2">
+          <img src="https://source.unsplash.com/ZdWo8KdGJno/400x500" alt="Image 2">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aliquam explicabo, facilis vel quis fugit, enim aperiam doloribus delectus ratione, modi molestias earum! Facere, ad dolore quod nisi minus laboriosam?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aliquam explicabo, facilis vel quis fugit, enim aperiam doloribus delectus ratione, modi molestias earum! Facere, ad dolore quod nisi minus laboriosam?</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aliquam explicabo, facilis vel quis fugit, enim aperiam doloribus delectus ratione.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aliquam explicabo, facilis vel quis fugit, enim aperiam doloribus delectus ratione.</p>
+        </div>
+
+        <p class="visit-text"><a href="https://new-new.herokuapp.com/" target="_blank" rel="noopener noreferrer">Visit</a></p>
       </div>
 
-      <p class="visit-text"><a href="https://new-new.herokuapp.com/" target="_blank" rel="noopener noreferrer">Visit</a></p>
-    </div>
 
-
-    <div class="footer">
-      <div class="footer-icons">
-        <a class="footer-icon" href="mailto:mrbryanbrotonel@gmail.com" target="_blank" rel="noopener noreferrer">
+      <div class="footer">
+        <div class="footer-icons">
+          <a class="footer-icon" href="mailto:mrbryanbrotonel@gmail.com" target="_blank" rel="noopener noreferrer">
             <i class="far fa-envelope fa-2x hvr-grow"></i>
           </a>
-        <a class="footer-icon" href="https://github.com/bryanbrotonel" target="_blank" rel="noopener noreferrer">
+          <a class="footer-icon" href="https://github.com/bryanbrotonel" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github fa-2x hvr-grow"></i>
           </a>
-        <a class="footer-icon" href="https://www.linkedin.com/in/bryanbrotonel/" target="_blank" rel="noopener noreferrer">
+          <a class="footer-icon" href="https://www.linkedin.com/in/bryanbrotonel/" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin-in fa-2x hvr-grow"></i>
           </a>
-        <a class="footer-icon" href="https://www.instagram.com/bryanbrotonel" target="_blank" rel="noopener noreferrer">
+          <a class="footer-icon" href="https://www.instagram.com/bryanbrotonel" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-instagram fa-2x hvr-grow"></i>
           </a>
+        </div>
+        <br>
+        <p class="copyright-text">&copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          Bryan Brotonel</p>
       </div>
-      <br>
-      <p class="copyright-text">&copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
-        Bryan Brotonel</p>
     </div>
+
+    <!-- This is the off-canvas -->
+    <div id="my-id" uk-offcanvas="overlay: true">
+      <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+          <li class="uk-parent">
+            <a href="../../#work"><strong>Work</strong></a>
+            <ul class="uk-nav-sub">
+              <li><a href="../by-forte">By Forte</a></li>
+              <li class="uk-active"><a href="#">New New</a></li>
+              <li><a href="../fyndit">Fyndit</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../../#about"><strong>About</strong></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
 
   <!-- scrollreveal JS -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>

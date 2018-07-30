@@ -177,6 +177,9 @@ a, a:active, a:hover, a:visited {
   .visit-text a:hover {
     font-weight: bolder; }
 
+.menu-icon {
+  color: white; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -193,5 +196,26 @@ a, a:active, a:hover, a:visited {
   padding-left: 20px;
   padding-right: 20px;
   max-width: 740px; }
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between; }
+
+@media (min-width: 576px) {
+  .navbar {
+    padding: 30px 35px; }
+    .navbar .container {
+      margin: 0;
+      padding: 0; } }
+.uk-offcanvas-bar {
+  background: #F2D0A4; }
+  .uk-offcanvas-bar .uk-nav-primary .uk-nav-sub a,
+  .uk-offcanvas-bar .uk-nav-primary > li > a,
+  .uk-offcanvas-bar .uk-offcanvas-close {
+    color: #262626; }
 
 /*# sourceMappingURL=app.css.map */
