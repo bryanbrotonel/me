@@ -31,6 +31,28 @@ img {
 .h-center {
   margin: 0 auto;
 }
+
+// START OF HOVER GROW
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:active,
+.hvr-grow:focus,
+.hvr-grow:hover {
+  transform: scale(1.1);
+}
+
+// END OF HOVER GROW
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   div[class^="col"] {

@@ -19,6 +19,21 @@ img {
 .h-center {
   margin: 0 auto; }
 
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform; }
+
+.hvr-grow:active,
+.hvr-grow:focus,
+.hvr-grow:hover {
+  transform: scale(1.1); }
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   div[class^="col"] {
@@ -35,9 +50,31 @@ img {
   div[class^="col"] {
     margin-left: 20px;
     margin-right: 20px; } }
-.navbar-logo {
-  width: 50px;
-  height: auto; }
+.navbar-brand {
+  margin: 0;
+  padding: 0; }
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between; }
+
+@media (min-width: 576px) {
+  .navbar {
+    padding: 30px 35px; }
+    .navbar .container {
+      margin: 0;
+      padding: 0; } }
+.uk-offcanvas-bar {
+  background: #1d2786; }
+  .uk-offcanvas-bar .uk-nav-primary .uk-nav-sub a,
+  .uk-offcanvas-bar .uk-nav-primary > li > a,
+  .uk-offcanvas-bar .uk-offcanvas-close {
+    color: #FAFAFA;
+    text-transform: uppercase; }
 
 .footer {
   text-align: center;
@@ -55,7 +92,7 @@ img {
   .footer-icons a, .footer-icons a:active, .footer-icons a:hover, .footer-icons a:visited {
     color: #818181; } }
 .copyright-text {
-  color: #F2D0A4; }
+  color: #1d2786; }
 
 body {
   font-family: "Roboto", sans-serif; }
@@ -196,26 +233,5 @@ a, a:active, a:hover, a:visited {
   padding-left: 20px;
   padding-right: 20px;
   max-width: 740px; }
-
-.navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between; }
-
-@media (min-width: 576px) {
-  .navbar {
-    padding: 30px 35px; }
-    .navbar .container {
-      margin: 0;
-      padding: 0; } }
-.uk-offcanvas-bar {
-  background: #F2D0A4; }
-  .uk-offcanvas-bar .uk-nav-primary .uk-nav-sub a,
-  .uk-offcanvas-bar .uk-nav-primary > li > a,
-  .uk-offcanvas-bar .uk-offcanvas-close {
-    color: #262626; }
 
 /*# sourceMappingURL=app.css.map */
