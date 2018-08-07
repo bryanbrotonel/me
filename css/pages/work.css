@@ -13,7 +13,7 @@
   margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
-  background: linear-gradient(rgba(38, 38, 38, 0.5), rgba(38, 38, 38, 0.5)), url("https://source.unsplash.com/Yy4sN6QzboU/1600x900");
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/Yy4sN6QzboU/1600x900");
   background-size: cover;
   background-position: center; }
   .byforte-masthead h1 {
@@ -24,7 +24,7 @@
   margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
-  background: linear-gradient(rgba(38, 38, 38, 0.5), rgba(38, 38, 38, 0.5)), url("https://source.unsplash.com/XUdIi04ohps/1600x900");
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/XUdIi04ohps/1600x900");
   background-size: cover;
   background-position: center; }
   .newnew-masthead h1 {
@@ -35,7 +35,7 @@
   margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
-  background: linear-gradient(rgba(38, 38, 38, 0.5), rgba(38, 38, 38, 0.5)), url("https://source.unsplash.com/NHSnBQyE7RE/1600x900");
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/NHSnBQyE7RE/1600x900");
   background-size: cover;
   background-position: center; }
   .fyndit-masthead h1 {
@@ -51,7 +51,6 @@
 
 .work-wrapper {
   margin-bottom: 20px;
-  color: black;
   min-width: 375px; }
   @media (min-width: 1200px) {
     .work-wrapper {

@@ -1,31 +1,68 @@
 @import "./../modules/all";
 
-// START OF BANNER
+// PAGES VARIABLES
+$about-section-color: $black;
+$profile-max-size: 400px;
 
-.banner {
-  align-items: center;
-  display: flex;
-  height: $bannerHeight;
-  justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/mdoPthuhr6Q/1600x900") center;
+// START OF WORK SECTION
+
+.work-section {
+  background-color: $white;
+  color: $black;
+}
+
+// END OF WORK SECTION
+
+// START OF ABOUT SECTION
+
+.about-section {
+  background-color: $grey;
+  color: $about-section-color;
+}
+
+.profile-img {
+  margin: 0;
+  border: solid 10px $about-section-color;
+  max-height: $profile-max-size;
+  max-width: $profile-max-size;
+  background: url($profile-image) center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: white;
 }
 
-.banner-title {
-  font-weight: $extra-bold;
+.about-write {
+  margin-top: 10px;
+  text-align: center;
 }
-
-.banner-arrow {
-  position: absolute;
-  top: $bannerHeight - 10;
-}
-@media (min-width: 576px) {
-  .banner {
-    text-align: center;
+@media (min-width: 768px) {
+  .about-write {
+    margin-top: 0;
+    text-align: left;
   }
 }
-// END OF BANNER
+
+// END OF ABOUT SECTION
+
+// START OF FOOTER SECTION
+.footer {
+  margin-bottom: 0;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer-icon {
+  padding: 7.5px;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    text-align: left;
+  }
+}
+
+// END OF FOOTER SECTION

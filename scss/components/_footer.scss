@@ -16,16 +16,3 @@
 .footer-icon {
   padding: 7.5px;
 }
-@media (min-width: 576px) {
-  .footer-icons {
-    #{$a-tags-hover},
-    #{$a-tags} {
-      color: tint($black, 42%);
-    }
-  }
-}
-
-
-.copyright-text {
-  color: $primary-colour;
-}

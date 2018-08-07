@@ -1,6 +1,30 @@
+$(document).ready( function(){
+
+  //Get the canvas & context
+  var c = $('#respondCanvas');
+  var ct = c.get(0).getContext('2d');
+  var container = $(c).parent();
+
+  //Run function when browser  resize
+  $(window).resize( respondCanvas );
+
+  function respondCanvas(){
+    c.attr('width', $(container).width() ); //max width
+    c.attr('height', $(container).width() ); //set the heigh to the width
+
+    //Redraw & reposition content
+    var x = c.width();
+    var y = c.height();
+
+}
+
+//Initial call
+respondCanvas();
+});
+
 // Scroll Reveal
 window.sr = ScrollReveal();
-sr.reveal('.work-section', {
+sr.reveal('.work-content', {
   duration: 800,
   delay: 400,
   distance: '1px',

@@ -1,5 +1,6 @@
 $white: #FAFAFA;
-$black: #262626;
+$grey: #f0f0f0;
+$black: #000000;
 $green: #3F826D;
 $gold: #F2D0A4;
 $blue: #545E75;
@@ -11,7 +12,7 @@ $tertiary-colour: #ffcdcd;
 $quaternary-colour: #ffe6eb;
 
 $primary-tint: rgba($secondary-colour, .5);
-$black-tint: rgba($black, .5);
+$black-tint: rgba($black, .75);
 
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);

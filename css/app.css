@@ -2,8 +2,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #FAFAFA;
-  color: #262626; }
+  background-color: #FAFAFA; }
 
 img {
   max-width: 100%;
@@ -34,22 +33,6 @@ img {
 .hvr-grow:hover {
   transform: scale(1.1); }
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  div[class^="col"] {
-    margin-left: 10px;
-    margin-right: 10px; } }
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  div[class^="col"] {
-    margin-left: 15px;
-    margin-right: 15px; } }
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  /*default so you don't need this*/
-  div[class^="col"] {
-    margin-left: 20px;
-    margin-right: 20px; } }
 .navbar-brand {
   margin: 0;
   padding: 0; }
@@ -76,6 +59,28 @@ img {
     color: #FAFAFA;
     text-transform: uppercase; }
 
+.banner {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/mdoPthuhr6Q/1600x900") center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white; }
+
+.banner-title {
+  font-weight: 800; }
+
+.banner-arrow {
+  position: absolute;
+  top: 90vh; }
+
+@media (min-width: 576px) {
+  .banner {
+    text-align: center; } }
 .footer {
   text-align: center;
   margin-bottom: 0; }
@@ -86,13 +91,6 @@ img {
 
 .footer-icon {
   padding: 7.5px; }
-
-@media (min-width: 576px) {
-  .footer-icons a:active, .footer-icons a:hover,
-  .footer-icons a, .footer-icons a:active, .footer-icons a:hover, .footer-icons a:visited {
-    color: #818181; } }
-.copyright-text {
-  color: #1d2786; }
 
 body {
   font-family: "Roboto", sans-serif; }

@@ -1,25 +1,42 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700");
-.banner {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/mdoPthuhr6Q/1600x900") center;
+.work-section {
+  background-color: #FAFAFA;
+  color: #000000; }
+
+.about-section {
+  background-color: #f0f0f0;
+  color: #000000; }
+
+.profile-img {
+  margin: 0;
+  border: solid 10px #000000;
+  max-height: 400px;
+  max-width: 400px;
+  background: url("../../img/profile.jpg") center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  color: white; }
+  background-size: cover; }
 
-.banner-title {
-  font-weight: 800; }
+.about-write {
+  margin-top: 10px;
+  text-align: center; }
 
-.banner-arrow {
-  position: absolute;
-  top: 90vh; }
+@media (min-width: 768px) {
+  .about-write {
+    margin-top: 0;
+    text-align: left; } }
+.footer {
+  margin-bottom: 0;
+  text-align: center; }
+  .footer a {
+    text-decoration: none; }
 
-@media (min-width: 576px) {
-  .banner {
-    text-align: center; } }
+.footer-icon {
+  padding: 7.5px; }
+
+@media (min-width: 768px) {
+  .footer {
+    text-align: left; } }
 
 /*# sourceMappingURL=index.css.map */
