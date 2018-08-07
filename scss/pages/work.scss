@@ -1,0 +1,89 @@
+@import "./../modules/all"; // START OF MAIN WORK PHOTOS
+
+.byforte-background {
+  background-image: url($byforte-background);
+}
+
+.newnew-background {
+  background-image: url($newnew-background);
+}
+
+.fyndit-background {
+  background-image: url($fydnit-backgrond);
+}
+// END OF MAIN WORK PHOTOS
+// START OF WORK MASTHEADS
+
+.byforte-masthead {
+  @include work-masthead($byforte-background);
+}
+
+.newnew-masthead {
+  @include work-masthead($newnew-background);
+}
+
+.fyndit-masthead {
+  @include work-masthead($fydnit-backgrond);
+}
+
+// END OF WORK MASTHEADS
+// START OF WORK SECTION
+
+.work-item:focus .work-content,
+.work-item:hover .work-content {
+  @include backgroundScale(1.05);
+}
+
+.work-wrapper {
+  margin-bottom: 20px;
+  min-width: 375px;
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
+  }
+}
+
+.work-image-wrapper {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.work-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.work-image-wrapper:focus .work-image,
+.work-image-wrapper:hover .work-image {
+  @include backgroundScale(1.05);
+}
+
+.work-image-wrapper:focus .work-image:before,
+.work-image-wrapper:focus a,
+.work-image-wrapper:hover .work-image:before,
+.work-image-wrapper:hover a {
+  display: block;
+}
+
+.work-image:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+// END OF WORK SECTION
