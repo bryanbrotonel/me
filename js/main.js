@@ -33,6 +33,14 @@ sr.reveal('.work-content', {
   scale: 0.999
 });
 
+sr.reveal('.work-mockUp', {
+  duration: 800,
+  delay: 400,
+  distance: '7px',
+  mobile: true,
+  scale: 0.999
+});
+
 sr.reveal('.footer-icon', {
   duration: 500,
   delay: 500,
