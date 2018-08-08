@@ -1,25 +1,26 @@
-$(document).ready( function(){
+$(document).ready(function() {
 
-  //Get the canvas & context
-  var c = $('#respondCanvas');
-  var ct = c.get(0).getContext('2d');
-  var container = $(c).parent();
+  if (document.getElementById("profileImgCanvas")) {
+    //Get the canvas & context
+    var c = $('#profileImgCanvas');
+    var ct = c.get(0).getContext('2d');
+    var container = $(c).parent();
 
-  //Run function when browser  resize
-  $(window).resize( respondCanvas );
+    //Run function when browser  resize
+    $(window).resize(squareCanvas);
 
-  function respondCanvas(){
-    c.attr('width', $(container).width() ); //max width
-    c.attr('height', $(container).width() ); //set the heigh to the width
+    function squareCanvas() {
+      c.attr('width', $(container).width()); //max width
+      c.attr('height', $(container).width()); //set the heigh to the width
 
-    //Redraw & reposition content
-    var x = c.width();
-    var y = c.height();
+      //Redraw & reposition content
+      var x = c.width();
+      var y = c.height();
+    }
 
-}
-
-//Initial call
-respondCanvas();
+    //Initial call
+    squareCanvas();
+  }
 });
 
 // Scroll Reveal
@@ -32,7 +33,6 @@ sr.reveal('.work-content', {
   scale: 0.999
 });
 
-
 sr.reveal('.footer-icon', {
   duration: 500,
   delay: 500,
@@ -42,9 +42,9 @@ sr.reveal('.footer-icon', {
 }, 150);
 
 // Animate CSS
-setTimeout(function () {
-    $('.banner-content').show().addClass('animated fadeIn');}, 650
-);
+setTimeout(function() {
+  $('.banner-content').show().addClass('animated fadeIn');
+}, 650);
 
 $.fn.extend({
   animateCss: function(animationName, callback) {
@@ -80,7 +80,9 @@ $.fn.extend({
 $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
     var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    target = target.length
+      ? target
+      : $('[name=' + this.hash.slice(1) + ']');
     if (target.length) {
       $('html, body').animate({
         scrollTop: (target.offset().top)
