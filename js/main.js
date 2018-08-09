@@ -39,7 +39,7 @@ sr.reveal('.work-mockUp', {
   distance: '7px',
   mobile: true,
   scale: 0.999
-});
+}, 150);
 
 sr.reveal('.footer-icon', {
   duration: 500,

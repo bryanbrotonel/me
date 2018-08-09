@@ -226,10 +226,17 @@ a, a:active, a:hover, a:visited {
 .section {
   padding: 50px 0; }
 
+.content-container {
+  margin: 0 auto; }
+
 .content-section {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 740px; }
+  margin-top: 5vh;
+  margin-bottom: 5vh; }
+
+@media (min-width: 768px) {
+  .content-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 740px; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,19 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700");
-.byforte-background {
-  background-image: url("https://source.unsplash.com/Yy4sN6QzboU/1600x900"); }
-
-.newnew-background {
-  background-image: url("https://source.unsplash.com/XUdIi04ohps/1600x900"); }
-
-.fyndit-background {
-  background-image: url("https://source.unsplash.com/NHSnBQyE7RE/1600x900"); }
-
 .byforte-masthead {
   height: 75vh;
   margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/Yy4sN6QzboU/1600x900");
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../../img/portfolio/By Forte/By Forte - Masthead.png");
   background-size: cover;
   background-position: center; }
   .byforte-masthead h1 {
@@ -41,6 +32,15 @@
   .fyndit-masthead h1 {
     font-size: 4em; }
 
+.byforte-background {
+  background-image: url("../../img/portfolio/By Forte/By Forte - Masthead.png"); }
+
+.newnew-background {
+  background-image: url("https://source.unsplash.com/XUdIi04ohps/1600x900"); }
+
+.fyndit-background {
+  background-image: url("https://source.unsplash.com/NHSnBQyE7RE/1600x900"); }
+
 .work-item:focus .work-content,
 .work-item:hover .work-content {
   -ms-transform: scale(1.05);
@@ -49,11 +49,11 @@
   -o-transform: scale(1.05);
   transform: scale(1.05); }
 
-.work-wrapper {
+.home-work-wrapper {
   margin-bottom: 20px;
   min-width: 375px; }
   @media (min-width: 1200px) {
-    .work-wrapper {
+    .home-work-wrapper {
       margin-bottom: 0; } }
 
 .work-image-wrapper {
@@ -99,5 +99,8 @@
   position: absolute;
   top: 0;
   left: 0; }
+
+.iPhone-mockUp {
+  width: 60%; }
 
 /*# sourceMappingURL=work.css.map */
