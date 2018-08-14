@@ -87,9 +87,10 @@ img {
   .footer a {
     text-decoration: none; }
   .footer :hover .footer-icon {
-    color: black; }
+    color: #000000; }
 
 .footer-icon {
+  color: #000000;
   padding: 7.5px; }
 
 body {
@@ -183,6 +184,7 @@ h6 {
 
 a:active, a:hover,
 a, a:active, a:hover, a:visited {
+  font-weight: bold;
   color: inherit; }
 
 .section-title {

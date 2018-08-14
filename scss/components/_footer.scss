@@ -8,11 +8,12 @@
 
   :hover {
     .footer-icon {
-      color: black;
+      color: $black;
     }
   }
 }
 
 .footer-icon {
+  color: $black;
   padding: 7.5px;
 }

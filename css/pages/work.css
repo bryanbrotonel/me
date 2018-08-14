@@ -26,7 +26,7 @@
   margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/NHSnBQyE7RE/1600x900");
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../../img/portfolio/Fyndit/Fyndit - Masthead.png");
   background-size: cover;
   background-position: center; }
   .fyndit-masthead h1 {
@@ -39,7 +39,7 @@
   background-image: url("https://source.unsplash.com/XUdIi04ohps/1600x900"); }
 
 .fyndit-background {
-  background-image: url("https://source.unsplash.com/NHSnBQyE7RE/1600x900"); }
+  background-image: url("../../img/portfolio/Fyndit/Fyndit - Masthead.png"); }
 
 .work-item:focus .work-content,
 .work-item:hover .work-content {
@@ -100,7 +100,8 @@
   top: 0;
   left: 0; }
 
-.iPhone-mockUp {
-  width: 60%; }
+.phone-mockUp {
+  max-width: 60%;
+  max-height: 650.844px; }
 
 /*# sourceMappingURL=work.css.map */
