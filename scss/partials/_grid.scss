@@ -1,0 +1,30 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.row {
+  margin: 0;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.content-container {
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-top: 5vh;
+  // margin-bottom: 5vh;
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 740px;
+  }
+}

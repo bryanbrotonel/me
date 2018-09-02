@@ -1,62 +1,101 @@
-(function($) {
-  // START OF CREATIVE TEMPLATE
-  "use strict"; // Start of use strict
+$(document).ready(function() {
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 57)
-        }, 1000, "easeInOutExpo");
-        return false;
+  if (document.getElementById("profileImgCanvas")) {
+    //Get the canvas & context
+    var c = $('#profileImgCanvas');
+    var ct = c.get(0).getContext('2d');
+    var container = $(c).parent();
+
+    //Run function when browser  resize
+    $(window).resize(squareCanvas);
+
+    function squareCanvas() {
+      c.attr('width', $(container).width()); //max width
+      c.attr('height', $(container).width()); //set the heigh to the width
+
+      //Redraw & reposition content
+      var x = c.width();
+      var y = c.height();
+    }
+
+    //Initial call
+    squareCanvas();
+  }
+});
+
+// Scroll Reveal
+window.sr = ScrollReveal();
+sr.reveal('.work-content', {
+  duration: 800,
+  delay: 400,
+  distance: '1px',
+  mobile: true,
+  scale: 0.999
+});
+
+sr.reveal('.work-mockUp', {
+  duration: 800,
+  delay: 400,
+  distance: '7px',
+  mobile: true,
+  scale: 0.999
+}, 150);
+
+sr.reveal('.footer-icon', {
+  duration: 500,
+  delay: 500,
+  distance: '3px',
+  mobile: true,
+  scale: 0.98
+}, 150);
+
+// Animate CSS
+setTimeout(function() {
+  $('.banner-content').show().addClass('animated fadeIn');
+}, 650);
+
+$.fn.extend({
+  animateCss: function(animationName, callback) {
+    var animationEnd = (function(el) {
+      var animations = {
+        animation: 'animationend',
+        OAnimation: 'oAnimationEnd',
+        MozAnimation: 'mozAnimationEnd',
+        WebkitAnimation: 'webkitAnimationEnd'
+      };
+
+      for (var t in animations) {
+        if (el.style[t] !== undefined) {
+          return animations[t];
+        }
       }
+    })(document.createElement('div'));
+
+    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).removeClass('animated ' + animationName);
+
+      if (typeof callback === 'function')
+        callback();
+      }
+    );
+
+    return this;
+  }
+});
+
+// Sroll to SECTION
+// Smooth scrolling using jQuery easing
+$('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length
+      ? target
+      : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: (target.offset().top)
+      }, 1000, "easeInOutExpo");
+      return false;
     }
-  });
-
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
-
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 57
-  });
-
-  // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-    }
-  };
-  // Collapse now if page is not at top
-  navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
-
-  // Scroll reveal calls
-  window.sr = ScrollReveal();
-  sr.reveal('.sr-icons', {
-    duration: 600,
-    scale: 0.3,
-    distance: '0px'
-  }, 200);
-  sr.reveal('.sr-work', {
-    duration: 1000,
-    delay: 100
-  });
-  sr.reveal('.sr-contact', {
-    duration: 600,
-    scale: 0.3,
-    distance: '0px'
-  }, 300);
-
-  // END OF CREATIVE TEMPLATE
-
-})(jQuery); // End of use strict
+  }
+});

@@ -1,0 +1,38 @@
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+}
+
+// START OF NAVBAR
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5vh;
+}
+
+@media (min-width: 576px) {
+  .navbar {
+    padding: 30px 35px;
+
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.uk-offcanvas-bar {
+  background: $primary-colour;
+
+  .uk-nav-primary .uk-nav-sub a,
+  .uk-nav-primary > li > a,
+  .uk-offcanvas-close {
+    color: $white;
+    text-transform: uppercase;
+  }
+}
+// END OF NAVBAR
