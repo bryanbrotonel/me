@@ -15,7 +15,7 @@
   margin-bottom: 25px;
   color: white;
   /* top, transparent $black-tint, faked with gradient */
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/XUdIi04ohps/1600x900");
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://source.unsplash.com/0l0KjNoAfAk/1600x900");
   background-size: cover;
   background-position: center; }
   .newnew-masthead h1 {
@@ -36,7 +36,7 @@
   background-image: url("../../img/portfolio/By Forte/By Forte - Masthead.png"); }
 
 .newnew-background {
-  background-image: url("https://source.unsplash.com/XUdIi04ohps/1600x900"); }
+  background-image: url("https://source.unsplash.com/0l0KjNoAfAk/1600x900"); }
 
 .fyndit-background {
   background-image: url("../../img/portfolio/Fyndit/Fyndit - Masthead.png"); }
