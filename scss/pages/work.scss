@@ -1,18 +1,6 @@
-@import "./../modules/all"; // START OF MAIN WORK PHOTOS
+@import "./../modules/all";
 
-.byforte-background {
-  background-image: url($byforte-background);
-}
-
-.newnew-background {
-  background-image: url($newnew-background);
-}
-
-.fyndit-background {
-  background-image: url($fydnit-backgrond);
-}
-// END OF MAIN WORK PHOTOS
-// START OF WORK MASTHEADS
+// START OF WORK PAGE MASTHEADS
 
 .byforte-masthead {
   @include work-masthead($byforte-background);
@@ -26,15 +14,32 @@
   @include work-masthead($fydnit-backgrond);
 }
 
-// END OF WORK MASTHEADS
-// START OF WORK SECTION
+// END OF WORK PAGE MASTHEADS
+
+// START OF HOME PAGE WORK SECTION
+
+// START OF HOME PAGE WORK PHOTOS
+
+.byforte-background {
+  background-image: url($byforte-background);
+}
+
+.newnew-background {
+  background-image: url($newnew-background);
+}
+
+.fyndit-background {
+  background-image: url($fydnit-backgrond);
+}
+
+// END OF HOME PAGE WORK PHOTOS
 
 .work-item:focus .work-content,
 .work-item:hover .work-content {
   @include backgroundScale(1.05);
 }
 
-.work-wrapper {
+.home-work-wrapper {
   margin-bottom: 20px;
   min-width: 375px;
   @media (min-width: 1200px) {
@@ -86,4 +91,22 @@
   top: 0;
   left: 0;
 }
-// END OF WORK SECTION
+// END OF HOME PAGE WORK SECTION
+
+// START OF WORK CONTENT
+
+.work-mockUp {
+  margin-bottom: 5vh;
+}
+
+.phone-mockUp {
+  max-width: 60%;
+  max-height: 650.844px;
+}
+
+@media (min-width: 1200px) {
+  .work-mockUp {
+    margin-bottom: 0;
+  }}
+
+// END OF WORK CONTENT

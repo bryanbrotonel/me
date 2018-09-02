@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700");
 .work-section {
-  background-color: #FAFAFA;
-  color: #000000; }
+  background-color: #fafafa;
+  color: #000; }
 
 .about-section {
   background-color: #f0f0f0;
-  color: #000000; }
+  color: #000; }
 
 .profile-img {
   margin: 0;
-  border: solid 10px #000000;
+  border: solid 10px #3F826D;
   max-height: 400px;
   max-width: 400px;
   background: url("../../img/profile.jpg") center;
