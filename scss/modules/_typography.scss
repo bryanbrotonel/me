@@ -41,13 +41,3 @@ $a-tags-hover: 'a:active, a:hover';
 @function num($input){
   @return $input/($input * 0 + 1);
 }
-
-
-@mixin work-page-title() {
-  margin-bottom: 50px;
-  text-align: center;
-
-  :nth-child(2) {
-    color: $quaternary-colour;
-  }
-}

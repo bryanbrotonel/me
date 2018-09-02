@@ -100,8 +100,15 @@
   top: 0;
   left: 0; }
 
+.work-mockUp {
+  margin-bottom: 5vh; }
+
 .phone-mockUp {
   max-width: 60%;
   max-height: 650.844px; }
+
+@media (min-width: 1200px) {
+  .work-mockUp {
+    margin-bottom: 0; } }
 
 /*# sourceMappingURL=work.css.map */

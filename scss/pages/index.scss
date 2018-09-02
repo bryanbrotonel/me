@@ -1,7 +1,6 @@
 @import "./../modules/all";
 
 // PAGES VARIABLES
-$about-section-color: $black;
 $profile-max-size: 400px;
 
 // START OF WORK SECTION
@@ -17,12 +16,12 @@ $profile-max-size: 400px;
 
 .about-section {
   background-color: $grey;
-  color: $about-section-color;
+  color: $black;
 }
 
 .profile-img {
   margin: 0;
-  border: solid 10px $about-section-color;
+  border: solid 10px $primary-colour;
   max-height: $profile-max-size;
   max-width: $profile-max-size;
   background: url($profile-image) center;
