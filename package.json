@@ -1,7 +1,7 @@
 {
-  "name": "React-Starter-Template",
+  "name": "BryanBrotonel",
   "version": "1.0.0",
-  "description": "A starter template built with React and Webpack",
+  "description": "Bryan Brotonel's personal portfolio",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback --env.PLATFORM=local --env.VERSION=stag",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bryanbrotonel/React-Starter-Template.git"
+    "url": "git+https://github.com/bryanbrotonel/me.git"
   },
   "keywords": [
     "React",
@@ -19,14 +19,15 @@
   "author": "Bryan Brotonel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bryanbrotonel/React-Starter-Template/issues"
+    "url": "https://github.com/bryanbrotonel/me/issues"
   },
-  "homepage": "https://github.com/bryanbrotonel/React-Starter-Template#readme",
+  "homepage": "https://github.com/bryanbrotonel/me#readme",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -38,7 +39,7 @@
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
     "babel-loader": "^8.0.0-beta.0",
-    "copy-webpack-plugin": "^4.5.1",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
