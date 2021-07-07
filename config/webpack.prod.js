@@ -7,7 +7,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const Visualizer = require("webpack-visualizer-plugin");
 
 // Configs
-var baseConfig = require("./webpack.base.config");
+var baseConfig = require("./webpack.dev");
 
 const prodConfiguration = env => {
   return merge([

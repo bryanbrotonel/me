@@ -1,10 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const APP_DIR = path.resolve(__dirname, "../src");
 
@@ -12,12 +11,15 @@ module.exports = env => {
   const { PLATFORM, VERSION } = env;
   return merge([
     {
-      entry: ["@babel/polyfill", APP_DIR],
+      entry: {
+        main: "./src/index.js"
+      },
 
       resolve: {
         modules: [APP_DIR, "node_modules"],
-        extensions: [".js", ".jsx"]
+        extensions: [".js", ".jsx"],
       },
+      mode: "development",
 
       module: {
         rules: [
@@ -25,8 +27,8 @@ module.exports = env => {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
-              loader: "babel-loader"
-            }
+              loader: "babel-loader",
+            },
           },
           {
             test: /\.scss$/,
@@ -38,7 +40,7 @@ module.exports = env => {
               "sass-loader"
             ]
           }
-        ]
+        ],
       },
 
       plugins: [
@@ -54,15 +56,14 @@ module.exports = env => {
             minifyURLs: true,
             minifyJS: true,
             removeComments: true,
-            removeRedundantAttributes: true
-          }
+            removeRedundantAttributes: true,
+          },
         }),
         new webpack.DefinePlugin({
-          "process.env.VERSION": JSON.stringify(env.VERSION),
-          "process.env.PLATFORM": JSON.stringify(env.PLATFORM)
+          "process.env.VERSION": JSON.stringify(VERSION),
+          "process.env.PLATFORM": JSON.stringify(PLATFORM),
         }),
-        new CopyWebpackPlugin([{ from: "src/static" }])
-      ]
-    }
+      ],
+    },
   ]);
 };
