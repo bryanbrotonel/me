@@ -45,7 +45,7 @@ module.exports = env => {
 
       plugins: [
         new HtmlWebpackPlugin({
-          title: "React Starter Template",
+          title: "me",
           template: "./resources/index.html",
           filename: "./index.html",
           inject: true,
