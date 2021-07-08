@@ -1,13 +1,9 @@
-import React from "react"
+import React from "react";
 
 class Socials extends React.Component {
   render() {
-    return (
-      <div>
-        Socials
-      </div>
-    )
+    return <div>Socials</div>;
   }
 }
 
-export default Socials
+export default Socials;

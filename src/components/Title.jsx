@@ -4,7 +4,7 @@ import "./Title.scss";
 
 class Title extends React.Component {
   render() {
-    return <span>BryanBrotonel</span>;
+    return <h1>BryanBrotonel</h1>;
   }
 }
 
