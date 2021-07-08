@@ -1,57 +1,56 @@
-body {
-  @include font-size(20px);
-  font-family: $base-font-family;
+html {
+  font-size: 100%; // 16px
 }
-@for $i from 1 through 6 {
-  h#{7 - $i} {
-    font-weight: bold;
+
+body {
+  background: $white;
+  font-family: $base-font-family;
+  font-weight: 400;
+  line-height: 1.75;
+  color: $black;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+@for $i from 1 through 5 {
+  h#{6 - $i} {
+    margin: 3rem 0 1.38rem;
     font-family: $header-font-family;
-    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.3;
   }
 }
 
 h1 {
-  @include font-size(53.75px, 58.25px);
+  margin-top: 0;
+  font-size: 2.488rem;
 }
 
 h2 {
-  @include font-size(49.25px, 53.25px);
+  font-size: 2.074rem;
 }
 
 h3 {
-  @include font-size(44.75px, 49.25px);
+  font-size: 1.728rem;
 }
 
 h4 {
-  @include font-size(40.25px, 44.75px);
+  font-size: 1.44rem;
 }
 
 h5 {
-  @include font-size(35.75px, 40.25px);
+  font-size: 1.2rem;
 }
 
-h6 {
-  @include font-size(31.25px, 35.75px);
+small,
+.text_small {
+  font-size: 0.833rem;
 }
 
 #{$a-tags-hover},
 #{$a-tags} {
   font-weight: bold;
   color: inherit;
-}
-
-.section-title {
-  @include font-size(53px, 61px);
-  font-weight: bold;
-  text-align: center;
-  padding-bottom: 30px;
-  margin-bottom: 0;
-}
-
-.typed {
-  display: inline;
-}
-
-.menu-icon {
-  color: white;
 }
