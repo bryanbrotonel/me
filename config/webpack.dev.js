@@ -1,25 +1,24 @@
-const path = require("path");
-const webpack = require("webpack");
-const { merge } = require("webpack-merge");
+const path = require('path');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const APP_DIR = path.resolve(__dirname, "../src");
+const APP_DIR = path.resolve(__dirname, '../src');
 
-module.exports = env => {
+module.exports = (env) => {
   const { PLATFORM, VERSION } = env;
   return merge([
     {
       entry: {
-        main: "./src/index.js"
+        main: './src/index.js',
       },
-
       resolve: {
-        modules: [APP_DIR, "node_modules"],
-        extensions: [".js", ".jsx"],
+        modules: [APP_DIR, 'node_modules'],
+        extensions: ['.js', '.jsx'],
       },
-      mode: "development",
+      mode: 'development',
 
       module: {
         rules: [
@@ -27,27 +26,29 @@ module.exports = env => {
             test: /\.js|\.jsx$/,
             exclude: /node_modules/,
             use: {
-              loader: "babel-loader",
+              loader: 'babel-loader',
             },
           },
           {
             test: /\.scss$/,
             use: [
-              PLATFORM === "production"
+              PLATFORM === 'production'
                 ? MiniCssExtractPlugin.loader
-                : "style-loader",
-              "css-loader",
-              "sass-loader"
-            ]
-          }
+                : 'style-loader',
+              'css-loader',
+              'sass-loader',
+            ],
+          },
         ],
       },
-
+      devServer: {
+        historyApiFallback: true,
+      },
       plugins: [
         new HtmlWebpackPlugin({
-          title: "me",
-          template: "./resources/index.html",
-          filename: "./index.html",
+          title: 'me',
+          template: './resources/index.html',
+          filename: './index.html',
           inject: true,
           minify: {
             collapseWhitespace: true,
@@ -60,8 +61,8 @@ module.exports = env => {
           },
         }),
         new webpack.DefinePlugin({
-          "process.env.VERSION": JSON.stringify(VERSION),
-          "process.env.PLATFORM": JSON.stringify(PLATFORM),
+          'process.env.VERSION': JSON.stringify(VERSION),
+          'process.env.PLATFORM': JSON.stringify(PLATFORM),
         }),
       ],
     },
