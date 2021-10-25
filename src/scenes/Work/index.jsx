@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-function About() {
+function Work() {
   return (
     <div>
-      <h1>About</h1>
+      <h1>👋 Work</h1>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam modi
         optio odit sit cumque iusto, veniam a quas assumenda rerum harum earum
@@ -13,4 +13,4 @@ function About() {
   );
 }
 
-export default About;
+export default Work;
