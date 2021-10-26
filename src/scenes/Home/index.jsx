@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { fetchContentfulData } from '../../helpers';
 
 import './styles.scss';
 
-const query = `
+function Home() {
+  const query = `
   {
     mastheadCollection{
       items {
@@ -16,31 +18,10 @@ const query = `
   }
   `;
 
-function Home() {
   const [page, setPage] = useState(null);
 
   useEffect(() => {
-    window
-      .fetch('https://graphql.contentful.com/content/v1/spaces/yg6bvazmunnt/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Auth request
-          Authorization:
-            'Bearer a0257b82968ffe4ec3d59ee2087eea1f82eabd5b0a2c50e9737aeadceb95d24d',
-        },
-        // Send GraphQL query
-        body: JSON.stringify({ query }),
-      })
-      .then((response) => response.json())
-      .then(({ data, errors }) => {
-        if (errors) {
-          console.error(errors);
-        }
-
-        // render entire component with new data
-        setPage(data.mastheadCollection.items[0]);
-      });
+    fetchContentfulData(query, 'mastheadCollection', setPage);
   }, []);
 
   if (!page) return 'Loading...';
