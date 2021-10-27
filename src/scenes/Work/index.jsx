@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Link } from 'react-router-dom';
 
 import { fetchContentfulData } from '../../helpers';
 
@@ -11,6 +10,7 @@ function Work() {
     items {
       title
       subtitle
+      link
       content {
         json
       }
@@ -31,12 +31,17 @@ function Work() {
     <div>
       <h1>Work</h1>
       <div>
-        {items.map(({ title, subtitle }) => (
-          <div key={title}>
-            <h2>{title}</h2>
-            <h3>{subtitle}</h3>
-            <hr />
-          </div>
+        {items.map(({ title, subtitle, link }) => (
+          <Link
+            key={title}
+            to={`/work/${encodeURI(link)}`}
+          >
+            <div>
+              <h2>{title}</h2>
+              <h3>{subtitle}</h3>
+              <hr />
+            </div>
+          </Link>
         ))}
       </div>
     </div>
