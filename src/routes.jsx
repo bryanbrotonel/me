@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -9,14 +8,15 @@ import {
 import Home from 'scenes/Home';
 import Work from 'scenes/Work';
 import WorkPost from 'scenes/Work Post';
-// import NotFound from 'scenes/Not Found';
+import Error from 'scenes/Error';
 
 const Routes = () => (
   <Switch>
     <Redirect from="/home" to="/" />
     <Route exact path="/" component={Home} />
     <Route exact path="/work" component={Work} />
-    <Route exact path="/work/:workPost" component={WorkPost} />
+    <Route path="/work/:workPost" component={WorkPost} />
+    <Route component={Error}/>
   </Switch>
 );
 

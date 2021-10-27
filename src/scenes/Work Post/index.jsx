@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import { fetchContentfulData } from '../../helpers';
 
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Error from '../Error';
 
 function WorkPost() {
   let { workPost } = useParams();
@@ -33,7 +34,9 @@ function WorkPost() {
 
   const { title, subtitle, content } = pageContent;
 
-  return (
+  return pageContent.length == 0 ? (
+    <Error />
+  ) : (
     <div>
       <h1>{title}</h1>
       <h2>{subtitle}</h2>
