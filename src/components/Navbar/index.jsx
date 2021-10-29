@@ -8,7 +8,7 @@ function Navbar() {
   const navLinks = pages.map((page) => {
     return (
       <li key={page}>
-        <NavLink to={'/' + encodeURI(page)}>{page}</NavLink>
+        <NavLink to={'/' + encodeURI(page.replace(/\s/g, '-'))}>{page}</NavLink>
       </li>
     );
   });
