@@ -1,16 +1,36 @@
-import render from 'dom-serializer';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+import { fetchContentfulData } from '../../helpers';
 
 function CurriculumVitae() {
+  const query = `
+  {
+    curriculumVitaeCollection {
+      items {
+        title
+        content {
+          json
+        }
+      }
+    }
+  }
+  `;
+
+  const [pageContent, setPageContent] = useState(null);
+
+  useEffect(() => {
+    fetchContentfulData(query, 'curriculumVitaeCollection', setPageContent);
+  }, []);
+
+  if (!pageContent) return 'Loading...';
+
+  const { title, content } = pageContent;
+
   return (
     <div>
-      <h1>curriculum vitae</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus veniam
-        perspiciatis illum odit assumenda iste magnam temporibus omnis. Porro
-        atque dolorem eveniet deleniti quia quisquam unde dolores quam suscipit
-        exercitationem.
-      </p>
+      <h1>{title}</h1>
+      {documentToReactComponents(content['json'])}
     </div>
   );
 }
