@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchContentfulData } from '../../helpers';
 
-import './styles.scss';
-
 function Home() {
   const query = `
   {

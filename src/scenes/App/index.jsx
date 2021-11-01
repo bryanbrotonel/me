@@ -5,8 +5,6 @@ import Routes from '../../routes';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-import './styles.scss';
-
 const App = () => {
   return (
     <div id="app">

@@ -6,8 +6,6 @@ import { createBrowserHistory } from "history";
 
 import App from "./scenes/App";
 
-import "scss/main.scss";
-
 // Creates history
 const history = createBrowserHistory();
 
