@@ -21,6 +21,9 @@ const GlobalStyle = createGlobalStyle`
 
     // unit - don't modify unless you want to change the typography unit (e.g., from Rem to Em units)
     --text-unit: 1em; // if Em units → --text-unit: 1em;
+
+    // Colours
+    --colour-primary: #F77F00;
   }
 
   :root,
@@ -96,6 +99,47 @@ const GlobalStyle = createGlobalStyle`
   }
   .font-xxxxl {
     font-size: var(--text-xxxxl);
+  }
+
+  //Bootstrap container
+  .container,
+  .container-fluid,
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    /* width: 100%; */
+    padding-right: var(--bs-gutter-x, 1rem);
+    padding-left: var(--bs-gutter-x, 1rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 576px) {
+    .container-sm, .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container-md, .container-sm, .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-lg, .container-md, .container-sm, .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1140px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1320px;
+    }
   }
 
 `;

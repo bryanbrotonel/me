@@ -4,30 +4,33 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.section`
-  border: dotted;
-
   display: grid;
   grid-gap: 10px;
 
   justify-items: center;
   justify-content: center;
+  padding: 10px 0 !important;
 
   @media (min-width: 600px) {
     grid-template-columns: 1fr repeat(2, fit-content(200px));
     grid-gap: 20px;
+    padding: 20px 0;
   }
 `;
 
-const LinkWrapper = styled.section`
-  border: solid;
-
+const Link = styled(NavLink)`
+  text-decoration: none;
   padding: 10px 0;
+  font-family: var(--font-primary);
+  color: #020504;
 
   &.homeLink {
     grid-column: 1 / 3;
 
-    font-size: larger;
     font-weight: bold;
+    font-size: var(--text-xl);
+
+    color: var(--colour-primary);
 
     @media (min-width: 600px) {
       grid-column: 1 / 2;
@@ -37,23 +40,23 @@ const LinkWrapper = styled.section`
 `;
 
 function Navbar() {
-  const pages = ['home', 'work', 'curriculum vitae'];
+  const pages = ['Home', 'Work', 'Curriculum Vitae'];
 
   const navLinks = pages.map((page) => {
-    return page == 'home' ? (
-      <LinkWrapper key={page} className="homeLink">
-        <NavLink to={'/'}>Bryan Brotonel</NavLink>
-      </LinkWrapper>
+    return page == 'Home' ? (
+      <Link key={page} to="/" className="homeLink">
+        BryanBrotonel
+      </Link>
     ) : (
-      <LinkWrapper key={page}>
-        <NavLink to={'/' + encodeURI(page.replace(/\s/g, '-'))}>{page}</NavLink>
-      </LinkWrapper>
+      <Link key={page} to={'/' + encodeURI(page.replace(/\s/g, '-'))}>
+        {page}
+      </Link>
     );
   });
   return (
-    <React.Fragment>
-      <Wrapper>{navLinks}</Wrapper>
-    </React.Fragment>
+    <div>
+      <Wrapper className="container-lg">{navLinks}</Wrapper>
+    </div>
   );
 }
 

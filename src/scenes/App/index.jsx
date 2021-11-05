@@ -10,14 +10,13 @@ const Container = styled.section`
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 0 20px;
 `;
 
 const App = () => {
   return (
     <Container>
       <Navbar />
-      <div>
+      <div className="container">
         <Routes />
       </div>
       <Footer />

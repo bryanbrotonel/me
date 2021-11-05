@@ -1,19 +1,38 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Wrapper = styled.section`
-  border: dotted;
-
   display: grid;
   grid-template-columns: 1fr;
-
   justify-items: center;
   justify-content: center;
+  margin-top: 60px;
+  padding: 30px 0;
+
+  background-color: #f77f00;
+  color: white;
 `;
 
-const Email = styled.a`
+const Header = styled.span`
+  padding: 20px 0;
+  font-family: var(--font-primary);
+  font-size: var(--text-xxxl);
+  font-weight: 600;
+
+  @media (min-width: 600px) {
+    font-size: var(--text-xxxxl);
+  }
+`;
+
+const Email = styled.span`
   padding-bottom: 10px;
-  font-weight: bold;
+
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  text-decoration: none;
+  color: white;
 `;
 
 const Info = styled.section`
@@ -28,11 +47,28 @@ const Socials = styled.section`
   grid-gap: 10px;
 `;
 
+const SocialButton = styled.button`
+  display: inline-block;
+  font-size: var(--text-xxl);
+  color: white;
+  margin: 0.5em;
+  display: block;
+
+  @media (min-width: 600px) {
+    font-size: var(--text-xxxl);
+  }
+`;
+
+const Copyright = styled.span`
+  font-family: var(--font-primary);
+`;
+
 function footer() {
   return (
     <Wrapper>
-      <h1>Lets Connect</h1>
+      <Header>&#x1F91D; Lets Connect &#x1F91D;</Header>
       <Email
+        as="a"
         href="mailto:mrbryanbrotonel@gmail.com"
         title="Bryan Brotonel | Mail"
         target="_blank"
@@ -40,25 +76,27 @@ function footer() {
         mrbryanbrotonel@gmail.com
       </Email>
       <Socials>
-        <a
+        <SocialButton
+          as="a"
           href="https://www.linkedin.com/in/bryanbrotonel/"
           title="Bryan Brotonel | LinkedIn"
           target="_blank"
         >
-          LinkedIn
-        </a>
-        <a
+          <FontAwesomeIcon icon={faLinkedin} />
+        </SocialButton>
+        <SocialButton
+          as="a"
           href="https://github.com/bryanbrotonel"
           title="Bryan Brotonel | GitHub"
           target="_blank"
         >
-          GitHub
-        </a>
+          <FontAwesomeIcon icon={faGithub} />
+        </SocialButton>
       </Socials>
       <Info>
-        <h5>
+        <Copyright>
           &#169; {new Date().getFullYear()}. All Rights Reserved | Vancouver, BC
-        </h5>
+        </Copyright>
       </Info>
     </Wrapper>
   );
