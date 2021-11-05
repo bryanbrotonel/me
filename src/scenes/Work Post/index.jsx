@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import { fetchContentfulData } from '../../helpers';
@@ -37,11 +38,11 @@ function WorkPost() {
   return pageContent.length == 0 ? (
     <Error />
   ) : (
-    <div>
+    <React.Fragment>
       <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      {documentToReactComponents(content['json'])}
-    </div>
+      <h4>{subtitle}</h4>
+      <div>{documentToReactComponents(content['json'])}</div>
+    </React.Fragment>
   );
 }
 

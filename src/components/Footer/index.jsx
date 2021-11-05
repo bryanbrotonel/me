@@ -41,7 +41,7 @@ function footer() {
       </Email>
       <Socials>
         <a
-          href="mailto:mrbryanbrotonel@gmail.com"
+          href="https://www.linkedin.com/in/bryanbrotonel/"
           title="Bryan Brotonel | LinkedIn"
           target="_blank"
         >
