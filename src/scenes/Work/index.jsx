@@ -29,13 +29,10 @@ function Work() {
 
   return (
     <div>
-      <h1>Work</h1>
       <div>
+        <h1>Work</h1>
         {items.map(({ title, subtitle, link }) => (
-          <Link
-            key={title}
-            to={`/work/${encodeURI(link)}`}
-          >
+          <Link key={title} to={`/work/${encodeURI(link)}`}>
             <div>
               <h2>{title}</h2>
               <h3>{subtitle}</h3>

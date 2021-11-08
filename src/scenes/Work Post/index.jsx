@@ -38,11 +38,13 @@ function WorkPost() {
   return pageContent.length == 0 ? (
     <Error />
   ) : (
-    <React.Fragment>
-      <h1>{title}</h1>
-      <h4>{subtitle}</h4>
-      <div>{documentToReactComponents(content['json'])}</div>
-    </React.Fragment>
+    <div className="pageWrapper">
+      <div className="contentWrapper">
+        <h1>{title}</h1>
+        <h4>{subtitle}</h4>
+        {documentToReactComponents(content['json'])}
+      </div>
+    </div>
   );
 }
 

@@ -20,9 +20,14 @@ const Wrapper = styled.section`
 
 const Link = styled(NavLink)`
   text-decoration: none;
-  padding: 10px 0;
+  align-self: center;
+
   font-family: var(--font-primary);
   color: #020504;
+
+  @media (min-width: 600px) {
+    padding: 10px 0;
+  }
 
   &.homeLink {
     grid-column: 1 / 3;
@@ -55,7 +60,7 @@ function Navbar() {
   });
   return (
     <div>
-      <Wrapper className="container-lg">{navLinks}</Wrapper>
+      <Wrapper className="container-sm">{navLinks}</Wrapper>
     </div>
   );
 }

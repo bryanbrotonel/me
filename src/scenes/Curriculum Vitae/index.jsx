@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import { fetchContentfulData } from '../../helpers';
@@ -28,9 +29,11 @@ function CurriculumVitae() {
   const { title, content } = pageContent;
 
   return (
-    <div>
-      <h1>{title}</h1>
-      {documentToReactComponents(content['json'])}
+    <div className="pageWrapper">
+      <div className="contentWrapper">
+        <h1>{title}</h1>
+        {documentToReactComponents(content['json'])}
+      </div>
     </div>
   );
 }

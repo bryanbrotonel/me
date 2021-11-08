@@ -22,8 +22,14 @@ const GlobalStyle = createGlobalStyle`
     // unit - don't modify unless you want to change the typography unit (e.g., from Rem to Em units)
     --text-unit: 1em; // if Em units → --text-unit: 1em;
 
+    // gutters
+     --bs-gutter-x: 1.5rem;
+     --bs-gutter-y: 0;
+
     // Colours
     --colour-primary: #F77F00;
+
+    --colour-black: #020504;
   }
 
   :root,
@@ -43,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
   }
 
-  @include breakpoint(md) {
+  @media (min-width: 600px) {
     :root {
       --text-base-size: 1.25em;
       --text-scale-ratio: 1.25;
@@ -54,11 +60,18 @@ const GlobalStyle = createGlobalStyle`
   body,
   #app {
     height: 100%;
+    background-color: #fcf3e7;
   }
   
   body {
     font-family: var(--font-secondary);
+    color: var(--colour-black);
+    line-height: var(--body-line-height);
     margin: 0;
+  }
+
+  p {
+    font-size: var(--text-base-size);
   }
 
   // Header sizes and styling
@@ -139,6 +152,20 @@ const GlobalStyle = createGlobalStyle`
   @media (min-width: 1400px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1320px;
+    }
+  }
+
+  .pageWrapper {
+    @media (min-width: 992px) {
+      display: grid;
+    }
+  }
+  
+  .contentWrapper {
+    @media (min-width: 992px) {
+      align-self: center;
+      justify-self: center;
+      width: 50%;
     }
   }
 
