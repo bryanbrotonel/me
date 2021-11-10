@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   padding: 10px 0 !important;
 
   @media (min-width: 600px) {
-    grid-template-columns: 1fr repeat(2, fit-content(200px));
+    grid-template-columns: 1fr repeat(3, fit-content(200px));
     grid-gap: 20px;
     padding: 20px 0;
   }
@@ -67,6 +67,9 @@ function Navbar() {
         </Link>
         <Link smooth to="/#work">
           Work
+        </Link>
+        <Link smooth to="/education">
+          Education
         </Link>
         <Link smooth to="/resume">
           Resume
