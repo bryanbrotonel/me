@@ -28,7 +28,7 @@ function Education() {
 
   return (
     <div className="pageWrapper">
-      <div className="contentWrapper">
+      <div className="contentWrapper container">
         <h1>{title}</h1>
         <ReactMarkdown children={content} />
       </div>

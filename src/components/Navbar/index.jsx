@@ -31,14 +31,17 @@ const Link = styled(NavHashLink)`
   }
 
   &.homeLink {
-    grid-column: 1 / 3;
+    grid-column: 1 / 5;
+    text-align: center;
 
     font-weight: bold;
     font-size: var(--text-lg);
 
     color: var(--colour-primary);
+    width: 100%;
 
     @media (min-width: 600px) {
+      text-align: start;
       grid-column: 1 / 2;
       justify-self: start;
     }
