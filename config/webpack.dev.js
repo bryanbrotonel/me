@@ -64,7 +64,9 @@ module.exports = (env) => {
           'process.env.VERSION': JSON.stringify(VERSION),
           'process.env.PLATFORM': JSON.stringify(PLATFORM),
         }),
-        new CopyWebpackPlugin([{ from: 'src/static' }]),
+        new CopyWebpackPlugin({
+          patterns: [{ from: 'src/static' }],
+        }),
       ],
     },
   ]);
