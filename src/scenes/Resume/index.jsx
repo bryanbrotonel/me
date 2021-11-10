@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { fetchContentfulData } from '../../helpers';
 
-function CurriculumVitae() {
+function Resume() {
   const query = `
   {
     curriculumVitaeCollection {
@@ -31,11 +31,11 @@ function CurriculumVitae() {
   return (
     <div className="pageWrapper">
       <div className="contentWrapper">
-        <h1>{title}</h1>
+        <h1>Resume</h1>
         {documentToReactComponents(content['json'])}
       </div>
     </div>
   );
 }
 
-export default CurriculumVitae;
+export default Resume;

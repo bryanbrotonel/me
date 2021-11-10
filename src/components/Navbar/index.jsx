@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 const Wrapper = styled.section`
   display: grid;
@@ -18,7 +19,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Link = styled(NavLink)`
+const Link = styled(NavHashLink)`
   text-decoration: none;
   align-self: center;
 
@@ -45,22 +46,32 @@ const Link = styled(NavLink)`
 `;
 
 function Navbar() {
-  const pages = ['Home', 'Work', 'Curriculum Vitae'];
+  // const pages = ['Home', 'Work', 'Curriculum Vitae'];
 
-  const navLinks = pages.map((page) => {
-    return page == 'Home' ? (
-      <Link key={page} to="/" className="homeLink">
-        BryanBrotonel
-      </Link>
-    ) : (
-      <Link key={page} to={'/' + encodeURI(page.replace(/\s/g, '-'))}>
-        {page}
-      </Link>
-    );
-  });
+  // const navLinks = pages.map((page) => {
+  //   return page == 'Home' ? (
+  //     <Link key={page} to="/" className="homeLink">
+  //       BryanBrotonel
+  //     </Link>
+  //   ) : (
+  //     <Link key={page} to={'/#' + encodeURI(page.replace(/\s/g, '-'))}>
+  //       {page}
+  //     </Link>
+  //   );
+  // });
   return (
     <div>
-      <Wrapper className="container-sm">{navLinks}</Wrapper>
+      <Wrapper className="container-sm">
+        <Link to="/" className="homeLink">
+          BryanBrotonel
+        </Link>
+        <Link smooth to="/#work">
+          Work
+        </Link>
+        <Link smooth to="/resume">
+          Resume
+        </Link>
+      </Wrapper>
     </div>
   );
 }

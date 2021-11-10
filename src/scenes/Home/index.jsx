@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+
+import ReactMarkdown from 'react-markdown';
+
+import Work from '../Work';
 import { fetchContentfulData } from '../../helpers';
 
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styled from 'styled-components';
 
 const MastheadWrapper = styled.div`
   display: grid;
+  padding: 100px 0;
   grid-gap: 20px;
   justify-content: space-evenly;
   text-align: left;
@@ -48,6 +52,25 @@ const MastheadTitle = styled.span`
   color: var(--colour-primary);
 `;
 
+const AboutWrapper = styled.div`
+  padding: 100px 0;
+  color: white;
+  background-color: var(--colour-secondary);
+`;
+
+const AboutParagraph = styled.div`
+  @media (min-width: 992px) {
+    width: 50% !important;
+    margin-left: 10px !important;
+  }
+`;
+
+const WorkWrapper = styled.div`
+  padding-top: 100px;
+  color: white;
+  background-color: var(--colour-tertiary);
+`;
+
 function Home() {
   const query = `
   {
@@ -72,7 +95,7 @@ function Home() {
 
   if (!page) return 'Loading...';
 
-  const { title, image, blurb } = page;
+  const { title, image, blurb, aboutParagraph } = page;
 
   return (
     <div>
@@ -80,11 +103,19 @@ function Home() {
         <MastheadImageWrapper>
           <MastheadImage src={image.url} alt="Image" />
         </MastheadImageWrapper>
-        <MastheadHeader>
+        <MastheadHeader className="container">
           <MastheadTitle>{title}</MastheadTitle>
-          <p>{blurb}</p>
+          <ReactMarkdown children={blurb} />
         </MastheadHeader>
       </MastheadWrapper>
+      <AboutWrapper>
+        <AboutParagraph className="container">
+          <ReactMarkdown children={aboutParagraph} />
+        </AboutParagraph>
+      </AboutWrapper>
+      <WorkWrapper id="work">
+        <Work />
+      </WorkWrapper>
     </div>
   );
 }

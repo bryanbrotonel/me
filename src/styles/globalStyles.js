@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
 
     // Colours
     --colour-primary: #F77F00;
+    --colour-secondary: #E07400;
+    --colour-tertiary: #FCBF49;
+
 
     --colour-black: #020504;
   }
@@ -161,6 +164,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .pageWrapper {
+    margin-bottom: 100px;
     @media (min-width: 992px) {
       display: grid;
     }

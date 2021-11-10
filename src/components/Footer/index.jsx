@@ -8,10 +8,9 @@ const Wrapper = styled.section`
   grid-template-columns: 1fr;
   justify-items: center;
   justify-content: center;
-  margin-top: 60px;
-  padding: 30px 0;
+  padding: 100px 0;
 
-  background-color: #f77f00;
+  background-color: var(--colour-primary);
   color: white;
 `;
 

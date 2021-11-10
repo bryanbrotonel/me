@@ -19,7 +19,8 @@ const WorkGrid = styled.div`
 
 const WorkContent = styled.div`
   grid-column: 1 / -1;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
+  text-align: center;
 
   &:last-of-type {
     margin-top: 100px;
@@ -31,10 +32,12 @@ const WorkContent = styled.div`
 `;
 
 const WorkHeader = styled.h1`
+  font-size: var(--text-xxxl);
+
   margin-bottom: 16px;
 `;
 
-const WorkLink = styled(Link)`
+const WorkLink = styled.a`
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -105,7 +108,7 @@ function Work() {
   if (!items) return 'Loading...';
 
   return (
-    <React.Fragment>
+    <div className="container">
       <WorkContent>
         <WorkHeader>Work</WorkHeader>
         <span>Check out my recent projects!</span>
@@ -114,7 +117,7 @@ function Work() {
         {items.map(
           ({ title, link, coverImage: { url, title: imageTitle } }) => (
             <div key={title}>
-              <WorkLink to={`/work/${encodeURI(link)}`}>
+              <WorkLink href={`${encodeURI(link)}`} target="_blank">
                 <WorkCard title={title} image={url} imageTitle={imageTitle} />
               </WorkLink>
             </div>
@@ -132,7 +135,7 @@ function Work() {
           <span>&nbsp; Check out more of my projects!</span>
         </WorkButton>
       </WorkContent>
-    </React.Fragment>
+    </div>
   );
 }
 

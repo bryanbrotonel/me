@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Container>
       <Navbar />
-      <div className="container">
+      <div>
         <Routes />
       </div>
       <Footer />
