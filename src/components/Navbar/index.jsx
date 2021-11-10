@@ -33,7 +33,7 @@ const Link = styled(NavLink)`
     grid-column: 1 / 3;
 
     font-weight: bold;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
 
     color: var(--colour-primary);
 

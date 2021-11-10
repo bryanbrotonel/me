@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
@@ -28,6 +28,15 @@ module.exports = (env) => {
             use: {
               loader: 'babel-loader',
             },
+          },
+          {
+            test: /\.css$/,
+            use: [
+              PLATFORM === 'production'
+                ? MiniCssExtractPlugin.loader
+                : 'style-loader',
+              'css-loader',
+            ],
           },
         ],
       },

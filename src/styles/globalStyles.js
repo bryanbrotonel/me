@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'animate.css';
 
 const GlobalStyle = createGlobalStyle`
   
@@ -99,6 +100,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--text-md);
   }
 
+  h1 + span {
+    font-size: var(--text-md);
+  }
+
   // font family
   .font-primary {
     font-family: var(--font-primary);
@@ -122,15 +127,15 @@ const GlobalStyle = createGlobalStyle`
   .container-lg,
   .container-md,
   .container-sm {
-    /* width: 100%; */
-    padding-right: var(--bs-gutter-x, 1rem);
-    padding-left: var(--bs-gutter-x, 1rem);
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
   }
-
+  
   @media (min-width: 576px) {
     .container-sm, .container {
+      width: 100%;
       max-width: 540px;
     }
   }
