@@ -71,12 +71,6 @@ function Navbar() {
         <Link smooth to="/#work">
           Work
         </Link>
-        <Link smooth to="/education">
-          Education
-        </Link>
-        <Link smooth to="/resume">
-          Resume
-        </Link>
       </Wrapper>
     </div>
   );
