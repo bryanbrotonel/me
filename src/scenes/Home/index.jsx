@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const MastheadWrapper = styled.div`
   display: grid;
-  padding: 100px 0;
+  padding-bottom: 5rem;
   grid-gap: 20px;
   justify-content: space-evenly;
   text-align: left;
@@ -23,6 +23,7 @@ const MastheadWrapper = styled.div`
   @media (min-width: 992px) {
     grid-auto-flow: column;
     grid-template-columns: repeat(auto-fit, minmax(auto, 600px));
+    padding: 2rem 0 10rem 0;
   }
 `;
 
@@ -89,10 +90,10 @@ function Home() {
           <ReactMarkdown children={blurb} />
         </MastheadHeader>
       </MastheadWrapper>
-      <div className='sectionWrapper'>
+      <div id="about" className='sectionWrapper'>
         <About />
       </div>
-      <div className='sectionWrapper'>
+      <div id="work" className='sectionWrapper'>
         <Work />
       </div>
     </React.Fragment>

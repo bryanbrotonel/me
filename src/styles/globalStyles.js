@@ -32,8 +32,8 @@ const GlobalStyle = createGlobalStyle`
     --colour-secondary: #E07400;
     --colour-tertiary: #FCBF49;
 
-
-    --colour-black: #020504;
+    --colour-white: #FFFFFF;
+    --colour-black: #1D1A05;
   }
 
   :root,
@@ -180,11 +180,11 @@ const GlobalStyle = createGlobalStyle`
   .sectionWrapper {
     padding-bottom: 7rem;
 
-    background-color: white;
+    background-color: var(--colour-white);
     color: var(--colour-primary);
     &:nth-of-type(2n+1) {
       background-color: var(--colour-primary);
-      color: white;
+      color: var(--colour-white);
     }
   }
 

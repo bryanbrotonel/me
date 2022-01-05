@@ -51,7 +51,7 @@ const WorkButton = styled.button`
   align-self: center;
 
   background-color: var(--colour-primary);
-  color: white;
+  color: var(--colour-white);
   text-decoration: none;
 
   display: flex;

@@ -29,7 +29,7 @@ const CardBackgroundImage = styled.div`
 const ContentSection = styled.div`
   height: 100%;
   position: relative;
-  color: white;
+  color: var(--colour-white);
 `;
 
 const Title = styled.h1`
