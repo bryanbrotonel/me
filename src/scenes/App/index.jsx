@@ -16,9 +16,7 @@ const App = () => {
   return (
     <Container>
       <Navbar />
-      <div>
-        <Routes />
-      </div>
+      <Routes />
       <Footer />
     </Container>
   );

@@ -9,9 +9,6 @@ const Wrapper = styled.section`
   justify-items: center;
   justify-content: center;
   padding: 100px 0;
-
-  background-color: var(--colour-primary);
-  color: white;
 `;
 
 const Header = styled.span`
@@ -31,7 +28,7 @@ const Email = styled.span`
   font-family: var(--font-primary);
   font-size: var(--text-md);
   text-decoration: none;
-  color: white;
+  color: currentColor;
 `;
 
 const Info = styled.section`
@@ -49,7 +46,7 @@ const Socials = styled.section`
 const SocialButton = styled.button`
   display: inline-block;
   font-size: var(--text-xxl);
-  color: white;
+  color: currentColor;
   margin: 0.5em;
   display: block;
 
@@ -64,7 +61,7 @@ const Copyright = styled.span`
 
 function footer() {
   return (
-    <Wrapper>
+    <Wrapper className="sectionWrapper">
       <Header>&#x1F91D; Lets Connect &#x1F91D;</Header>
       <Email
         as="a"

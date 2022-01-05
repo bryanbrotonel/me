@@ -64,7 +64,6 @@ const GlobalStyle = createGlobalStyle`
   body,
   #app {
     height: 100%;
-    background-color: #fcf3e7;
   }
   
   body {
@@ -175,6 +174,17 @@ const GlobalStyle = createGlobalStyle`
       align-self: center;
       justify-self: center;
       width: 50%;
+    }
+  }
+  
+  .sectionWrapper {
+    padding-bottom: 7rem;
+
+    background-color: white;
+    color: var(--colour-primary);
+    &:nth-of-type(2n+1) {
+      background-color: var(--colour-primary);
+      color: white;
     }
   }
 

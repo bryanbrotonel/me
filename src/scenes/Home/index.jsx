@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import Work from '../Work';
+import About from '../About';
 import { fetchContentfulData } from '../../helpers';
 
 import styled from 'styled-components';
@@ -52,25 +53,6 @@ const MastheadTitle = styled.span`
   color: var(--colour-primary);
 `;
 
-const AboutWrapper = styled.div`
-  padding: 100px 0;
-  color: white;
-  background-color: var(--colour-secondary);
-`;
-
-const AboutParagraph = styled.div`
-  @media (min-width: 992px) {
-    width: 50% !important;
-    margin-left: 10px !important;
-  }
-`;
-
-const WorkWrapper = styled.div`
-  padding-top: 100px;
-  color: white;
-  background-color: var(--colour-tertiary);
-`;
-
 function Home() {
   const query = `
   {
@@ -81,7 +63,6 @@ function Home() {
           url
         }
         blurb
-        aboutParagraph
       }
     }
   }
@@ -95,10 +76,10 @@ function Home() {
 
   if (!page) return 'Loading...';
 
-  const { title, image, blurb, aboutParagraph } = page;
+  const { title, image, blurb } = page;
 
   return (
-    <div>
+    <React.Fragment>
       <MastheadWrapper>
         <MastheadImageWrapper>
           <MastheadImage src={image.url} alt="Image" />
@@ -108,15 +89,13 @@ function Home() {
           <ReactMarkdown children={blurb} />
         </MastheadHeader>
       </MastheadWrapper>
-      <AboutWrapper>
-        <AboutParagraph className="container">
-          <ReactMarkdown children={aboutParagraph} />
-        </AboutParagraph>
-      </AboutWrapper>
-      <WorkWrapper id="work">
+      <div className='sectionWrapper'>
+        <About />
+      </div>
+      <div className='sectionWrapper'>
         <Work />
-      </WorkWrapper>
-    </div>
+      </div>
+    </React.Fragment>
   );
 }
 
