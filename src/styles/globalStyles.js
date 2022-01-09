@@ -162,32 +162,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .pageWrapper {
-    margin-bottom: 100px;
-    @media (min-width: 992px) {
-      display: grid;
-    }
-  }
-  
-  .contentWrapper {
-    @media (min-width: 992px) {
-      align-self: center;
-      justify-self: center;
-      width: 50%;
-    }
-  }
-  
-  .sectionWrapper {
-    padding-bottom: 7rem;
-
-    background-color: var(--colour-white);
-    color: var(--colour-primary);
-    &:nth-of-type(2n+1) {
-      background-color: var(--colour-primary);
-      color: var(--colour-white);
-    }
-  }
-
 `;
 
 export default GlobalStyle;

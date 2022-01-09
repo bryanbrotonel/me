@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 import Work from '../Work';
 import About from '../About';
+import SectionTemplate from '../../components/SectionTemplate';
 import { fetchContentfulData } from '../../helpers';
 
 import styled from 'styled-components';
@@ -27,18 +28,11 @@ const MastheadWrapper = styled.div`
   }
 `;
 
-const MastheadImageWrapper = styled.div`
-  text-align: center;
-`;
-
 const MastheadImage = styled.img`
+  justify-self: center;
+  align-self: center;
   max-width: 75%;
   height: auto;
-
-  @media (min-width: 992px) {
-    min-width: 100%;
-    max-width: 450px;
-  }
 `;
 
 const MastheadHeader = styled.div`
@@ -82,20 +76,18 @@ function Home() {
   return (
     <React.Fragment>
       <MastheadWrapper>
-        <MastheadImageWrapper>
-          <MastheadImage src={image.url} alt="Image" />
-        </MastheadImageWrapper>
+        <MastheadImage src={image.url} alt="Image" />
         <MastheadHeader className="container">
           <MastheadTitle>{title}</MastheadTitle>
           <ReactMarkdown children={blurb} />
         </MastheadHeader>
       </MastheadWrapper>
-      <div id="about" className='sectionWrapper'>
+      <SectionTemplate anchor="about" title="About">
         <About />
-      </div>
-      <div id="work" className='sectionWrapper'>
+      </SectionTemplate>
+      <SectionTemplate anchor="work" title="Recent Work">
         <Work />
-      </div>
+      </SectionTemplate>
     </React.Fragment>
   );
 }

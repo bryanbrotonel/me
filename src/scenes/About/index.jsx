@@ -6,12 +6,6 @@ import { fetchContentfulData } from '../../helpers';
 
 import styled from 'styled-components';
 
-const AboutHeader = styled.h1`
-  font-size: var(--text-xxxl);
-  text-align: center;
-  margin-bottom: 4rem;
-`;
-
 const AboutParagraph = styled.div`
   @media (min-width: 992px) {
     width: 65% !important;
@@ -41,9 +35,8 @@ function About() {
 
   return (
     <div className="container">
-      <AboutHeader>About</AboutHeader>
       <AboutParagraph>
-      <ReactMarkdown children={aboutParagraph} />
+        <ReactMarkdown children={aboutParagraph} />
       </AboutParagraph>
     </div>
   );

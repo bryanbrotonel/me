@@ -5,7 +5,7 @@ const CardWrapper = styled.section`
   height: 300px;
   min-width: 100%;
   max-width: 400px;
-  border: 7px solid var(--colour-primary);
+  /* border: 7px solid var(--colour-primary); */
   overflow: hidden;
 `;
 
@@ -13,8 +13,7 @@ const CardBackgroundImage = styled.div`
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(0deg, var(--colour-black) 10%, transparent 100%),
-    url(${(props) => props.img});
+  background: url(${(props) => props.img});
 
   background-size: cover;
   background-position: center;

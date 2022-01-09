@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { fetchContentfulData } from '../../helpers';
 import WorkCard from '../../components/WorkCard';
@@ -17,24 +13,15 @@ const WorkGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(auto, 400px));
 `;
 
-const WorkContent = styled.div`
+const ButtonWrapper = styled.div`
   grid-column: 1 / -1;
-  padding-bottom: 100px;
   text-align: center;
 
-  &:last-of-type {
-    margin-top: 100px;
+  margin-top: 100px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const WorkHeader = styled.h1`
-  font-size: var(--text-xxxl);
-
-  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const WorkLink = styled.a`
@@ -48,38 +35,14 @@ const WorkButton = styled.button`
   padding: 0.25em 1em;
   border: 2px solid var(--colour-primary);
   border-radius: 6px;
-  align-self: center;
 
   background-color: var(--colour-primary);
   color: var(--colour-white);
   text-decoration: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    svg {
-      animation: tada;
-      animation-duration: 2s;
-    }
-  }
-
-  svg {
-    font-size: var(--text-xl);
-  }
-
-  span {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-  }
+  font-family: var(--font-primary);
 
   @media (min-width: 600px) {
-    font-size: var(--text-md);
-    svg {
-      font-size: var(--text-lg);
-    }
+    font-size: var(--text-lg);
   }
 `;
 
@@ -109,10 +72,6 @@ function Work() {
 
   return (
     <div className="container">
-      <WorkContent>
-        <WorkHeader>Work</WorkHeader>
-        <span>Check out my recent projects!</span>
-      </WorkContent>
       <WorkGrid>
         {items.map(
           ({ title, link, coverImage: { url, title: imageTitle } }) => (
@@ -124,17 +83,16 @@ function Work() {
           )
         )}
       </WorkGrid>
-      <WorkContent>
+      <ButtonWrapper>
         <WorkButton
           as="a"
           href="https://github.com/bryanbrotonel"
           title="Bryan Brotonel | GitHub"
           target="_blank"
         >
-          <FontAwesomeIcon icon={faGithub} />
-          <span>&nbsp; Check out more of my projects!</span>
+          More Projects
         </WorkButton>
-      </WorkContent>
+      </ButtonWrapper>
     </div>
   );
 }
