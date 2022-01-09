@@ -3,18 +3,29 @@ import styled from 'styled-components';
 
 import { NavHashLink } from 'react-router-hash-link';
 
-const Wrapper = styled.section`
-  display: grid;
-  grid-gap: 10px;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
 
-  justify-items: center;
-  justify-content: center;
-  padding: 50px 0 !important;
+  padding: 2rem 0 !important;
 
   @media (min-width: 600px) {
-    grid-template-columns: 1fr repeat(3, fit-content(200px));
-    grid-gap: 20px;
-    padding: 20px 0;
+    flex-direction: row;
+  }
+`;
+
+const PagesWrapper = styled.div`
+  display: flex;
+  flex-grow: 0.3;
+  gap: 2rem;
+  flex-flow: end;
+  justify-content: center;
+
+  @media (min-width: 600px) {
+    justify-content: flex-end;
+    gap: 4rem;
   }
 `;
 
@@ -24,28 +35,12 @@ const Link = styled(NavHashLink)`
 
   font-family: var(--font-primary);
   font-size: var(--text-md);
-
-  color: #020504;
-
-  @media (min-width: 600px) {
-    padding: 0 2rem;
-  }
+  color: var(--colour-black);
 
   &.homeLink {
-    grid-column: 1 / 3;
-    text-align: center;
-
     font-weight: bold;
-    font-size: var(--text-lg);
-
+    font-size: var(--text-xl);
     color: var(--colour-primary);
-    width: 100%;
-
-    @media (min-width: 600px) {
-      text-align: start;
-      grid-column: 1 / 2;
-      justify-self: start;
-    }
   }
 `;
 
@@ -56,12 +51,14 @@ function Navbar() {
         <Link to="/" className="homeLink">
           BryanBrotonel
         </Link>
-        <Link smooth to="/#about">
-          About
-        </Link>
-        <Link smooth to="/#work">
-          Work
-        </Link>
+        <PagesWrapper>
+          <Link smooth to="/#about">
+            About
+          </Link>
+          <Link smooth to="/#work">
+            Work
+          </Link>
+        </PagesWrapper>
       </Wrapper>
     </div>
   );
