@@ -5,29 +5,33 @@ import { fetchContentfulData } from '../../helpers';
 import WorkCard from '../../components/WorkCard';
 
 const WorkGrid = styled.div`
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
 
-  grid-template-columns: repeat(auto-fit, minmax(auto, 400px));
+  justify-content: center;
 `;
 
-const ButtonWrapper = styled.div`
-  grid-column: 1 / -1;
-  text-align: center;
+const WorkItem = styled.div`
+  height: auto;
+  flex-basis: 400px;
+  margin-top: 1rem;
 
-  margin-top: 100px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media (min-width: 992px) {
+    margin: 1rem;
+  }
 `;
 
 const WorkLink = styled.a`
   text-decoration: none;
   display: flex;
   justify-content: center;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 `;
 
 const WorkButton = styled.button`
@@ -39,11 +43,8 @@ const WorkButton = styled.button`
   background-color: var(--colour-primary);
   color: var(--colour-white);
   text-decoration: none;
-  font-family: var(--font-primary);
-
-  @media (min-width: 600px) {
-    font-size: var(--text-lg);
-  }
+  font-family: var(--font-secondary);
+  font-size: var(--text-md);
 `;
 
 function Work() {
@@ -75,11 +76,11 @@ function Work() {
       <WorkGrid>
         {items.map(
           ({ title, link, coverImage: { url, title: imageTitle } }) => (
-            <div key={title}>
+            <WorkItem key={title}>
               <WorkLink href={`${encodeURI(link)}`} target="_blank">
                 <WorkCard title={title} image={url} imageTitle={imageTitle} />
               </WorkLink>
-            </div>
+            </WorkItem>
           )
         )}
       </WorkGrid>

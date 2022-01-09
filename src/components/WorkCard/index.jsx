@@ -5,7 +5,6 @@ const CardWrapper = styled.section`
   height: 300px;
   min-width: 100%;
   max-width: 400px;
-  /* border: 7px solid var(--colour-primary); */
   overflow: hidden;
 `;
 
@@ -52,7 +51,7 @@ function WorkCard(props) {
           img={image}
           aria-label={imageTitle}
         ></CardBackgroundImage>
-        <Title>{title}</Title>
+        {/* <Title>{title}</Title> */}
       </ContentSection>
     </CardWrapper>
   );
