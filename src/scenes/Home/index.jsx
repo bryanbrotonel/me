@@ -10,32 +10,28 @@ import { fetchContentfulData } from '../../helpers';
 import styled from 'styled-components';
 
 const MastheadWrapper = styled.div`
-  display: grid;
-  padding-bottom: 5rem;
-  grid-gap: 20px;
+  display: flex;
   justify-content: space-evenly;
-  text-align: left;
-
-  div {
-    justify-self: center;
-    align-self: center;
-  }
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5rem;
 
   @media (min-width: 992px) {
-    grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 600px));
-    padding: 2rem 0 10rem 0;
+    flex-direction: row;
   }
 `;
 
 const MastheadImage = styled.img`
-  justify-self: center;
-  align-self: center;
-  max-width: 75%;
-  height: auto;
+  max-width: 300px;
+  margin-bottom: 1rem;
+  @media (min-width: 992px) {
+    max-width: 450px;
+    margin: 0;
+  }
 `;
 
 const MastheadHeader = styled.div`
+  flex-basis: 50%;
   @media (min-width: 992px) {
     order: -1;
   }
@@ -75,9 +71,9 @@ function Home() {
 
   return (
     <React.Fragment>
-      <MastheadWrapper>
+      <MastheadWrapper className="container">
         <MastheadImage src={image.url} alt="Image" />
-        <MastheadHeader className="container">
+        <MastheadHeader>
           <MastheadTitle>{title}</MastheadTitle>
           <ReactMarkdown children={blurb} />
         </MastheadHeader>
