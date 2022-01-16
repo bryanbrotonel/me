@@ -10,14 +10,17 @@ import MastheadImage from './MastheadImage';
 import MastheadHeader from './MastheadHeader';
 
 const MastheadWrapper = styled.div`
-  height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  margin-bottom: 2rem;
 
   @media (min-width: 600px) {
+    min-height: 70vh;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
   }
 `;

@@ -19,10 +19,8 @@ const fadeInLeft = keyframes`
 `;
 
 const HeaderWrapper = styled.div`
-  animation-name: ${fadeInLeft};
-  animation-duration: 2.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 600px) {
     margin-right: 5rem;
@@ -39,13 +37,25 @@ const MastheadTitle = styled.span`
   font-size: var(--text-xxxxl);
   font-weight: 700;
   color: var(--colour-primary);
+
+  animation-name: ${fadeInLeft};
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 `;
 
 const MastheadBlurb = styled.span`
   font-family: var(--font-secondary);
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-weight: 500;
   color: var(--colour-darkGrey);
+  margin-top: 1rem;
+
+  animation-name: ${fadeInLeft};
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 `;
 
 function MastheadHeader() {
@@ -76,7 +86,7 @@ function MastheadHeader() {
         <ReactMarkdown children={title} components={{ p: 'span' }} />
       </MastheadTitle>
       <MastheadBlurb>
-        <ReactMarkdown children={blurb} />
+        <ReactMarkdown children={blurb} components={{ p: 'span' }} />
       </MastheadBlurb>
     </HeaderWrapper>
   );

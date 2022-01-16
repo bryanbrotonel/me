@@ -9,10 +9,13 @@ const Wrapper = styled.div`
   justify-content: space-between;
   gap: 1rem;
 
-  padding: 2rem 0 !important;
+  padding: 2rem 0;
 
   @media (min-width: 600px) {
     flex-direction: row;
+
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
   }
 `;
 
