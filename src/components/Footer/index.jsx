@@ -20,7 +20,7 @@ const Header = styled.span`
   font-weight: 600;
 
   @media (min-width: 600px) {
-    font-size: var(--text-xxxxl);
+    font-size: var(--text-xxxl);
   }
 `;
 
