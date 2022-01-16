@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import 'animate.css';
 
 const GlobalStyle = createGlobalStyle`
   
   :root {
+
     // font family
     --font-primary: 'PT Serif', serif;
     --font-secondary: 'Roboto', sans-serif;
@@ -11,11 +11,11 @@ const GlobalStyle = createGlobalStyle`
     // font size
     --text-base-size: 1em; // body font-size
     --text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
-
+    
     // line-height
     --body-line-height: 1.4;
     --heading-line-height: 1.2;
-
+    
     // capital letters - used in combo with the lhCrop mixin
     --font-primary-capital-letter: 1;
     --font-secondary-capital-letter: 1;
@@ -24,47 +24,43 @@ const GlobalStyle = createGlobalStyle`
     --text-unit: 1em; // if Em units → --text-unit: 1em;
 
     // gutters
-     --bs-gutter-x: 1.5rem;
-     --bs-gutter-y: 0;
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
 
     // Colours
-    --colour-primary: #F77F00;
-    --colour-secondary: #E07400;
-    --colour-tertiary: #FCBF49;
+    --colour-primary: #0B6E4F;
+    --colour-secondary: #0f956a;
+    --colour-tertiary: #074a35;
 
-
-    --colour-black: #020504;
+    --colour-white: #FFFFFF;
+    --colour-black: #1D1A05;
+    --colour-darkGrey: #6b7280;
+    --colour-lightGrey: #f9fafb;
   }
 
-  :root,
-  * {
-    // type scale
-    --text-xs: calc(
-      (var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)
-    );
-    --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
-    --text-md: calc(
-      var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)
-    );
-    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
-    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
-    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
-    --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
-    --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
-  }
-
-  @media (min-width: 600px) {
+  @media (min-width: 992px) {
     :root {
       --text-base-size: 1.25em;
-      --text-scale-ratio: 1.25;
+      --text-scale-ratio: 1.3;
     }
   }
+
+  :root, * {
+  // type scale
+  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
+}
 
   html,
   body,
   #app {
     height: 100%;
-    background-color: #fcf3e7;
   }
   
   body {
@@ -87,22 +83,6 @@ const GlobalStyle = createGlobalStyle`
     --heading-font-weight: 700;
   }
 
-  h1 {
-    font-size: var(--text-xxl);
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-  }
-
-  h3 {
-    font-size: var(--text-lg);
-  }
-
-  h4 {
-    font-size: var(--text-md);
-  }
-
   h1 + span {
     font-size: var(--text-md);
   }
@@ -111,6 +91,7 @@ const GlobalStyle = createGlobalStyle`
   .font-primary {
     font-family: var(--font-primary);
   }
+
   .font-secondary {
     font-family: var(--font-secondary);
   }
@@ -118,6 +99,7 @@ const GlobalStyle = createGlobalStyle`
   .font-xxxl {
     font-size: var(--text-xxxl);
   }
+
   .font-xxxxl {
     font-size: var(--text-xxxxl);
   }
@@ -162,22 +144,7 @@ const GlobalStyle = createGlobalStyle`
       max-width: 1320px;
     }
   }
-
-  .pageWrapper {
-    margin-bottom: 100px;
-    @media (min-width: 992px) {
-      display: grid;
-    }
-  }
   
-  .contentWrapper {
-    @media (min-width: 992px) {
-      align-self: center;
-      justify-self: center;
-      width: 50%;
-    }
-  }
-
 `;
 
 export default GlobalStyle;

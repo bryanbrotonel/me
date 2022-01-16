@@ -3,8 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from 'scenes/Home';
 import Work from 'scenes/Work';
-import Resume from 'scenes/Resume';
-import Education from 'scenes/Education';
 import WorkPost from 'scenes/Work Post';
 import Error from 'scenes/Error';
 
@@ -13,8 +11,6 @@ const Routes = () => (
     <Redirect from="/home" to="/" />
     <Route exact path="/" component={Home} />
     <Route exact path="/work" component={Work} />
-    <Route exact path="/resume" component={Resume} />
-    <Route exact path="/education" component={Education} />
     <Route path="/work/:workPost" component={WorkPost} />
     <Route component={Error} />
   </Switch>

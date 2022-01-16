@@ -5,7 +5,6 @@ const CardWrapper = styled.section`
   height: 300px;
   min-width: 100%;
   max-width: 400px;
-  border: 7px solid var(--colour-primary);
   overflow: hidden;
 `;
 
@@ -13,8 +12,7 @@ const CardBackgroundImage = styled.div`
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(0deg, var(--colour-black) 10%, transparent 100%),
-    url(${(props) => props.img});
+  background: url(${(props) => props.img});
 
   background-size: cover;
   background-position: center;
@@ -29,7 +27,7 @@ const CardBackgroundImage = styled.div`
 const ContentSection = styled.div`
   height: 100%;
   position: relative;
-  color: white;
+  color: var(--colour-white);
 `;
 
 const Title = styled.h1`
@@ -53,7 +51,7 @@ function WorkCard(props) {
           img={image}
           aria-label={imageTitle}
         ></CardBackgroundImage>
-        <Title>{title}</Title>
+        {/* <Title>{title}</Title> */}
       </ContentSection>
     </CardWrapper>
   );

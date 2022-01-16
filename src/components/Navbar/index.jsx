@@ -1,21 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 
-const Wrapper = styled.section`
-  display: grid;
-  grid-gap: 10px;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
 
-  justify-items: center;
-  justify-content: center;
-  padding: 10px 0 !important;
+  padding: 2rem 0;
 
   @media (min-width: 600px) {
-    grid-template-columns: 1fr repeat(3, fit-content(200px));
-    grid-gap: 20px;
-    padding: 20px 0;
+    flex-direction: row;
+
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+`;
+
+const PagesWrapper = styled.div`
+  display: flex;
+  flex-grow: 0.3;
+  gap: 2rem;
+  flex-flow: end;
+  justify-content: center;
+
+  @media (min-width: 600px) {
+    justify-content: flex-end;
+    gap: 4rem;
   }
 `;
 
@@ -24,59 +37,31 @@ const Link = styled(NavHashLink)`
   align-self: center;
 
   font-family: var(--font-primary);
-  color: #020504;
-
-  @media (min-width: 600px) {
-    padding: 10px 0;
-  }
+  font-size: var(--text-md);
+  color: var(--colour-black);
 
   &.homeLink {
-    grid-column: 1 / 5;
-    text-align: center;
-
     font-weight: bold;
     font-size: var(--text-lg);
-
     color: var(--colour-primary);
-    width: 100%;
-
-    @media (min-width: 600px) {
-      text-align: start;
-      grid-column: 1 / 2;
-      justify-self: start;
-    }
   }
 `;
 
 function Navbar() {
-  // const pages = ['Home', 'Work', 'Curriculum Vitae'];
-
-  // const navLinks = pages.map((page) => {
-  //   return page == 'Home' ? (
-  //     <Link key={page} to="/" className="homeLink">
-  //       BryanBrotonel
-  //     </Link>
-  //   ) : (
-  //     <Link key={page} to={'/#' + encodeURI(page.replace(/\s/g, '-'))}>
-  //       {page}
-  //     </Link>
-  //   );
-  // });
   return (
     <div>
       <Wrapper className="container-sm">
         <Link to="/" className="homeLink">
           BryanBrotonel
         </Link>
-        <Link smooth to="/#work">
-          Work
-        </Link>
-        <Link smooth to="/education">
-          Education
-        </Link>
-        <Link smooth to="/resume">
-          Resume
-        </Link>
+        <PagesWrapper>
+          <Link smooth to="/#about">
+            About
+          </Link>
+          <Link smooth to="/#work">
+            Work
+          </Link>
+        </PagesWrapper>
       </Wrapper>
     </div>
   );
