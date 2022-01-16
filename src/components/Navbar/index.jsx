@@ -39,7 +39,7 @@ const Link = styled(NavHashLink)`
 
   &.homeLink {
     font-weight: bold;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     color: var(--colour-primary);
   }
 `;

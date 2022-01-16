@@ -14,7 +14,7 @@ const Content = styled.div`
 `;
 
 const SectionHeader = styled.h1`
-  font-size: var(--text-xxxl);
+  font-size: var(--text-xxl);
   text-align: center;
   margin-bottom: 4rem;
 `;

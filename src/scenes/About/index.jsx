@@ -29,7 +29,7 @@ function About() {
     fetchContentfulData(query, 'mastheadCollection', setPage);
   }, []);
 
-  if (!page) return 'Loading...';
+  if (!page) return <div></div>;
 
   const { aboutParagraph } = page;
 

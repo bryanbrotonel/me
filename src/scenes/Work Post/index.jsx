@@ -31,7 +31,7 @@ function WorkPost() {
     fetchContentfulData(query, 'workItemCollection', setPageContent);
   }, []);
 
-  if (!pageContent) return 'Loading...';
+  if (!pageContent) return <div></div>;
 
   const { title, subtitle, content } = pageContent;
 

@@ -69,7 +69,7 @@ function Work() {
     fetchContentfulData(query, 'workItemCollection', setItems);
   }, []);
 
-  if (!items) return 'Loading...';
+  if (!items) return <div></div>;
 
   return (
     <div className="container">

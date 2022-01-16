@@ -10,13 +10,13 @@ import MastheadImage from './MastheadImage';
 import MastheadHeader from './MastheadHeader';
 
 const MastheadWrapper = styled.div`
+  height: 80vh;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 5rem;
   overflow: hidden;
 
-  @media (min-width: 992px) {
+  @media (min-width: 600px) {
     justify-content: center;
     flex-direction: row;
   }

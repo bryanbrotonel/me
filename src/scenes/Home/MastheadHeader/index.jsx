@@ -24,9 +24,13 @@ const HeaderWrapper = styled.div`
   animation-fill-mode: forwards;
   opacity: 0;
 
-  @media (min-width: 992px) {
-    margin-right: 10rem;
+  @media (min-width: 600px) {
+    margin-right: 5rem;
     order: -1;
+  }
+
+  @media (min-width: 1200px) {
+    margin-right: 10rem;
   }
 `;
 
@@ -35,6 +39,13 @@ const MastheadTitle = styled.span`
   font-size: var(--text-xxxxl);
   font-weight: 700;
   color: var(--colour-primary);
+`;
+
+const MastheadBlurb = styled.span`
+  font-family: var(--font-secondary);
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--colour-darkGrey);
 `;
 
 function MastheadHeader() {
@@ -55,7 +66,7 @@ function MastheadHeader() {
     fetchContentfulData(query, 'mastheadCollection', setPage);
   }, []);
 
-  if (!page) return 'Loading...';
+  if (!page) return <div></div>;
 
   const { title, blurb } = page;
 
@@ -64,7 +75,9 @@ function MastheadHeader() {
       <MastheadTitle>
         <ReactMarkdown children={title} components={{ p: 'span' }} />
       </MastheadTitle>
-      <ReactMarkdown children={blurb} />
+      <MastheadBlurb>
+        <ReactMarkdown children={blurb} />
+      </MastheadBlurb>
     </HeaderWrapper>
   );
 }

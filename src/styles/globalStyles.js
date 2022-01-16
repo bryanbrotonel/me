@@ -34,12 +34,14 @@ const GlobalStyle = createGlobalStyle`
 
     --colour-white: #FFFFFF;
     --colour-black: #1D1A05;
+    --colour-darkGrey: #6b7280;
+    --colour-lightGrey: #f9fafb;
   }
 
   @media (min-width: 992px) {
     :root {
       --text-base-size: 1.25em;
-      --text-scale-ratio: 1.25;
+      --text-scale-ratio: 1.3;
     }
   }
 

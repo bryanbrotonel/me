@@ -18,10 +18,6 @@ const Header = styled.span`
   font-family: var(--font-primary);
   font-size: var(--text-xxxl);
   font-weight: 600;
-
-  @media (min-width: 600px) {
-    font-size: var(--text-xxxl);
-  }
 `;
 
 const Email = styled.span`
@@ -53,7 +49,7 @@ const SocialButton = styled.button`
   display: block;
 
   @media (min-width: 600px) {
-    font-size: var(--text-xxxl);
+    font-size: var(--text-xxl);
   }
 `;
 
