@@ -49,21 +49,19 @@ const Link = styled(NavHashLink)`
 
 function Navbar() {
   return (
-    <div>
-      <Wrapper className="container-sm">
-        <Link to="/" className="homeLink">
-          BryanBrotonel
+    <Wrapper className="container-sm">
+      <Link to="/" className="homeLink">
+        BryanBrotonel
+      </Link>
+      <PagesWrapper>
+        <Link smooth to="/#about">
+          About
         </Link>
-        <PagesWrapper>
-          <Link smooth to="/#about">
-            About
-          </Link>
-          <Link smooth to="/#work">
-            Work
-          </Link>
-        </PagesWrapper>
-      </Wrapper>
-    </div>
+        <Link smooth to="/#work">
+          Work
+        </Link>
+      </PagesWrapper>
+    </Wrapper>
   );
 }
 

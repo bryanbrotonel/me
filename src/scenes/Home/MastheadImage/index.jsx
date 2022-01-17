@@ -17,15 +17,29 @@ const fadeInRight = keyframes`
   }
 `;
 
-const Image = styled.img`
-  max-width: 300px;
-  margin-bottom: 1rem;
+const rotateCenter = keyframes`
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  opacity: 0;
 
   animation-name: ${fadeInRight};
-  animation-duration: 2s;
-  animation-delay: 0.5s;
+  animation-duration: 2000ms;
+  animation-delay: 500ms;
   animation-fill-mode: forwards;
-  opacity: 0;
+`;
+
+const Image = styled.img`
+  max-width: 300px;
 
   @media (min-width: 992px) {
     max-width: 450px;
@@ -33,20 +47,42 @@ const Image = styled.img`
   }
 `;
 
+const Logo = styled.img`
+  position: absolute;
+  right: -7.5%;
+  top: -10%;
+  width: 30%;
+  height: auto;
+
+  animation-name: ${rotateCenter};
+  animation-duration: 8000ms;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+`;
+
 function MastheadImage() {
+  const [mastheadImage, setImage] = useState(null);
+
   const query = `
   {
     mastheadCollection{
       items {
         image{
-          url
+          url(transform: {
+            format: WEBP
+          })
+        }
+        logo{
+          url(transform: {
+            format: WEBP,
+          })
         }
       }
     }
   }
   `;
-
-  const [mastheadImage, setImage] = useState(null);
 
   useEffect(() => {
     fetchContentfulData(query, 'mastheadCollection', setImage);
@@ -54,9 +90,14 @@ function MastheadImage() {
 
   if (!mastheadImage) return <div></div>;
 
-  const { image } = mastheadImage;
+  const { image, logo } = mastheadImage;
 
-  return <Image src={image.url} alt="Image" />;
+  return (
+    <ImageWrapper>
+      <Image src={image.url} alt="Image" />
+      <Logo src={logo.url} alt="Logo" />
+    </ImageWrapper>
+  );
 }
 
 export default MastheadImage;

@@ -14,7 +14,6 @@ const MastheadWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
   margin-bottom: 2rem;
 
   @media (min-width: 600px) {
