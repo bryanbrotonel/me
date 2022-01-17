@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem;
 
   padding: 2rem 0;
 
@@ -37,13 +37,17 @@ const Link = styled(NavHashLink)`
   align-self: center;
 
   font-family: var(--font-primary);
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
   color: var(--colour-black);
 
   &.homeLink {
     font-weight: bold;
     font-size: var(--text-lg);
     color: var(--colour-primary);
+  }
+
+  @media (min-width: 600px) {
+    font-size: var(--text-md);
   }
 `;
 

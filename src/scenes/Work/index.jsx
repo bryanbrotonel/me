@@ -6,6 +6,7 @@ import WorkCard from '../../components/WorkCard';
 
 const WorkGrid = styled.div`
   display: flex;
+  gap: 2em;
   flex-wrap: wrap;
 
   justify-content: center;
@@ -16,9 +17,6 @@ const WorkItem = styled.div`
   flex-basis: 400px;
   margin-top: 1rem;
 
-  @media (min-width: 992px) {
-    margin: 1rem;
-  }
 `;
 
 const WorkLink = styled.a`

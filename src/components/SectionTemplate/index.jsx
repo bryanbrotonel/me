@@ -3,8 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Content = styled.div`
-  padding-bottom: 7rem;
-
+  padding: 10rem 0;
   background-color: var(--colour-white);
   color: var(--colour-primary);
   &:nth-of-type(2n + 1) {
@@ -15,21 +14,18 @@ const Content = styled.div`
 
 const SectionHeader = styled.h1`
   font-size: var(--text-xxl);
+  line-height: 1;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
 `;
 
 function SectionTemplate(props) {
   const { title, anchor, children } = props;
 
-  let header;
-
-  if (title)
-    header = <SectionHeader>{title}</SectionHeader>;
-
   return (
     <Content id={anchor}>
-      {header}
+      {title ? <SectionHeader>{title}</SectionHeader> : ''}
       {children}
     </Content>
   );

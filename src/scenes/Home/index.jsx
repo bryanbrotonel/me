@@ -12,15 +12,17 @@ import MastheadHeader from './MastheadHeader';
 const MastheadWrapper = styled.div`
   min-height: 60vh;
   display: flex;
+  gap: 1rem;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 
   @media (min-width: 600px) {
     min-height: 70vh;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    gap: 8rem;
   }
 `;
 

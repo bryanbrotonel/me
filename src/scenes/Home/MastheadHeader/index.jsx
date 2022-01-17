@@ -23,12 +23,7 @@ const HeaderWrapper = styled.div`
   flex-direction: column;
 
   @media (min-width: 600px) {
-    margin-right: 5rem;
     order: -1;
-  }
-
-  @media (min-width: 1200px) {
-    margin-right: 10rem;
   }
 `;
 
