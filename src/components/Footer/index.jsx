@@ -36,7 +36,11 @@ const SocialButton = styled.button`
   svg {
     font-size: var(--text-xxl);
   }
-  
+
+  transition: 0.2s ease-in-out 0s;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const Copyright = styled.span`

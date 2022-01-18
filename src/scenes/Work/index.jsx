@@ -16,7 +16,6 @@ const WorkItem = styled.div`
   height: auto;
   flex-basis: 400px;
   margin-top: 1rem;
-
 `;
 
 const WorkLink = styled.a`
@@ -43,6 +42,10 @@ const WorkButton = styled.button`
   text-decoration: none;
   font-family: var(--font-secondary);
   font-size: var(--text-md);
+
+  &:hover {
+    filter: brightness(120%);
+  }
 `;
 
 function Work() {
