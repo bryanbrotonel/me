@@ -42,7 +42,7 @@ const Title = styled.h1`
 `;
 
 function WorkCard(props) {
-  const { title, image, imageTitle } = props;
+  const { image, imageTitle } = props;
 
   return (
     <CardWrapper>
@@ -51,7 +51,6 @@ function WorkCard(props) {
           img={image}
           aria-label={imageTitle}
         ></CardBackgroundImage>
-        {/* <Title>{title}</Title> */}
       </ContentSection>
     </CardWrapper>
   );

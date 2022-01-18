@@ -40,6 +40,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   max-width: 300px;
+  height: auto;
 
   @media (min-width: 992px) {
     max-width: 450px;
@@ -77,6 +78,7 @@ function MastheadImage() {
         logo{
           url(transform: {
             format: WEBP,
+            width: 135
           })
         }
       }

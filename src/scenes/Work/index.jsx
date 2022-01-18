@@ -57,7 +57,9 @@ function Work() {
           link
           coverImage {
             title
-            url
+            url(transform: {
+              format: WEBP
+            })
           }
         }
       }
