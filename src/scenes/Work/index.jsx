@@ -51,7 +51,7 @@ const WorkButton = styled.button`
 function Work() {
   const query = `
     {
-      workItemCollection {
+      workItemCollection(order: order_ASC) {
         items {
           title
           link
