@@ -18,9 +18,18 @@ export function fetchContentfulData(query, collection, setPage) {
         console.error(errors);
       }
 
-      // render entire component with new data
+      console.log(
+        data.asset != null
+          ? data.asset
+          : data[collection].items.length == 1
+          ? data[collection].items[0]
+          : data[collection].items
+      );
+
       setPage(
-        data[collection].items.length == 1
+        data.asset != null
+          ? data.asset
+          : data[collection].items.length == 1
           ? data[collection].items[0]
           : data[collection].items
       );
