@@ -2,25 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CardWrapper = styled.section`
-  height: 300px;
-  min-width: 100%;
   max-width: 400px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  
   overflow: hidden;
 `;
 
-const CardBackgroundImage = styled.div`
+const CardBackgroundImage = styled.img`
   width: 100%;
   height: 100%;
-
-  background: url(${(props) => props.img});
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   transition: all 0.3s;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 `;
 
@@ -47,10 +43,7 @@ function WorkCard(props) {
   return (
     <CardWrapper>
       <ContentSection>
-        <CardBackgroundImage
-          img={image}
-          aria-label={imageTitle}
-        ></CardBackgroundImage>
+        <CardBackgroundImage src={image} alt={imageTitle} />
       </ContentSection>
     </CardWrapper>
   );

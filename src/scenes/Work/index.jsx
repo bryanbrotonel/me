@@ -8,6 +8,7 @@ const WorkGrid = styled.div`
   display: flex;
   gap: 2em;
   flex-wrap: wrap;
+  align-items: center;
 
   justify-content: center;
 `;
