@@ -4,10 +4,10 @@ import styled, { keyframes } from 'styled-components';
 
 import { fetchContentfulData } from '../../../helpers';
 
-const fadeInRight = keyframes`
+const fadeInUp = keyframes`
   0% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
     opacity: 0;
   }
   100% {
@@ -32,7 +32,7 @@ const ImageWrapper = styled.div`
   position: relative;
   opacity: 0;
 
-  animation-name: ${fadeInRight};
+  animation-name: ${fadeInUp};
   animation-duration: 2000ms;
   animation-delay: 500ms;
   animation-fill-mode: forwards;
@@ -43,7 +43,7 @@ const Image = styled.img`
   height: auto;
 
   @media (min-width: 992px) {
-    max-width: 450px;
+    /* max-width: 450px; */
     margin: 0;
   }
 `;
@@ -56,14 +56,14 @@ const Logo = styled.img`
   height: auto;
 
   animation-name: ${rotateCenter};
-  animation-duration: 8000ms;
+  animation-duration: 20s;
   animation-delay: 3s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 `;
 
-function MastheadImage() {
+function ProfileImage() {
   const [mastheadImage, setImage] = useState(null);
 
   const query = `
@@ -102,4 +102,4 @@ function MastheadImage() {
   );
 }
 
-export default MastheadImage;
+export default ProfileImage;

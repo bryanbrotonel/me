@@ -4,14 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import SectionTemplate from '../SectionTemplate';
-
 const Wrapper = styled.div`
   flex-direction: column;
   display: flex;
   gap: 3rem;
   align-items: center;
   align-content: center;
+
+  padding: 5rem 0;
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
 `;
 
 const Header = styled.span`
@@ -49,7 +51,6 @@ const Copyright = styled.span`
 
 function footer() {
   return (
-    <SectionTemplate>
       <Wrapper>
         <Header>&#x1F91D; Lets Connect &#x1F91D;</Header>
         <Socials>
@@ -85,7 +86,6 @@ function footer() {
           </Copyright>
         </section>
       </Wrapper>
-    </SectionTemplate>
   );
 }
 

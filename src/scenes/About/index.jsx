@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from 'react';
 
-import ReactMarkdown from 'react-markdown';
-
 import { fetchContentfulData } from '../../helpers';
 
+import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
+
+import Header from '../../components/Header';
+import ProfileImage from './ProfileImage';
 
 const AboutWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  
+  align-items: center;
   justify-content: center;
+
+  margin: 5rem 0;
+
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const AboutParagraph = styled.div`
-  text-align: center;
-
-  *:first-child {
-    margin-top: 0;
-  }
-
-  *:last-child {
-    margin-bottom: 0;
-  }
-
   @media (min-width: 768px) {
-    max-width: 60%;
+    max-width: 650px;
   }
 `;
 
@@ -51,8 +53,10 @@ function About() {
   return (
     <AboutWrapper className="container">
       <AboutParagraph>
-        <ReactMarkdown children={aboutParagraph} />
+        <Header title={'Who is Bryan?'} subtitle={'about'} />
+          <ReactMarkdown children={aboutParagraph} />
       </AboutParagraph>
+      <ProfileImage />
     </AboutWrapper>
   );
 }
