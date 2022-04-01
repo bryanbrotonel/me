@@ -12,7 +12,7 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
-  
+
   align-items: center;
   justify-content: center;
 
@@ -54,7 +54,7 @@ function About() {
     <AboutWrapper className="container">
       <AboutParagraph>
         <Header title={'Who is Bryan?'} subtitle={'about'} />
-          <ReactMarkdown children={aboutParagraph} />
+        <ReactMarkdown children={aboutParagraph} />
       </AboutParagraph>
       <ProfileImage />
     </AboutWrapper>

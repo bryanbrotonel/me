@@ -2,27 +2,18 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { fetchContentfulData } from '../../helpers';
-import WorkCard from '../../components/WorkCard';
+import WorkItem from './WorkItem';
 
-const WorkGrid = styled.div`
+const WorkRow = styled.div`
   display: flex;
-  gap: 2em;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  gap: 10em;
 
   justify-content: center;
-`;
 
-const WorkItem = styled.div`
-  height: auto;
-  flex-basis: 400px;
-  margin-top: 1rem;
-`;
-
-const WorkLink = styled.a`
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
+  @media (min-width: 768px) {
+    gap: 10rem;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -77,17 +68,19 @@ function Work() {
 
   return (
     <div className="container">
-      <WorkGrid>
+      <WorkRow>
         {items.map(
           ({ title, link, coverImage: { url, title: imageTitle } }) => (
-            <WorkItem key={title}>
-              <WorkLink href={`${encodeURI(link)}`} target="_blank">
-                <WorkCard title={title} image={url} imageTitle={imageTitle} />
-              </WorkLink>
-            </WorkItem>
+            <WorkItem
+              key={title}
+              title={title}
+              image={url}
+              imageTitle={imageTitle}
+              link={link}
+            />
           )
         )}
-      </WorkGrid>
+      </WorkRow>
       <ButtonWrapper>
         <WorkButton
           as="a"

@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     --colour-primary: #0B6E4F;
     --colour-secondary: #0f956a;
     --colour-tertiary: #074a35;
+    --colour-light: #95d5b2;
 
     --colour-white: #FFFFFF;
     --colour-black: #1D1A05;
@@ -83,8 +84,12 @@ const GlobalStyle = createGlobalStyle`
     --heading-font-weight: 700;
   }
 
-  h1 + span {
-    font-size: var(--text-md);
+  ::-moz-selection { /* Code for Firefox */
+    background: var(--colour-light);
+  }
+
+  ::selection {
+    background: var(--colour-light);
   }
 
   // font family
