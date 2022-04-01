@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Work from '../Work';
 import About from '../About';
+import Contact from '../Contact';
 
 import styled from 'styled-components';
 
@@ -32,6 +33,7 @@ function Home() {
       </MastheadWrapper>
         <About />
         <Work />
+        <Contact />
     </React.Fragment>
   );
 }

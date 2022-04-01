@@ -3,6 +3,20 @@ import styled from 'styled-components';
 
 import { fetchContentfulData } from '../../helpers';
 import WorkItem from './WorkItem';
+import Header from 'components/Header';
+import Button from 'components/Button';
+
+const WorkWrapper = styled.div`
+  margin: 5rem 0;
+`;
+
+const WorkHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5rem 0;
+`;
 
 const WorkRow = styled.div`
   display: flex;
@@ -10,33 +24,10 @@ const WorkRow = styled.div`
   gap: 10em;
 
   justify-content: center;
+  margin: 7rem 0;
 
   @media (min-width: 768px) {
     gap: 10rem;
-  }
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-`;
-
-const WorkButton = styled.button`
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid var(--colour-primary);
-  border-radius: 6px;
-
-  background-color: var(--colour-primary);
-  color: var(--colour-white);
-  text-decoration: none;
-  font-family: var(--font-secondary);
-  font-size: var(--text-md);
-
-  &:hover {
-    filter: brightness(120%);
   }
 `;
 
@@ -67,7 +58,10 @@ function Work() {
   if (!items) return <div></div>;
 
   return (
-    <div className="container">
+    <WorkWrapper className="container">
+      <WorkHeader>
+        <Header title={'Look What I Built!'} subtitle={'Work'} centered />
+      </WorkHeader>
       <WorkRow>
         {items.map(
           ({ title, link, coverImage: { url, title: imageTitle } }) => (
@@ -81,17 +75,12 @@ function Work() {
           )
         )}
       </WorkRow>
-      <ButtonWrapper>
-        <WorkButton
-          as="a"
-          href="https://github.com/bryanbrotonel"
-          title="Bryan Brotonel | GitHub"
-          target="_blank"
-        >
-          More Projects
-        </WorkButton>
-      </ButtonWrapper>
-    </div>
+      <Button
+        value="more projects"
+        title="Bryan Brotonel | GitHub"
+        href="https://github.com/bryanbrotonel"
+      ></Button>
+    </WorkWrapper>
   );
 }
 

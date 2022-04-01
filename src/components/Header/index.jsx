@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: inline-block;
-  text-align: ${props => props.centered ? 'center' : ''};
+  text-align: ${props => props.centered ? 'center' : 'left'};
 `;
 
 const Subtitle = styled.h3`
@@ -20,10 +20,12 @@ const Title = styled.h1`
 `;
 
 function Header(props) {
-  const { subtitle, title } = props;
+  const { subtitle, title, centered } = props;
+
+  console.log("centered", centered)
 
   return (
-    <Wrapper>
+    <Wrapper centered={centered}> 
       <Subtitle>{subtitle}</Subtitle>
       <Title>{title}</Title>
     </Wrapper>

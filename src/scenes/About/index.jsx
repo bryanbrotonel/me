@@ -5,7 +5,7 @@ import { fetchContentfulData } from '../../helpers';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
-import Header from '../../components/Header';
+import Header from 'components/Header';
 import ProfileImage from './ProfileImage';
 
 const AboutWrapper = styled.div`
