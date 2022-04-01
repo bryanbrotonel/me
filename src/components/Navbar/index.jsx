@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
   gap: 0.5rem;
 
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 
   @media (min-width: 600px) {
     flex-direction: row;

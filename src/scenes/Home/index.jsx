@@ -16,7 +16,7 @@ const MastheadWrapper = styled.div`
   margin: 2rem 0;
 
   @media (min-width: 600px) {
-    min-height: 70vh;
+    min-height: 80vh;
     flex-direction: row;
     justify-content: center;
     align-items: center;

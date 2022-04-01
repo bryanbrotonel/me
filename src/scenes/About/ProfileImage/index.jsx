@@ -43,15 +43,14 @@ const Image = styled.img`
   height: auto;
 
   @media (min-width: 992px) {
-    /* max-width: 450px; */
     margin: 0;
   }
 `;
 
 const Logo = styled.img`
   position: absolute;
-  right: -7.5%;
-  top: -10%;
+  right: -15%;
+  top: -12.5%;
   width: 30%;
   height: auto;
 
