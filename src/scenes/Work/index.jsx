@@ -24,7 +24,7 @@ const WorkRow = styled.div`
   gap: 10em;
 
   justify-content: center;
-  margin: 7rem 0;
+  margin: 2rem 0;
 
   @media (min-width: 768px) {
     gap: 10rem;

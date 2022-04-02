@@ -1,91 +1,103 @@
 import React from 'react';
+
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const Wrapper = styled.div`
-  flex-direction: column;
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  align-content: center;
+import Socials from './Socials';
+import Logo from '../Logo';
 
-  padding: 5rem 0;
+const FooterContainer = styled.div`
   background-color: var(--colour-primary);
   color: var(--colour-white);
+  padding: 4rem 0;
+  @media (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
-const Header = styled.span`
-  font-family: var(--font-primary);
-  font-size: var(--text-xxxl);
-  font-weight: 600;
-  line-height: 1;
-`;
+const FooterRow = styled.div`
+  width: 100%;
 
-const Socials = styled.section`
+  height: 100%;
   display: flex;
-  gap: 2rem;
-  flex-direction: row;
+  gap: 4rem;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    gap: 0rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;
 
-const SocialButton = styled.button`
-  display: inline-block;
-  line-height: 1;
-  color: currentColor;
-  display: block;
+const FooterContent = styled.div`
+  display: grid;
+  gap: 2rem;
 
-  svg {
-    font-size: var(--text-xxl);
-  }
+  text-align: center;
 
-  transition: 0.2s ease-in-out 0s;
-  &:hover {
-    transform: scale(1.05);
+  @media (min-width: 768px) {
+    text-align: left;
+    padding: 4rem 0;
   }
+`;
+
+const FooterTitle = styled.h1`
+  font-size: var(--text-xxxl);
+  font-weight: bold;
+  margin: 0;
 `;
 
 const Copyright = styled.span`
-  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  @media (min-width: 768px) {
+    font-size: var(--text-sm);
+  }
+`;
+
+const LogoWrapper = styled.div`
+  width: 10%;
+
+  @media (min-width: 768px) {
+    position: relative;
+    overflow: hidden;
+    width: 35%;
+    height: 100%;
+
+    div {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -10%);
+    }
+  }
 `;
 
 function footer() {
   return (
-      <Wrapper>
-        <Header>&#x1F91D; Lets Connect &#x1F91D;</Header>
-        <Socials>
-          <SocialButton
-            as="a"
-            href="mailto:mrbryanbrotonel@gmail.com"
-            title="Bryan Brotonel | Email"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faEnvelope} />
-          </SocialButton>
-          <SocialButton
-            as="a"
-            href="https://www.linkedin.com/in/bryanbrotonel/"
-            title="Bryan Brotonel | LinkedIn"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </SocialButton>
-          <SocialButton
-            as="a"
-            href="https://github.com/bryanbrotonel"
-            title="Bryan Brotonel | GitHub"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </SocialButton>
-        </Socials>
-        <section>
+    <FooterContainer>
+      <FooterRow>
+        <FooterContent>
+          <FooterTitle>BryanBrotonel</FooterTitle>
+          <div>
+            <Socials />
+          </div>
           <Copyright>
             &#169; {new Date().getFullYear()}. All Rights Reserved | Vancouver,
             BC
           </Copyright>
-        </section>
-      </Wrapper>
+        </FooterContent>
+        <LogoWrapper>
+          <div>
+            <Logo />
+          </div>
+        </LogoWrapper>
+      </FooterRow>
+    </FooterContainer>
   );
 }
 

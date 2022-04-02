@@ -17,17 +17,6 @@ const fadeInUp = keyframes`
   }
 `;
 
-const rotateCenter = keyframes`
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-`;
-
 const ImageWrapper = styled.div`
   position: relative;
   opacity: 0;
@@ -54,7 +43,7 @@ const Logo = styled.img`
   width: 30%;
   height: auto;
 
-  animation-name: ${rotateCenter};
+  animation-name: rotateCenter;
   animation-duration: 20s;
   animation-delay: 3s;
   animation-timing-function: linear;
