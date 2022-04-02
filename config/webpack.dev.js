@@ -19,8 +19,8 @@ module.exports = (env) => {
         modules: [APP_DIR, 'node_modules'],
         extensions: ['.js', '.jsx'],
         alias: {
-          components: path.resolve(__dirname, 'src/components/')
-        }
+          Components: path.resolve(__dirname, '../src/components/'),
+        },
       },
       mode: 'development',
 
@@ -52,7 +52,7 @@ module.exports = (env) => {
           title: 'me',
           template: './resources/index.html',
           filename: './index.html',
-          favicon: "./src/favicon.ico",
+          favicon: './src/favicon.ico',
           inject: true,
           minify: {
             collapseWhitespace: true,

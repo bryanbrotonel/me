@@ -2,8 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import Header from 'components/Header';
-import Button from 'components/Button';
+import Header from 'Components/Header';
+import Button from 'Components/Button';
 
 const ContactContainer = styled.div`
   display: flex;

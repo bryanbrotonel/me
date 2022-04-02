@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import Routes from '../../routes';
 
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import Navbar from 'Components/Navbar';
+import Footer from 'Components/Footer';
 
 const Container = styled.section`
   min-height: 100%;
