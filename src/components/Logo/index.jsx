@@ -21,11 +21,7 @@ function Logo() {
   {
     asset(id: "4RxkeMgSdU01LZiPm9tP0v") {
       title
-      url(transform: {
-        width: 600,
-        resizeStrategy: FIT, 
-        resizeFocus: BOTTOM, 
-        format: WEBP})
+      url
     }
   }
   `;
