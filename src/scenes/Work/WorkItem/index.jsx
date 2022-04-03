@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 
 const Wrapper = styled.section`
   display: flex;
@@ -55,7 +56,7 @@ const Title = styled.h1`
 `;
 
 function WorkItem(props) {
-  const { title, image, imageTitle } = props;
+  const { title, blurb, image, imageTitle } = props;
 
   return (
     <Wrapper>
@@ -66,12 +67,7 @@ function WorkItem(props) {
       </CardWrapper>
       <WorkParagraph>
         <Title>{title}</Title>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, amet sint
-          excepturi sapiente, facilis natus minus delectus possimus ipsam
-          repudiandae accusantium fugiat fuga dolores ratione iure earum ut.
-          Quaerat, architecto.
-        </p>
+        <ReactMarkdown children={blurb} />
       </WorkParagraph>
     </Wrapper>
   );

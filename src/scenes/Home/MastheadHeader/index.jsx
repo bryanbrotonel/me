@@ -77,10 +77,7 @@ function MastheadHeader() {
       items {
         title
         logo{
-          url(transform: {
-            format: WEBP,
-            width: 135
-          })
+          url
         }
       }
     }

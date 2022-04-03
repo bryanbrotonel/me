@@ -38,11 +38,10 @@ function Work() {
         items {
           title
           link
+          blurb
           coverImage {
             title
-            url(transform: {
-              format: WEBP
-            })
+            url(transform: {format: WEBP})
           }
         }
       }
@@ -64,10 +63,11 @@ function Work() {
       </WorkHeader>
       <WorkRow>
         {items.map(
-          ({ title, link, coverImage: { url, title: imageTitle } }) => (
+          ({ title, link, blurb, coverImage: { url, title: imageTitle } }) => (
             <WorkItem
               key={title}
               title={title}
+              blurb={blurb}
               image={url}
               imageTitle={imageTitle}
               link={link}
