@@ -13,7 +13,7 @@ const ContactContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin: 12rem 0;
+  margin: 10rem 0;
 `;
 
 const ContactContent = styled.div`
@@ -40,7 +40,7 @@ function Contact() {
   }, []);
 
   return (
-    <ContactContainer className="container">
+    <ContactContainer id="contact" className="container">
       <ContactContent>
         <Header centered title={'Buzzing With Ideas?'} subtitle={'contact'} />
         <ReactMarkdown children={!contactBlurb ? null : contactBlurb.content} />

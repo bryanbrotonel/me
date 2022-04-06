@@ -65,6 +65,9 @@ function Navbar() {
         <Link smooth to="/#work">
           Work
         </Link>
+        <Link smooth to="/#contact">
+          Contact
+        </Link>
       </PagesWrapper>
     </Wrapper>
   );

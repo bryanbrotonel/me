@@ -11,12 +11,11 @@ import ProfileImage from './ProfileImage';
 const AboutWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 3em;
 
   align-items: center;
   justify-content: center;
 
-  margin: 5rem 0;
+  padding: 5rem 0;
 
   @media (min-width: 768px) {
     flex-wrap: nowrap;
@@ -51,7 +50,7 @@ function About() {
   const { aboutParagraph } = page;
 
   return (
-    <AboutWrapper className="container">
+    <AboutWrapper id="about" className="container">
       <AboutParagraph>
         <Header title={'Who is Bryan?'} subtitle={'about'} />
         <ReactMarkdown children={aboutParagraph} />

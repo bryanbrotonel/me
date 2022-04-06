@@ -9,8 +9,6 @@ const Wrapper = styled.section`
   flex-direction: column;
   flex-wrap: wrap;
 
-  gap: 1em;
-
   @media (min-width: 768px) {
     flex-direction: row;
     gap: 2em;
@@ -42,7 +40,11 @@ const CardBackgroundImage = styled.img`
 `;
 
 const WorkParagraph = styled.div`
-  flex-basis: 500px;
+  flex-basis: 300px;
+
+  @media (min-width: 768px) {
+    flex-basis: 500px;
+  }
 `;
 
 const Title = styled.h1`

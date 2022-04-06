@@ -38,9 +38,9 @@ const Image = styled.img`
 
 const Logo = styled.img`
   position: absolute;
-  right: -15%;
-  top: -12.5%;
-  width: 30%;
+  right: -10%;
+  top: -10%;
+  width: 20%;
   height: auto;
 
   animation-name: rotateCenter;

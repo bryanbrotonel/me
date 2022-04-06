@@ -57,7 +57,7 @@ function Work() {
   if (!items) return <div></div>;
 
   return (
-    <WorkWrapper className="container">
+    <WorkWrapper id ="work" className="container">
       <WorkHeader>
         <Header title={'Look What I Built!'} subtitle={'Work'} centered />
       </WorkHeader>
