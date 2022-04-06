@@ -21,10 +21,9 @@ const WorkHeader = styled.div`
 const WorkRow = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10em;
+  gap: 3em;
 
   justify-content: center;
-  margin: 2rem 0;
 
   @media (min-width: 768px) {
     gap: 10rem;
@@ -37,7 +36,8 @@ function Work() {
       workItemCollection(order: order_ASC) {
         items {
           title
-          link
+          websiteLink
+          sourceLink
           blurb
           coverImage {
             title
@@ -63,14 +63,21 @@ function Work() {
       </WorkHeader>
       <WorkRow>
         {items.map(
-          ({ title, link, blurb, coverImage: { url, title: imageTitle } }) => (
+          ({
+            title,
+            websiteLink,
+            sourceLink,
+            blurb,
+            coverImage: { url, title: imageTitle },
+          }) => (
             <WorkItem
               key={title}
               title={title}
               blurb={blurb}
               image={url}
               imageTitle={imageTitle}
-              link={link}
+              websiteLink={websiteLink}
+              sourceLink={sourceLink}
             />
           )
         )}

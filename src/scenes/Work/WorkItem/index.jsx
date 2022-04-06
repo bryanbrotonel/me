@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
+import Links from './Links';
+
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+
   gap: 1em;
 
   @media (min-width: 768px) {
@@ -21,6 +25,7 @@ const Wrapper = styled.section`
 const CardWrapper = styled.section`
   max-width: 600px;
   max-height: 500px;
+
   width: auto;
   height: auto;
 
@@ -29,7 +34,6 @@ const CardWrapper = styled.section`
 
 const CardBackgroundImage = styled.img`
   width: 100%;
-  height: 100%;
   transition: all 0.3s;
 
   &:hover {
@@ -37,16 +41,8 @@ const CardBackgroundImage = styled.img`
   }
 `;
 
-const ContentSection = styled.div`
-  height: 100%;
-  position: relative;
-  color: var(--colour-white);
-`;
-
 const WorkParagraph = styled.div`
-  @media (min-width: 768px) {
-    max-width: 500px;
-  }
+  flex-basis: 500px;
 `;
 
 const Title = styled.h1`
@@ -56,18 +52,21 @@ const Title = styled.h1`
 `;
 
 function WorkItem(props) {
-  const { title, blurb, image, imageTitle } = props;
+  const { title, blurb, image, imageTitle, websiteLink, sourceLink } = props;
 
   return (
     <Wrapper>
       <CardWrapper>
-        <ContentSection>
-          <CardBackgroundImage src={image} alt={imageTitle} />
-        </ContentSection>
+        <CardBackgroundImage src={image} alt={imageTitle} />
       </CardWrapper>
       <WorkParagraph>
         <Title>{title}</Title>
         <ReactMarkdown children={blurb} />
+        <Links
+          title={title}
+          websiteLink={websiteLink}
+          sourceLink={sourceLink}
+        />
       </WorkParagraph>
     </Wrapper>
   );
