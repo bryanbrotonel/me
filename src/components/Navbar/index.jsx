@@ -3,20 +3,24 @@ import styled from 'styled-components';
 
 import { NavHashLink } from 'react-router-hash-link';
 
-const Wrapper = styled.div`
+const NavContainer = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  
+  padding: 1rem 0;
+  z-index: 1;
+  background: var(--colour-white);
+`;
+
+const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5rem;
 
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-
   @media (min-width: 600px) {
     flex-direction: row;
-
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
   }
 `;
 
@@ -50,26 +54,32 @@ const Link = styled(NavHashLink)`
   @media (min-width: 600px) {
     font-size: var(--text-md);
   }
+
+  &:hover {
+    color: var(--colour-primary);
+  }
 `;
 
 function Navbar() {
   return (
-    <Wrapper className="container-sm">
-      <Link to="/" className="homeLink">
-        BryanBrotonel
-      </Link>
-      <PagesWrapper>
-        <Link smooth to="/#about">
-          About
+    <NavContainer>
+      <NavWrapper className="container-sm">
+        <Link to="/" className="homeLink">
+          BryanBrotonel
         </Link>
-        <Link smooth to="/#work">
-          Work
-        </Link>
-        <Link smooth to="/#contact">
-          Contact
-        </Link>
-      </PagesWrapper>
-    </Wrapper>
+        <PagesWrapper>
+          <Link smooth to="/#about">
+            About
+          </Link>
+          <Link smooth to="/#work">
+            Work
+          </Link>
+          <Link smooth to="/#contact">
+            Contact
+          </Link>
+        </PagesWrapper>
+      </NavWrapper>
+    </NavContainer>
   );
 }
 
