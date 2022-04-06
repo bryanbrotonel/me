@@ -31,8 +31,6 @@ const Title = styled.h1`
 function Header(props) {
   const { subtitle, title, centered } = props;
 
-  console.log('centered', centered);
-
   return (
     <Wrapper centered={centered}>
       <Subtitle>{subtitle}</Subtitle>

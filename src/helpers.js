@@ -18,14 +18,6 @@ export function fetchContentfulData(query, collection, setPage) {
         console.error(errors);
       }
 
-      console.log(
-        data.asset != null
-          ? data.asset
-          : data[collection].items.length == 1
-          ? data[collection].items[0]
-          : data[collection].items
-      );
-
       setPage(
         data.asset != null
           ? data.asset
