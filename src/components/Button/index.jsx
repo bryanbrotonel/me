@@ -28,10 +28,10 @@ const WorkButton = styled.button`
 `;
 
 function Button(props) {
-  const { href, title, value } = props;
+  const { href, title, value, target } = props;
   return (
     <ButtonWrapper>
-      <WorkButton as="a" href={href} title={title} target="_blank">
+      <WorkButton as="a" href={href} title={title} target={target ? "_blank" : ""}>
         {value}
       </WorkButton>
     </ButtonWrapper>

@@ -57,7 +57,7 @@ function Work() {
   if (!items) return <div></div>;
 
   return (
-    <WorkWrapper id ="work" className="container">
+    <WorkWrapper id="work" className="container">
       <WorkHeader>
         <Header title={'Look What I Built!'} subtitle={'Work'} centered />
       </WorkHeader>
@@ -86,6 +86,7 @@ function Work() {
         value="more projects"
         title="Bryan Brotonel | GitHub"
         href="https://github.com/bryanbrotonel"
+        target={false}
       ></Button>
     </WorkWrapper>
   );

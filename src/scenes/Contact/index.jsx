@@ -48,6 +48,7 @@ function Contact() {
           value="say hello"
           title="Bryan Brotonel | Email"
           href="mailto:mrbryanbrotonel@gmail.com"
+          target={true}
         ></Button>
       </ContactContent>
     </ContactContainer>
