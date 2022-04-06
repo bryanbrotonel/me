@@ -1,39 +1,34 @@
-var merge = require("webpack-merge");
+var merge = require('webpack-merge');
 
 // Plugins
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const Visualizer = require("webpack-visualizer-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
 
 // Configs
-var baseConfig = require("./webpack.dev");
+var baseConfig = require('./webpack.dev');
 
-const prodConfiguration = env => {
+const prodConfiguration = (env) => {
   return merge([
     {
       optimization: {
-        // runtimeChunk: "single",
-        // splitChunks: {
-        //   cacheGroups: {
-        //     vendor: {
-        //       test: /[\\/]node_modules[\\/]/,
-        //       name: "vendors",
-        //       chunks: "all"
-        //     }
-        //   }
-        // },
         minimizer: [new UglifyJsPlugin()],
+      },
+      resolve: {
+        alias: {
+          Components: path.resolve(__dirname, '../src/components/'),
+        },
       },
       plugins: [
         new MiniCssExtractPlugin(),
         new OptimizeCssAssetsPlugin(),
-        new Visualizer({ filename: "./statistics.html" })
-      ]
-    }
+        new Visualizer({ filename: './statistics.html' }),
+      ],
+    },
   ]);
 };
 
-module.exports = env => {
+module.exports = (env) => {
   return merge(baseConfig(env), prodConfiguration(env));
 };
