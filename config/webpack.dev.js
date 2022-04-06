@@ -18,9 +18,6 @@ module.exports = (env) => {
       resolve: {
         modules: [APP_DIR, 'node_modules'],
         extensions: ['.js', '.jsx'],
-        alias: {
-          Components: path.resolve(__dirname, '../src/components/'),
-        },
       },
       mode: 'development',
 

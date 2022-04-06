@@ -5,8 +5,8 @@ import ReactMarkdown from 'react-markdown';
 
 import { fetchContentfulData } from '../../helpers';
 
-import Header from 'Components/Header';
-import Button from 'Components/Button';
+import Header from '../../components/Header';
+import Button from '../../components/Button';
 
 const ContactContainer = styled.div`
   display: flex;

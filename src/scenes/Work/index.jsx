@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import { fetchContentfulData } from '../../helpers';
 import WorkItem from './WorkItem';
-import Header from 'Components/Header';
-import Button from 'Components/Button';
+import Header from '../../components/Header';
+import Button from '../../components/Button';
 
 const WorkWrapper = styled.div`
   margin: 5rem 0;

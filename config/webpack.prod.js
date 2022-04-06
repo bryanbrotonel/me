@@ -15,11 +15,6 @@ const prodConfiguration = (env) => {
       optimization: {
         minimizer: [new UglifyJsPlugin()],
       },
-      resolve: {
-        alias: {
-          Components: path.resolve(__dirname, '../src/components/'),
-        },
-      },
       plugins: [
         new MiniCssExtractPlugin(),
         new OptimizeCssAssetsPlugin(),
