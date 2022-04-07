@@ -13,7 +13,6 @@ const ContactContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin: 10rem 0;
 `;
 
 const ContactContent = styled.div`

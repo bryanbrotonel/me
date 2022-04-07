@@ -104,6 +104,19 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  @keyframes fadeInUp {
+    0% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   // font family
   .font-primary {
     font-family: var(--font-primary);

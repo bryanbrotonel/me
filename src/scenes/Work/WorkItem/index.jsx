@@ -49,8 +49,10 @@ const WorkParagraph = styled.div`
 
 const Title = styled.h1`
   font-size: var(--text-xl);
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 function WorkItem(props) {

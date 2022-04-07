@@ -8,14 +8,12 @@ import styled from 'styled-components';
 import Header from '../../components/Header';
 import ProfileImage from './ProfileImage';
 
-const AboutWrapper = styled.div`
+const AboutContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 
   align-items: center;
   justify-content: center;
-
-  padding: 5rem 0;
 
   @media (min-width: 768px) {
     flex-wrap: nowrap;
@@ -25,6 +23,14 @@ const AboutWrapper = styled.div`
 const AboutParagraph = styled.div`
   @media (min-width: 768px) {
     max-width: 650px;
+  }
+`;
+
+const ProfileImageWrapper = styled.div`
+  padding: 2rem 0;
+
+  @media (min-width: 768px) {
+    padding: 0;
   }
 `;
 
@@ -50,13 +56,15 @@ function About() {
   const { aboutParagraph } = page;
 
   return (
-    <AboutWrapper id="about" className="container">
+    <AboutContainer id="about" className="container">
       <AboutParagraph>
         <Header title={'Who is Bryan?'} subtitle={'about'} />
         <ReactMarkdown children={aboutParagraph} />
       </AboutParagraph>
-      <ProfileImage />
-    </AboutWrapper>
+      <ProfileImageWrapper>
+        <ProfileImage />
+      </ProfileImageWrapper>
+    </AboutContainer>
   );
 }
 

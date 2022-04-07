@@ -6,16 +6,16 @@ import WorkItem from './WorkItem';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 
-const WorkWrapper = styled.div`
-  margin: 5rem 0;
-`;
-
 const WorkHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin: 5rem 0;
+  padding-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    padding-bottom: 4rem;
+  }
 `;
 
 const WorkRow = styled.div`
@@ -57,7 +57,7 @@ function Work() {
   if (!items) return <div></div>;
 
   return (
-    <WorkWrapper id="work" className="container">
+    <div id="work" className="container">
       <WorkHeader>
         <Header title={'Look What I Built!'} subtitle={'Work'} centered />
       </WorkHeader>
@@ -88,7 +88,7 @@ function Work() {
         href="https://github.com/bryanbrotonel"
         target={false}
       ></Button>
-    </WorkWrapper>
+    </div>
   );
 }
 

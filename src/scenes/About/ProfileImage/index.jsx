@@ -1,30 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import { fetchContentfulData } from '../../../helpers';
-
-const fadeInUp = keyframes`
-  0% {
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-`;
 
 const ImageWrapper = styled.div`
   position: relative;
   opacity: 0;
 
-  animation-name: ${fadeInUp};
+  animation-name: fadeInUp;
   animation-duration: 2000ms;
   animation-delay: 500ms;
   animation-fill-mode: forwards;
+  
 `;
 
 const Image = styled.img`
