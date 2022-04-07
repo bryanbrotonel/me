@@ -7,12 +7,12 @@ import { fetchContentfulData } from '../../helpers';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import FadeInTransition from '../../components/FadeInTransition';
 
 const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;
 
 const ContactContent = styled.div`
@@ -39,18 +39,22 @@ function Contact() {
   }, []);
 
   return (
-    <ContactContainer id="contact" className="container">
-      <ContactContent>
-        <Header centered title={'Buzzing With Ideas?'} subtitle={'contact'} />
-        <ReactMarkdown children={!contactBlurb ? null : contactBlurb.content} />
-        <Button
-          value="say hello"
-          title="Bryan Brotonel | Email"
-          href="mailto:mrbryanbrotonel@gmail.com"
-          target={true}
-        ></Button>
-      </ContactContent>
-    </ContactContainer>
+    <FadeInTransition>
+      <ContactContainer id="contact" className="container">
+        <ContactContent>
+          <Header centered title={'Buzzing With Ideas?'} subtitle={'contact'} />
+          <ReactMarkdown
+            children={!contactBlurb ? null : contactBlurb.content}
+          />
+          <Button
+            value="say hello"
+            title="Bryan Brotonel | Email"
+            href="mailto:mrbryanbrotonel@gmail.com"
+            target={true}
+          ></Button>
+        </ContactContent>
+      </ContactContainer>
+    </FadeInTransition>
   );
 }
 

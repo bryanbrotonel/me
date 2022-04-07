@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { fetchContentfulData } from '../../helpers';
+
 import WorkItem from './WorkItem';
 import Header from '../../components/Header';
 import Button from '../../components/Button';

@@ -92,31 +92,6 @@ const GlobalStyle = createGlobalStyle`
     background: var(--colour-light);
   }
 
-  /* KEYFRAME ANIMATION */
-  @keyframes rotateCenter {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      -webkit-transform: translateY(20px);
-              transform: translateY(20px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
   // font family
   .font-primary {
     font-family: var(--font-primary);
@@ -172,6 +147,31 @@ const GlobalStyle = createGlobalStyle`
   @media (min-width: 1400px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1320px;
+    }
+  }
+
+  /* TRANSITIONS */
+  @keyframes rotateCenter {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
     }
   }
   

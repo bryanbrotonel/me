@@ -7,7 +7,7 @@ const NavContainer = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  
+
   padding: 1rem 0;
   z-index: 1;
   background: var(--colour-white);
@@ -61,20 +61,26 @@ const Link = styled(NavHashLink)`
 `;
 
 function Navbar() {
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -100;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <NavContainer>
       <NavWrapper className="container-sm">
-        <Link to="/" className="homeLink">
+        <Link to="/#top" smooth className="homeLink">
           BryanBrotonel
         </Link>
         <PagesWrapper>
-          <Link smooth to="/#about">
+          <Link to="/#about" scroll={(el) => scrollWithOffset(el)}>
             About
           </Link>
-          <Link smooth to="/#work">
+          <Link to="/#work" scroll={(el) => scrollWithOffset(el)}>
             Work
           </Link>
-          <Link smooth to="/#contact">
+          <Link to="/#contact" scroll={(el) => scrollWithOffset(el)}>
             Contact
           </Link>
         </PagesWrapper>

@@ -6,13 +6,6 @@ import { fetchContentfulData } from '../../../helpers';
 
 const ImageWrapper = styled.div`
   position: relative;
-  opacity: 0;
-
-  animation-name: fadeInUp;
-  animation-duration: 2000ms;
-  animation-delay: 500ms;
-  animation-fill-mode: forwards;
-  
 `;
 
 const Image = styled.img`

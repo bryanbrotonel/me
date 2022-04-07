@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 import Header from '../../components/Header';
 import ProfileImage from './ProfileImage';
+import FadeInTransition from '../../components/FadeInTransition';
 
 const AboutContainer = styled.div`
   display: flex;
@@ -57,12 +58,16 @@ function About() {
 
   return (
     <AboutContainer id="about" className="container">
-      <AboutParagraph>
-        <Header title={'Who is Bryan?'} subtitle={'about'} />
-        <ReactMarkdown children={aboutParagraph} />
-      </AboutParagraph>
+      <FadeInTransition>
+        <AboutParagraph>
+          <Header title={'Who is Bryan?'} subtitle={'about'} />
+          <ReactMarkdown children={aboutParagraph} />
+        </AboutParagraph>
+      </FadeInTransition>
       <ProfileImageWrapper>
-        <ProfileImage />
+        <FadeInTransition>
+          <ProfileImage />
+        </FadeInTransition>
       </ProfileImageWrapper>
     </AboutContainer>
   );

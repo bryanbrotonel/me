@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
 import { fetchContentfulData } from '../../helpers';
+import FadeInTransition from '../FadeInTransition';
 
 const MastheadContainer = styled.div`
   min-height: 80vh;
@@ -26,11 +27,6 @@ const MastheadTitle = styled.div`
   font-family: var(--font-primary);
   font-size: var(--text-xl);
   font-weight: 700;
-
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  opacity: 0;
 
   @media (min-width: 768px) {
     font-size: var(--text-xxxl);
@@ -80,19 +76,21 @@ function Masthead() {
   return (
     <MastheadContainer className="container">
       <HeaderWrapper>
-        <MastheadTitle>
-          <ReactMarkdown
-            children={title}
-            components={{
-              // Map `p` (`paragraph`) to use `span`s.
-              p: 'span',
-              // Rewrite `strong`s (`__bold font__`) to `span` with primary font color.
-              strong: ({ node, ...props }) => (
-                <span style={{ color: 'var(--colour-primary)' }} {...props} />
-              ),
-            }}
-          />
-        </MastheadTitle>
+        <FadeInTransition>
+          <MastheadTitle>
+            <ReactMarkdown
+              children={title}
+              components={{
+                // Map `p` (`paragraph`) to use `span`s.
+                p: 'span',
+                // Rewrite `strong`s (`__bold font__`) to `span` with primary font color.
+                strong: ({ node, ...props }) => (
+                  <span style={{ color: 'var(--colour-primary)' }} {...props} />
+                ),
+              }}
+            />
+          </MastheadTitle>
+        </FadeInTransition>
         <div>
           <Logo src={logo.url} alt="Logo" />
         </div>
