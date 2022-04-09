@@ -12,6 +12,7 @@ const ImageWrapper = styled.div`
 const Image = styled.img`
   max-width: 300px;
   height: auto;
+  width: auto;
 
   @media (min-width: 992px) {
     margin: 0;

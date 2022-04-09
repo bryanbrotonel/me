@@ -24,16 +24,16 @@ const Wrapper = styled.section`
 
 const CardWrapper = styled.section`
   max-width: 600px;
-  max-height: 500px;
-
-  width: auto;
-  height: auto;
+  max-height: 450px;
 
   overflow: hidden;
 `;
 
 const CardBackgroundImage = styled.img`
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
   transition: all 0.3s;
 
   &:hover {
@@ -64,7 +64,7 @@ function WorkItem(props) {
     <Wrapper>
       <FadeInTransition>
         <CardWrapper>
-          <CardBackgroundImage src={image} alt={imageTitle} />
+          <CardBackgroundImage src={image} alt={imageTitle} width="600" height="450" />
         </CardWrapper>
       </FadeInTransition>
       <WorkParagraph>
