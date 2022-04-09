@@ -6,7 +6,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .fadeInUp {
-    transition: opacity 1.5s ease, transform 1.5s ease;
+    transition: opacity 1s ease, transform 1s ease;
   }
 }
 

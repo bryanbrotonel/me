@@ -19,12 +19,17 @@ function FadeInTransition(props) {
 
   // Observer options for viewport intersecting
   const options = {
+    // Element to detect visibility
     root: null,
+
+    // Margin around root
     rootMargin: '0px',
-    threshold: 1.0,
+
+    // Percentage of target that detects visibility
+    threshold: 0.75,
   };
 
-  // Observe if element is within viewport
+  // Observe only if element is within viewport
   useEffect(() => {
     const observer = new IntersectionObserver(crossedViewpoint, options);
 

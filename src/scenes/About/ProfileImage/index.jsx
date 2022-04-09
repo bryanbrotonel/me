@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import styled from 'styled-components';
+import EmptyPlaceholder from '../../../components/EmptyPlaceholder';
 
 import { fetchContentfulData } from '../../../helpers';
 
@@ -56,7 +57,7 @@ function ProfileImage() {
     fetchContentfulData(query, 'mastheadCollection', setImage);
   }, []);
 
-  if (!mastheadImage) return <div></div>;
+  if (!mastheadImage) return <EmptyPlaceholder />;
 
   const { image, logo } = mastheadImage;
 

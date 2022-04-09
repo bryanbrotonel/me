@@ -6,6 +6,7 @@ import { fetchContentfulData } from '../../helpers';
 import WorkItem from './WorkItem';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import EmptyPlaceholder from '../../components/EmptyPlaceholder';
 
 const WorkHeader = styled.div`
   display: flex;
@@ -55,7 +56,7 @@ function Work() {
     fetchContentfulData(query, 'workItemCollection', setItems);
   }, []);
 
-  if (!items) return <div></div>;
+  if (!items) return <EmptyPlaceholder />;
 
   return (
     <div id="work" className="container">

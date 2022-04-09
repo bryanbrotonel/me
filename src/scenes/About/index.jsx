@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import Header from '../../components/Header';
 import ProfileImage from './ProfileImage';
 import FadeInTransition from '../../components/FadeInTransition';
+import EmptyPlaceholder from '../../components/EmptyPlaceholder';
 
 const AboutContainer = styled.div`
   display: flex;
@@ -52,7 +53,7 @@ function About() {
     fetchContentfulData(query, 'mastheadCollection', setPage);
   }, []);
 
-  if (!page) return <div></div>;
+  if (!page) return <EmptyPlaceholder />;
 
   const { aboutParagraph } = page;
 
