@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import { fetchContentfulData } from '../../helpers';
 import FadeInTransition from '../FadeInTransition';
 import EmptyPlaceholder from '../EmptyPlaceholder';
+import { TypeMasthead } from '../../types';
 
 const MastheadContainer = styled.div`
   min-height: 80vh;
@@ -57,6 +58,7 @@ function Masthead() {
       items {
         title
         logo{
+          title
           url
         }
       }
@@ -64,15 +66,21 @@ function Masthead() {
   }
   `;
 
-  const [page, setPage] = useState(null);
+  const [masthead, setMasthead] = useState(null);
 
   useEffect(() => {
-    fetchContentfulData(query, 'mastheadCollection', setPage);
+    (async () => {
+      const data = (await fetchContentfulData(
+        query,
+        'mastheadCollection'
+      )) as TypeMasthead;
+      setMasthead(data);
+    })();
   }, []);
 
-  if (!page) return <EmptyPlaceholder />;
+  if (!masthead) return <EmptyPlaceholder />;
 
-  const { title, logo } = page;
+  const { title, logo } = masthead;
 
   return (
     <MastheadContainer className="container">
@@ -93,7 +101,7 @@ function Masthead() {
           </MastheadTitle>
         </FadeInTransition>
         <FadeInTransition>
-          <Logo src={logo.url} alt="Logo" />
+          <Logo src={logo.url} alt={logo.title} />
         </FadeInTransition>
       </HeaderWrapper>
     </MastheadContainer>

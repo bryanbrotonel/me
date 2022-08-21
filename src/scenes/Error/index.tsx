@@ -1,9 +1,12 @@
+import { ContentfulClientApi } from 'contentful';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import Button from '../../components/Button'
+import Button from '../../components/Button';
 
 import { fetchContentfulData } from '../../helpers';
+
+import * as Contentful from 'contentful';
 
 const ErrorWrapper = styled.div`
   display: flex;
@@ -30,13 +33,15 @@ function Error() {
   `;
 
   useEffect(() => {
-    fetchContentfulData(query, 'asset', setImage);
+    fetchContentfulData(query, 'asset').then((data) => {
+      setImage(data);
+    });
   }, []);
 
   return (
     <ErrorWrapper>
       <div>
-        {errorImage != null && <img src={errorImage.url} alt="" />}
+        {errorImage != null && <img src={errorImage.fields.file.url} alt="" />}
         <h1>Lost? Let's get you back on track.</h1>{' '}
         <Button
           value="Let's Go"

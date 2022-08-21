@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from 'scenes/Home';
-import Work from 'scenes/Work';
-import Error from 'scenes/Error';
+import Home from './scenes/Home';
+import Work from './scenes/Work';
+import Error from './scenes/Error';
 
 const Routes = () => (
   <Switch>

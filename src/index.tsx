@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './scenes/App';
 
 import GlobalStyle from './styles/globalStyles';
 
-// Creates history
-const history = createBrowserHistory();
-
 ReactDOM.render(
-  <Router history={history}>
+  <BrowserRouter>
     <GlobalStyle />
     <App />
-  </Router>,
+  </BrowserRouter>,
   document.getElementById('app')
 );

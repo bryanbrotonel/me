@@ -9,6 +9,7 @@ import Header from '../../components/Header';
 import ProfileImage from './ProfileImage';
 import FadeInTransition from '../../components/FadeInTransition';
 import EmptyPlaceholder from '../../components/EmptyPlaceholder';
+import { TypeMasthead } from '../../types';
 
 const AboutContainer = styled.div`
   display: flex;
@@ -50,7 +51,13 @@ function About() {
   const [page, setPage] = useState(null);
 
   useEffect(() => {
-    fetchContentfulData(query, 'mastheadCollection', setPage);
+    (async () => {
+      const data = (await fetchContentfulData(
+        query,
+        'mastheadCollection'
+      )) as TypeMasthead;
+      setPage(data);
+    })();
   }, []);
 
   if (!page) return <EmptyPlaceholder />;
