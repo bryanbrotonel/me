@@ -4,9 +4,9 @@ Personal website built with React.
 
 ## Built With
 
+- [Typescript](https://typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [Webpack](https://webpack.js.org/)
-- [Babel](https://babeljs.io/)
 - [npm](https://www.npmjs.com/)
 
 ## Docs
@@ -16,6 +16,5 @@ Personal website built with React.
 ## Authors
 
 - **Bryan Brotonel** - _Everything_ - [bryanbrotonel](https://github.com/bryanbrotonel)
-- **Adeel Imran** - _Webpack React App Tutorial_ - [adeelibr](https://github.com/adeelibr)
 
 Cheers! :tada:
