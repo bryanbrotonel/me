@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { fetchContentfulData } from '../../helpers';
 
+import * as Contentful from 'contentful';
+
 const LogoImage = styled.img`
   height: auto;
   width: 100%;
@@ -27,12 +29,20 @@ function Logo() {
   `;
 
   useEffect(() => {
-    fetchContentfulData(query, 'asset', setLogo);
+    (async () => {
+      const data = (await fetchContentfulData(
+        query,
+        'asset'
+      )) as Contentful.Asset;
+      setLogo(data);
+    })();
   }, []);
 
   if (!logo) return null;
 
-  return <LogoImage src={logo.url} alt="Logo" />;
+  const { title, url } = logo;
+
+  return <LogoImage src={url} alt={title} />;
 }
 
 export default Logo;

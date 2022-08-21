@@ -31,7 +31,11 @@ const LinkButton = styled.button`
   }
 `;
 
-function Links(props) {
+function Links(props: {
+  title: string;
+  sourceLink: string;
+  websiteLink: string;
+}) {
   const { title, sourceLink, websiteLink } = props;
 
   let sourceBtn, websiteBtn;

@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import Links from './Links';
 
 import FadeInTransition from '../../../components/FadeInTransition';
+import { TypeWorkItem, TypeWorkItemFields } from '../../../types';
 
 const Wrapper = styled.section`
   display: flex;
@@ -57,14 +58,19 @@ const Title = styled.h1`
   }
 `;
 
-function WorkItem(props) {
-  const { title, blurb, image, imageTitle, websiteLink, sourceLink } = props;
+function WorkItem(props: { item: any }) {
+  const { title, websiteLink, sourceLink, blurb, coverImage } = props.item;
 
   return (
     <Wrapper>
       <FadeInTransition>
         <CardWrapper>
-          <CardBackgroundImage src={image} alt={imageTitle} width="600" height="450" />
+          <CardBackgroundImage
+            src={coverImage.url}
+            alt={coverImage.title}
+            width="600"
+            height="450"
+          />
         </CardWrapper>
       </FadeInTransition>
       <WorkParagraph>

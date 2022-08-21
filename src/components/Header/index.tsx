@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  centered?: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   display: inline-block;
   text-align: ${(props) => (props.centered ? 'center' : 'left')};
 `;
@@ -28,7 +32,11 @@ const Title = styled.h1`
   }
 `;
 
-function Header(props) {
+function Header(props: {
+  subtitle: string;
+  title: string;
+  centered?: boolean;
+}) {
   const { subtitle, title, centered } = props;
 
   return (

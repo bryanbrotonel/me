@@ -7,6 +7,8 @@ import WorkItem from './WorkItem';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import EmptyPlaceholder from '../../components/EmptyPlaceholder';
+import { TypeWorkItem, TypeWorkItemFields } from '../../types';
+import { EntryCollection } from 'contentful';
 
 const WorkHeader = styled.div`
   display: flex;
@@ -53,37 +55,31 @@ function Work() {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
-    fetchContentfulData(query, 'workItemCollection', setItems);
+    (async () => {
+      const data = (await fetchContentfulData(
+        query,
+        'workItemCollection'
+      )) as EntryCollection<TypeWorkItem>;
+      setItems(data);
+    })();
   }, []);
 
   if (!items) return <EmptyPlaceholder />;
+
+  let itemsList;
+
+  if (items) {
+    itemsList = items.map((item: TypeWorkItemFields, index: number) => {
+      return <WorkItem key={index} item={item} />;
+    });
+  }
 
   return (
     <div id="work" className="container">
       <WorkHeader>
         <Header title={'Look What I Built!'} subtitle={'Work'} centered />
       </WorkHeader>
-      <WorkRow>
-        {items.map(
-          ({
-            title,
-            websiteLink,
-            sourceLink,
-            blurb,
-            coverImage: { url, title: imageTitle },
-          }) => (
-            <WorkItem
-              key={title}
-              title={title}
-              blurb={blurb}
-              image={url}
-              imageTitle={imageTitle}
-              websiteLink={websiteLink}
-              sourceLink={sourceLink}
-            />
-          )
-        )}
-      </WorkRow>
+      <WorkRow>{itemsList}</WorkRow>
       <Button
         value="more projects"
         title="Bryan Brotonel | GitHub"

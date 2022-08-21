@@ -61,7 +61,7 @@ const Link = styled(NavHashLink)`
 `;
 
 function Navbar() {
-  const scrollWithOffset = (el) => {
+  const scrollWithOffset = (el: Element) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -100;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
@@ -74,13 +74,13 @@ function Navbar() {
           BryanBrotonel
         </Link>
         <PagesWrapper>
-          <Link to="/#about" scroll={(el) => scrollWithOffset(el)}>
+          <Link to="/#about" scroll={(el: Element) => scrollWithOffset(el)}>
             About
           </Link>
-          <Link to="/#work" scroll={(el) => scrollWithOffset(el)}>
+          <Link to="/#work" scroll={(el: Element) => scrollWithOffset(el)}>
             Work
           </Link>
-          <Link to="/#contact" scroll={(el) => scrollWithOffset(el)}>
+          <Link to="/#contact" scroll={(el: Element) => scrollWithOffset(el)}>
             Contact
           </Link>
         </PagesWrapper>

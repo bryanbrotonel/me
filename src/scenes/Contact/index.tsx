@@ -8,6 +8,7 @@ import { fetchContentfulData } from '../../helpers';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import FadeInTransition from '../../components/FadeInTransition';
+import { TypeBlurb } from '../../types';
 
 const ContactContainer = styled.div`
   display: flex;
@@ -25,7 +26,6 @@ function Contact() {
     {
       blurbCollection(where: {title_in: "Contact Blurb"}) {
         items {
-          title
           content
         }
       }
@@ -35,23 +35,39 @@ function Contact() {
   const [contactBlurb, setContactBlurb] = useState(null);
 
   useEffect(() => {
-    fetchContentfulData(query, 'blurbCollection', setContactBlurb);
+    (async () => {
+      const data = (await fetchContentfulData(
+        query,
+        'blurbCollection'
+      )) as TypeBlurb;
+      setContactBlurb(data);
+    })();
   }, []);
+
+  let contactContent;
+
+  if (contactBlurb) {
+    const { content } = contactBlurb;
+
+    contactContent = (
+      <React.Fragment>
+        <ReactMarkdown children={!contactBlurb ? null : content} />
+        <Button
+          value="say hello"
+          title="Bryan Brotonel | Email"
+          href="mailto:mrbryanbrotonel@gmail.com"
+          target={true}
+        ></Button>
+      </React.Fragment>
+    );
+  }
 
   return (
     <FadeInTransition>
       <ContactContainer id="contact" className="container">
         <ContactContent>
           <Header centered title={'Buzzing With Ideas?'} subtitle={'contact'} />
-          <ReactMarkdown
-            children={!contactBlurb ? null : contactBlurb.content}
-          />
-          <Button
-            value="say hello"
-            title="Bryan Brotonel | Email"
-            href="mailto:mrbryanbrotonel@gmail.com"
-            target={true}
-          ></Button>
+          {contactContent}
         </ContactContent>
       </ContactContainer>
     </FadeInTransition>

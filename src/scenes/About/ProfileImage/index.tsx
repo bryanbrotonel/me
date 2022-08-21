@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import EmptyPlaceholder from '../../../components/EmptyPlaceholder';
 
 import { fetchContentfulData } from '../../../helpers';
+import { TypeMasthead } from '../../../types';
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -42,11 +43,13 @@ function ProfileImage() {
     mastheadCollection{
       items {
         image{
+          title
           url(transform: {
             format: WEBP
           })
         }
         logo{
+          title
           url
         }
       }
@@ -55,7 +58,13 @@ function ProfileImage() {
   `;
 
   useEffect(() => {
-    fetchContentfulData(query, 'mastheadCollection', setImage);
+    (async () => {
+      const data = (await fetchContentfulData(
+        query,
+        'mastheadCollection'
+      )) as TypeMasthead;
+      setImage(data);
+    })();
   }, []);
 
   if (!mastheadImage) return <EmptyPlaceholder />;
@@ -64,8 +73,8 @@ function ProfileImage() {
 
   return (
     <ImageWrapper>
-      <Image src={image.url} alt="Image" />
-      <Logo src={logo.url} alt="Logo" />
+      <Image src={image.url} alt={image.title} />
+      <Logo src={logo.url} alt={logo.title} />
     </ImageWrapper>
   );
 }
