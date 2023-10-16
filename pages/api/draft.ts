@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { redirect } from 'next/navigation';
-import { getPreviewPostBySlug } from '../../lib/api';
+import { getPreviewWorkBySlug } from '../../lib/api';
 
 export default async function handler(
   request: NextApiRequest,
@@ -18,12 +18,12 @@ export default async function handler(
     response.status(401).json({ message: 'Invalid token' });
   }
 
-  const post = await getPreviewPostBySlug(slug);
+  const work = await getPreviewWorkBySlug(slug);
 
-  if (!post) {
+  if (!work) {
     response.status(401).json({ message: 'Invalid slug' });
   }
 
   response.setDraftMode({ enable: true });
-  redirect(`/posts/${post.slug}`);
+  redirect(`/works/${work.slug}`);
 }

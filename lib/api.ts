@@ -1,4 +1,4 @@
-const POST_GRAPHQL_FIELDS = `
+const WORK_GRAPHQL_FIELDS = `
   sys {
     id
   }
@@ -29,50 +29,50 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-      // next: { tags: ['posts'] },
+      // next: { tags: ['Work'] },
     },
   ).then((response) => response.json());
 }
 
-function extractPost(fetchResponse: any): any {
+function extractWork(fetchResponse: any): any {
   return fetchResponse?.data?.workItemCollection?.items?.[0];
 }
 
-function extractPostEntries(fetchResponse: any): any[] {
+function extractWorkEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.workItemCollection?.items;
 }
 
-export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
+export async function getPreviewWorkBySlug(slug: string | null): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
       workItemCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
     true,
   );
-  return extractPost(entry);
+  return extractWork(entry);
 }
 
-export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
+export async function getAllWork(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
       workItemCollection(where: { slug_exists: true }, order: order_ASC, preview: ${
         isDraftMode ? 'true' : 'false'
       }) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
     isDraftMode,
   );
-  return extractPostEntries(entries);
+  return extractWorkEntries(entries);
 }
 
-export async function getPostAndMorePosts(
+export async function getWorkAndMoreWork(
   slug: string,
   preview: boolean,
 ): Promise<any> {
@@ -82,7 +82,7 @@ export async function getPostAndMorePosts(
       preview ? 'true' : 'false'
     }, limit: 1) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
@@ -94,14 +94,14 @@ export async function getPostAndMorePosts(
       preview ? 'true' : 'false'
     }, limit: 2) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
     preview,
   );
   return {
-    post: extractPost(entry),
-    morePosts: extractPostEntries(entries),
+    work: extractWork(entry),
+    moreWork: extractWorkEntries(entries),
   };
 }
