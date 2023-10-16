@@ -1,0 +1,1911 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "masthead",
+        "type": "ContentType",
+        "createdAt": "2021-10-22T17:22:12.154Z",
+        "updatedAt": "2022-01-16T05:24:08.782Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 39,
+        "publishedAt": "2022-01-16T05:24:08.782Z",
+        "firstPublishedAt": "2021-10-22T17:22:12.634Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 20,
+        "version": 40,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Masthead",
+      "description": "Masthead for home page",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "blurb",
+          "name": "Blurb",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "aboutParagraph",
+          "name": "About Paragraph",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "logo",
+          "name": "Logo",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "workItem",
+        "type": "ContentType",
+        "createdAt": "2021-10-24T22:48:16.125Z",
+        "updatedAt": "2022-04-05T16:24:26.443Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 21,
+        "publishedAt": "2022-04-05T16:24:26.443Z",
+        "firstPublishedAt": "2021-10-24T22:48:16.510Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 11,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Work Item",
+      "description": "Work item",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "websiteLink",
+          "name": "Website Link",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "sourceLink",
+          "name": "SourceLink",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "blurb",
+          "name": "Blurb",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ]
+            },
+            {
+              "enabledMarks": ["bold", "italic", "underline", "code"]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "coverImage",
+          "name": "Cover Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "order",
+          "name": "Order",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "blurb",
+        "type": "ContentType",
+        "createdAt": "2022-04-02T22:38:49.191Z",
+        "updatedAt": "2022-04-02T22:39:23.757Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-04-02T22:39:23.757Z",
+        "firstPublishedAt": "2022-04-02T22:38:49.607Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Blurb",
+      "description": "Blurbs around the website",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "yg6bvazmunnt",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 40,
+        "createdAt": "2021-10-22T17:22:12.767Z",
+        "createdBy": {
+          "sys": {
+            "id": "68i078DjJGHUcxYKMNqXYs",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-01-16T05:24:09.258Z",
+        "updatedBy": {
+          "sys": {
+            "id": "68i078DjJGHUcxYKMNqXYs",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "masthead",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "blurb",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "aboutParagraph",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "logo",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "yg6bvazmunnt",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 22,
+        "createdAt": "2021-10-24T22:48:16.642Z",
+        "createdBy": {
+          "sys": {
+            "id": "68i078DjJGHUcxYKMNqXYs",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-04-05T16:24:27.068Z",
+        "updatedBy": {
+          "sys": {
+            "id": "68i078DjJGHUcxYKMNqXYs",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "workItem",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "subtitle",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "websiteLink",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "sourceLink",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "blurb",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "coverImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "order",
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "yg6bvazmunnt",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 4,
+        "createdAt": "2022-04-02T22:38:49.664Z",
+        "createdBy": {
+          "sys": {
+            "id": "68i078DjJGHUcxYKMNqXYs",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-04-02T22:39:24.215Z",
+        "updatedBy": {
+          "sys": {
+            "id": "68i078DjJGHUcxYKMNqXYs",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "blurb",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "6FBs4GsjeJt9YN7DIPlD1f",
+        "type": "Entry",
+        "createdAt": "2021-10-22T17:22:19.826Z",
+        "updatedAt": "2022-09-08T01:25:35.077Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 306,
+        "publishedAt": "2022-09-08T01:25:35.077Z",
+        "firstPublishedAt": "2021-10-22T17:22:35.492Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 67,
+        "version": 307,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "automationTags": [],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "masthead"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Hello! My name is __BryanBrotonel__ and I am a passionate __Web Developer__. I utilize my creativity to build impactful solutions. What do they look like? __Let me show you!__"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1oc4SLwiZEh0onFcZpOk12"
+            }
+          }
+        },
+        "blurb": {
+          "en-US": "Web Developer from Vancouver"
+        },
+        "aboutParagraph": {
+          "en-US": "\nAn aspiring web developer passionate about expressing his creativity through technology. My passion lies in the medium between technology and creativity. Bridging that gap allows me to use my creativity to build real world solutions."
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7jVQTRtqBWqvSrWBfCGNcC"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "scRNq4tzwcUvu203P2ZgK",
+        "type": "Entry",
+        "createdAt": "2021-10-24T22:48:23.913Z",
+        "updatedAt": "2022-08-31T21:42:14.888Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 87,
+        "publishedAt": "2022-08-31T21:42:14.888Z",
+        "firstPublishedAt": "2021-10-24T22:49:16.183Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 32,
+        "version": 88,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "automationTags": [],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "workItem"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "By Forte"
+        },
+        "subtitle": {
+          "en-US": "Prosper Through Noise."
+        },
+        "websiteLink": {
+          "en-US": "https://byforte.netlify.app/"
+        },
+        "sourceLink": {
+          "en-US": "https://github.com/bryanbrotonel/By-Forte"
+        },
+        "blurb": {
+          "en-US": "By Forte is a streetwear brand representing what it means to bring the ideas that we visualize in our minds to life.\n\nTypescript · React · Tailwind CSS · Redux · Firebase "
+        },
+        "content": {
+          "en-US": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac egestas sapien. Maecenas tempor iaculis commodo. Maecenas urna risus, finibus nec tincidunt ut, semper sed metus. Mauris rhoncus lorem sollicitudin eleifend elementum. Proin blandit non tellus nec varius. Vivamus in tellus id urna condimentum scelerisque sed et quam. In convallis at erat eu commodo. Praesent maximus mauris non lectus pellentesque ullamcorper. Ut pharetra nisl justo, vitae fringilla sapien finibus et. Quisque id felis ac mauris dapibus tincidunt. Mauris ornare bibendum risus at auctor.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "In dignissim tortor sed volutpat lacinia. Maecenas hendrerit tincidunt vehicula. Aenean maximus malesuada ultricies. Donec hendrerit sapien elementum lorem sollicitudin aliquet. Sed in aliquam eros. Fusce nunc diam, gravida ut ullamcorper vitae, iaculis nec magna. Sed dolor mi, scelerisque ut tellus id, ullamcorper imperdiet mi. Pellentesque congue ligula fringilla, finibus massa in, congue lacus. Pellentesque feugiat orci eu pellentesque consectetur. Ut ullamcorper, augue sed vestibulum efficitur, velit nisi luctus lacus, vel gravida erat turpis vel libero. Suspendisse ultrices congue nisl, non tincidunt mauris eleifend eu. Proin ac dolor ullamcorper, porttitor erat non, pretium arcu. Morbi consequat venenatis velit.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Vestibulum efficitur id metus a pretium. Aenean euismod, felis nec fringilla mattis, lorem ex accumsan felis, in fringilla est odio a velit. Sed eu diam sit amet justo laoreet tincidunt vitae et sapien. Cras convallis sodales est, in varius mi auctor at. Vestibulum porta metus ac ex volutpat, at lobortis enim laoreet. In hac habitasse platea dictumst. Aliquam blandit nunc sed augue ultrices, ac mollis ante malesuada. In nec mattis ipsum. Etiam eget augue gravida, lobortis leo vel, ultricies erat. Cras sed leo in nunc fermentum auctor vel eu nulla. Phasellus eu arcu condimentum, fringilla urna ac, convallis lectus. Vestibulum commodo sollicitudin odio eu porttitor. Phasellus sed suscipit sapien. Integer vitae consectetur quam. Etiam ullamcorper vel diam non malesuada. Quisque a pharetra massa, et tincidunt magna.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Morbi neque mauris, efficitur sit amet ante consectetur, vulputate aliquet elit. Nullam ut vulputate quam, rutrum sodales eros. Suspendisse ac erat non nulla ornare viverra. Morbi mollis nisl ac sollicitudin volutpat. Sed a iaculis augue, id vulputate eros. Etiam blandit pellentesque ex, vel aliquam sem blandit sed. Nunc et felis in lorem viverra iaculis eu sit amet augue. Aliquam turpis eros, congue eget nibh in, mollis varius magna. Nunc ultrices purus blandit scelerisque faucibus. Vivamus condimentum maximus semper. Morbi ex nisl, iaculis sit amet est bibendum, laoreet eleifend velit.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Nam tempor consequat sagittis. Cras quis tellus id orci efficitur rutrum. Quisque ornare gravida eleifend. Ut molestie rhoncus purus. Quisque est orci, egestas vel mi eu, aliquet malesuada velit. Morbi mattis gravida sem quis dictum. Vestibulum lacus elit, auctor et ligula a, convallis congue ligula. Praesent ut quam vel diam accumsan fringilla. Vivamus non fringilla odio. Pellentesque malesuada in lectus eget congue. Nulla venenatis egestas elit, id imperdiet diam lacinia non. Sed dapibus sed sem vel malesuada. Phasellus ac varius purus, non convallis est. Nulla consectetur ante vel lacus lacinia, quis sollicitudin felis varius. Donec eu tortor consequat, placerat quam nec, fringilla velit.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "coverImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4V5C1anrRmOsxKnkQkt8UE"
+            }
+          }
+        },
+        "order": {
+          "en-US": 1
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "1Y4ijy2OIrH6DmYUoWNL6W",
+        "type": "Entry",
+        "createdAt": "2021-10-25T00:32:39.434Z",
+        "updatedAt": "2022-08-31T20:56:38.040Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 48,
+        "publishedAt": "2022-08-31T20:56:38.040Z",
+        "firstPublishedAt": "2021-10-25T00:33:56.821Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 18,
+        "version": 49,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "automationTags": [],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "workItem"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "The Lilac Foundation"
+        },
+        "subtitle": {
+          "en-US": "The Lilac Foundation"
+        },
+        "websiteLink": {
+          "en-US": "https://www.thelilacfoundation.com/"
+        },
+        "sourceLink": {
+          "en-US": "https://github.com/bryanbrotonel/Lilac-Foundation"
+        },
+        "blurb": {
+          "en-US": "The Lilac Foundation (TLF) is a non-profit organization dedicated to using Lila’s core values and influences to aid the quality of life of the community.\n\nTypescript · React · Redux · Tailwind CSS "
+        },
+        "content": {
+          "en-US": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo, lacus nec tempus porta, dolor libero dictum nibh, ut ultricies diam mi eget urna. Integer lobortis ultricies consectetur. Ut posuere, elit vel blandit ultrices, sapien lorem dapibus orci, eu blandit nisl nisl id turpis. Praesent vehicula, nulla id volutpat vulputate, odio justo pulvinar risus, sit amet vehicula justo odio eu sem. Sed elit leo, convallis sed lorem vitae, laoreet aliquam augue. Integer mattis sem metus, et auctor nisi imperdiet id. Curabitur ante nunc, commodo at augue sit amet, luctus laoreet libero. Nulla eu vulputate sapien. Praesent at dui ullamcorper, imperdiet justo a, imperdiet metus. Vestibulum a ornare sem. Nullam eu interdum ex, vel sodales sem. Nunc ac purus commodo, gravida neque sed, congue sem. Nulla dapibus porta venenatis. Mauris tristique risus eget nisi pharetra, vitae bibendum lectus dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Aenean iaculis justo tellus, sed luctus ligula rutrum ut. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec nec vestibulum quam, eget blandit felis. Ut viverra nisl dui, in pretium nisl maximus vitae. Nullam mattis sagittis auctor. Sed sagittis felis ac libero condimentum pulvinar. Nam tristique venenatis tellus commodo accumsan. Duis lacinia blandit commodo. Ut bibendum convallis interdum. Cras ac luctus neque.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Nunc faucibus, nibh eu aliquet dignissim, tortor dolor tincidunt eros, ac rutrum erat lectus id augue. Phasellus nec metus eu nulla cursus condimentum in eget erat. In ultricies, nisl in sodales placerat, eros sapien aliquet metus, eget porta ante neque in nulla. Mauris consectetur venenatis cursus. Phasellus dolor neque, posuere et lorem quis, gravida placerat ex. Maecenas condimentum sem vitae nisl congue, dignissim euismod nibh ullamcorper. Maecenas et enim sed nisl lacinia euismod in eget metus. Duis massa diam, sodales eu erat eu, tempus volutpat eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus ac erat cursus, auctor neque a, ornare augue. Integer fringilla eget quam convallis placerat. Proin varius urna sit amet hendrerit posuere.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Etiam dignissim diam at eleifend tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ultrices dui quis tincidunt rhoncus. Proin condimentum imperdiet scelerisque. Cras pretium luctus turpis, at pharetra nunc pretium vitae. Fusce pulvinar, purus at condimentum sodales, enim sem vestibulum nunc, nec accumsan nibh velit at nulla. Ut a augue sed libero euismod venenatis vitae sit amet magna. Nam quis felis sit amet turpis euismod posuere ut sed lectus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Donec dignissim id neque ac scelerisque. Sed eget iaculis leo, id gravida lacus. Phasellus in tempor magna. Sed in ex et mi laoreet aliquam ut in enim. In hac habitasse platea dictumst. In cursus urna ac diam tincidunt, a sodales mauris cursus. Vestibulum blandit, enim a vulputate aliquam, nisl tellus accumsan nisl, eget scelerisque est magna commodo massa. Vivamus in eleifend magna. Pellentesque tempor in erat eu sollicitudin. Vestibulum rhoncus magna enim, in semper risus eleifend vel. Integer laoreet vel nisi eu sodales. Phasellus ornare sed dolor interdum viverra. Cras et vulputate nisl, aliquam cursus nulla.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "coverImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6MhuTwW65SEHbVugJYFSfc"
+            }
+          }
+        },
+        "order": {
+          "en-US": 2
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "32MZtM2UoS4XzEwAMN6qXc",
+        "type": "Entry",
+        "createdAt": "2021-11-10T06:13:27.256Z",
+        "updatedAt": "2022-08-31T21:43:26.949Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 96,
+        "publishedAt": "2022-08-31T21:43:26.949Z",
+        "firstPublishedAt": "2021-11-10T06:13:54.483Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 32,
+        "version": 97,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "automationTags": [],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "workItem"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "New New"
+        },
+        "subtitle": {
+          "en-US": "New New"
+        },
+        "websiteLink": {
+          "en-US": "https://new-new.netlify.app"
+        },
+        "sourceLink": {
+          "en-US": "https://github.com/bryanbrotonel/NewNew"
+        },
+        "blurb": {
+          "en-US": "New New is a platform that sheds light on new and upcomming artists. A collection of the different sounds curated by personal taste and daily discoveries.\n\nJavascript · React · Spotify API · Styled Components"
+        },
+        "content": {
+          "en-US": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "New New is a platform where I shed light on new artists. Curated by personal taste, this is a collection of the different sounds that I discover from my day to day listening.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Sharing music is one of the greatest gifts we can ever receive. new new allows me to share new refreshing sounds to the world.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "From one listener to another.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "coverImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "tKlA1uQ7NGpMUIxhK02uu"
+            }
+          }
+        },
+        "order": {
+          "en-US": 3
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "4kxA2oaTUc1VlrfyMgqoso",
+        "type": "Entry",
+        "createdAt": "2022-04-02T22:38:54.983Z",
+        "updatedAt": "2022-10-31T18:58:35.108Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 37,
+        "publishedAt": "2022-10-31T18:58:35.108Z",
+        "firstPublishedAt": "2022-04-02T22:45:08.499Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 38,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "automationTags": [],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "blurb"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Contact Blurb"
+        },
+        "content": {
+          "en-US": "My inbox is always open. Whether you want to say hi or your head is spinning with ideas, reach out to me!"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "4aYoUqiZBnnnNQv7RD5fD",
+        "type": "Entry",
+        "createdAt": "2022-07-29T22:37:05.241Z",
+        "updatedAt": "2022-08-31T21:43:47.805Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 49,
+        "publishedAt": "2022-08-31T21:43:47.805Z",
+        "firstPublishedAt": "2022-07-29T22:43:33.397Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 50,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "automationTags": [],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "workItem"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Joyce Run Day"
+        },
+        "subtitle": {
+          "en-US": "Run For Their Lives"
+        },
+        "websiteLink": {
+          "en-US": "https://joyce-run-day.netlify.app"
+        },
+        "sourceLink": {
+          "en-US": "https://github.com/bryanbrotonel/Joyce-Run-Day"
+        },
+        "blurb": {
+          "en-US": "Joyce Run Day is an annual running event dedicated to staying active both in personal lives and within the community. Although only a fictional event, one day it will come to fruition.\n\nTypescript · React · Styled Components"
+        },
+        "content": {
+          "en-US": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo, lacus nec tempus porta, dolor libero dictum nibh, ut ultricies diam mi eget urna. Integer lobortis ultricies consectetur. Ut posuere, elit vel blandit ultrices, sapien lorem dapibus orci, eu blandit nisl nisl id turpis. Praesent vehicula, nulla id volutpat vulputate, odio justo pulvinar risus, sit amet vehicula justo odio eu sem. Sed elit leo, convallis sed lorem vitae, laoreet aliquam augue. Integer mattis sem metus, et auctor nisi imperdiet id. Curabitur ante nunc, commodo at augue sit amet, luctus laoreet libero. Nulla eu vulputate sapien. Praesent at dui ullamcorper, imperdiet justo a, imperdiet metus. Vestibulum a ornare sem. Nullam eu interdum ex, vel sodales sem. Nunc ac purus commodo, gravida neque sed, congue sem. Nulla dapibus porta venenatis. Mauris tristique risus eget nisi pharetra, vitae bibendum lectus dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nAenean iaculis justo tellus, sed luctus ligula rutrum ut. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec nec vestibulum quam, eget blandit felis. Ut viverra nisl dui, in pretium nisl maximus vitae. Nullam mattis sagittis auctor. Sed sagittis felis ac libero condimentum pulvinar. Nam tristique venenatis tellus commodo accumsan. Duis lacinia blandit commodo. Ut bibendum convallis interdum. Cras ac luctus neque.\nNunc faucibus, nibh eu aliquet dignissim, tortor dolor tincidunt eros, ac rutrum erat lectus id augue. Phasellus nec metus eu nulla cursus condimentum in eget erat. In ultricies, nisl in sodales placerat, eros sapien aliquet metus, eget porta ante neque in nulla. Mauris consectetur venenatis cursus. Phasellus dolor neque, posuere et lorem quis, gravida placerat ex. Maecenas condimentum sem vitae nisl congue, dignissim euismod nibh ullamcorper. Maecenas et enim sed nisl lacinia euismod in eget metus. Duis massa diam, sodales eu erat eu, tempus volutpat eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus ac erat cursus, auctor neque a, ornare augue. Integer fringilla eget quam convallis placerat. Proin varius urna sit amet hendrerit posuere.\nEtiam dignissim diam at eleifend tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ultrices dui quis tincidunt rhoncus. Proin condimentum imperdiet scelerisque. Cras pretium luctus turpis, at pharetra nunc pretium vitae. Fusce pulvinar, purus at condimentum sodales, enim sem vestibulum nunc, nec accumsan nibh velit at nulla. Ut a augue sed libero euismod venenatis vitae sit amet magna. Nam quis felis sit amet turpis euismod posuere ut sed lectus.\nDonec dignissim id neque ac scelerisque. Sed eget iaculis leo, id gravida lacus. Phasellus in tempor magna. Sed in ex et mi laoreet aliquam ut in enim. In hac habitasse platea dictumst. In cursus urna ac diam tincidunt, a sodales mauris cursus. Vestibulum blandit, enim a vulputate aliquam, nisl tellus accumsan nisl, eget scelerisque est magna commodo massa. Vivamus in eleifend magna. Pellentesque tempor in erat eu sollicitudin. Vestibulum rhoncus magna enim, in semper risus eleifend vel. Integer laoreet vel nisi eu sodales. Phasellus ornare sed dolor interdum viverra. Cras et vulputate nisl, aliquam cursus nulla.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "coverImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5TyP69s0rEpDKfu8tODO4I"
+            }
+          }
+        },
+        "order": {
+          "en-US": 4
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "1oc4SLwiZEh0onFcZpOk12",
+        "type": "Asset",
+        "createdAt": "2021-10-22T16:37:40.338Z",
+        "updatedAt": "2022-04-09T19:28:12.945Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 37,
+        "publishedAt": "2022-04-09T19:28:12.945Z",
+        "firstPublishedAt": "2021-10-22T16:38:02.498Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 8,
+        "version": 38,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Masthead Image"
+        },
+        "description": {
+          "en-US": "Masthead image for website"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/1oc4SLwiZEh0onFcZpOk12/b0994a67b0350159372073edff0d8b9f/IMG_5403.jpeg",
+            "details": {
+              "size": 23771,
+              "image": {
+                "width": 300,
+                "height": 300
+              }
+            },
+            "fileName": "IMG_5403.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "6MhuTwW65SEHbVugJYFSfc",
+        "type": "Asset",
+        "createdAt": "2021-11-08T17:46:01.418Z",
+        "updatedAt": "2022-08-20T22:39:57.529Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 32,
+        "publishedAt": "2022-08-20T22:39:57.529Z",
+        "firstPublishedAt": "2021-11-08T17:46:37.548Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 7,
+        "version": 33,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Lilac Foundation Cover Image"
+        },
+        "description": {
+          "en-US": "Lilac Foundation Cover Image"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/6MhuTwW65SEHbVugJYFSfc/24db99f9a5ebd191e0a38be8f93ec156/The_Lilac_Foundation_Cover.png",
+            "details": {
+              "size": 383089,
+              "image": {
+                "width": 2665,
+                "height": 1999
+              }
+            },
+            "fileName": "The Lilac Foundation Cover.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "4V5C1anrRmOsxKnkQkt8UE",
+        "type": "Asset",
+        "createdAt": "2021-11-08T17:47:34.553Z",
+        "updatedAt": "2022-08-31T21:01:13.846Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 34,
+        "publishedAt": "2022-08-31T21:01:13.846Z",
+        "firstPublishedAt": "2021-11-08T17:48:22.956Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 8,
+        "version": 35,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "By Forte Cover Image"
+        },
+        "description": {
+          "en-US": "By Forte Cover Image"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/4V5C1anrRmOsxKnkQkt8UE/dc89c368df8a0481dac629e9e61bbd36/By_Forte_Cover.png",
+            "details": {
+              "size": 220373,
+              "image": {
+                "width": 2665,
+                "height": 1999
+              }
+            },
+            "fileName": "By Forte Cover.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "tKlA1uQ7NGpMUIxhK02uu",
+        "type": "Asset",
+        "createdAt": "2021-11-10T10:21:07.569Z",
+        "updatedAt": "2022-08-31T21:01:03.569Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 51,
+        "publishedAt": "2022-08-31T21:01:03.569Z",
+        "firstPublishedAt": "2021-11-10T10:21:25.861Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 13,
+        "version": 52,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "New New Cover Image"
+        },
+        "description": {
+          "en-US": "New New Image"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/tKlA1uQ7NGpMUIxhK02uu/f628cd4154028e81bffa32ce2c89f120/New_New_Cover.png",
+            "details": {
+              "size": 1061775,
+              "image": {
+                "width": 2665,
+                "height": 1999
+              }
+            },
+            "fileName": "New New Cover.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "7jVQTRtqBWqvSrWBfCGNcC",
+        "type": "Asset",
+        "createdAt": "2022-01-16T04:37:47.995Z",
+        "updatedAt": "2022-04-02T21:52:41.273Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 17,
+        "publishedAt": "2022-04-02T21:52:41.273Z",
+        "firstPublishedAt": "2022-01-16T04:38:10.801Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 18,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Logo-Primary"
+        },
+        "description": {
+          "en-US": "Logo in primary colour"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/7jVQTRtqBWqvSrWBfCGNcC/33304af48092941d36c14eedc1ec39ca/logo-primary.svg",
+            "details": {
+              "size": 23912,
+              "image": {
+                "width": 400,
+                "height": 400
+              }
+            },
+            "fileName": "logo-primary.svg",
+            "contentType": "image/svg+xml"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "2N6sX87AaVL4e9tpzxhQHT",
+        "type": "Asset",
+        "createdAt": "2022-02-13T22:30:15.307Z",
+        "updatedAt": "2022-02-13T22:30:40.891Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2022-02-13T22:30:40.891Z",
+        "firstPublishedAt": "2022-02-13T22:30:40.891Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Error Doodle"
+        },
+        "description": {
+          "en-US": "Image for 404 error"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/2N6sX87AaVL4e9tpzxhQHT/f7bcb243976fa42721ad4eedf82fd1b6/PettingDoodle.png",
+            "details": {
+              "size": 88896,
+              "image": {
+                "width": 1024,
+                "height": 768
+              }
+            },
+            "fileName": "PettingDoodle.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "4RxkeMgSdU01LZiPm9tP0v",
+        "type": "Asset",
+        "createdAt": "2022-02-25T02:49:21.975Z",
+        "updatedAt": "2022-04-02T21:52:21.122Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 19,
+        "publishedAt": "2022-04-02T21:52:21.122Z",
+        "firstPublishedAt": "2022-04-02T03:53:05.935Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 20,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Logo - White"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/4RxkeMgSdU01LZiPm9tP0v/190e3025fd221b1cededd6a4b35d750f/logo-white.svg",
+            "details": {
+              "size": 23912,
+              "image": {
+                "width": 400,
+                "height": 400
+              }
+            },
+            "fileName": "logo-white.svg",
+            "contentType": "image/svg+xml"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "id": "5TyP69s0rEpDKfu8tODO4I",
+        "type": "Asset",
+        "createdAt": "2022-07-29T22:40:35.925Z",
+        "updatedAt": "2022-08-20T22:39:57.524Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 20,
+        "publishedAt": "2022-08-20T22:39:57.524Z",
+        "firstPublishedAt": "2022-07-29T22:40:48.503Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 21,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Joyce Run Day Cover"
+        },
+        "description": {
+          "en-US": "Joyce Run Day Cover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/yg6bvazmunnt/5TyP69s0rEpDKfu8tODO4I/f45e7b0cfdf55c887d5109eaba9774da/Joyce_Run_Day_Cover.png",
+            "details": {
+              "size": 866251,
+              "image": {
+                "width": 2665,
+                "height": 1999
+              }
+            },
+            "fileName": "Joyce Run Day Cover.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "4oKuMTRSVumuDqnUs9ZV4V",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "yg6bvazmunnt"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "bf123f71-5840-4268-a8a1-e27d76d7e745"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "createdAt": "2018-10-12T19:40:14Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "68i078DjJGHUcxYKMNqXYs"
+          }
+        },
+        "updatedAt": "2018-10-12T19:40:14Z"
+      }
+    }
+  ],
+  "webhooks": [],
+  "roles": []
+}

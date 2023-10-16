@@ -1,9 +1,10 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { GetStaticProps } from 'next';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
+import { getAllPosts } from '../lib/api';
 import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
 
@@ -13,7 +14,7 @@ export default function Home({
   allPostsData: {
     date: string;
     title: string;
-    id: string;
+    slug: string;
   }[];
 }) {
   return (
@@ -24,8 +25,7 @@ export default function Home({
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>
-          (This is a sample website - you’ll be building a site like this in
-          {' '}
+          (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>
           .)
         </p>
@@ -33,9 +33,9 @@ export default function Home({
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+          {allPostsData.map(({ slug, date, title }) => (
+            <li className={utilStyles.listItem} key={slug}>
+              <Link href={`/posts/${slug}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
@@ -48,8 +48,9 @@ export default function Home({
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
+export const getStaticProps: GetStaticProps = async (context) => {
+  // const allPostsData = getSortedPostsData()
+  const allPostsData = await getAllPosts(context.draftMode);
   return {
     props: {
       allPostsData,

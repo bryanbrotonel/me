@@ -7,9 +7,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup": "node ./lib/setup.ts"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.18.0",
+    "@contentful/rich-text-types": "^16.3.0",
+    "contentful-export": "^7.19.83",
+    "contentful-import": "^9.4.0",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "next": "^13.5.4",
