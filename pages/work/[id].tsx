@@ -81,8 +81,6 @@ export const getStaticProps: GetStaticProps = async ({ params, draftMode }) => {
     params?.id as string,
     draftMode,
   );
-  console.log('work', work);
-  console.log('moreWork', moreWork);
   return {
     props: {
       work,

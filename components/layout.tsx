@@ -1,12 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
+import Sidebar from './sidebar';
 
-const name = '[Bryan Brotonel]';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Bryan Brotonel';
 
 export default function Layout({
   children,
@@ -16,13 +12,10 @@ export default function Layout({
   home?: boolean;
 }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Bryan Brotonel" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -32,45 +25,14 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
+      <div className="min-h-screen flex flex-col md:flex-row items-center justify-around">
+        <div>
+          <Sidebar />
         </div>
-      )}
+        <main className="w-full md:w-2/4">
+          <div className="container">{children}</div>
+        </main>
+      </div>
     </div>
   );
 }
