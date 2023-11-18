@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Layout from '../../components/layout';
 import Date from '../../components/date';
-import utilStyles from '../../styles/utils.module.css';
 import { getAllWork, getWorkAndMoreWork } from '../../lib/api';
 
 export default function Work({
@@ -27,20 +26,20 @@ export default function Work({
         <title>{work.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{work.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1>{work.title}</h1>
+        <div>
           <Date dateString={work.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: work.blurb }} />
-        <h2 className={utilStyles.headingLg}>Stack</h2>
+        <h2>Stack</h2>
         {work.stack.map((item, index) => {
           return <p key={index}>{item}</p>;
         })}
       </article>
       <div>
-        <h3 className={utilStyles.headingMd}>More Work</h3>
+        <h3>More Work</h3>
         {
-          <ul className={utilStyles.list}>
+          <ul>
             {moreWork.map(({ slug, title }) => (
               <div key={slug}>
                 <a href={`/work/${slug}`}>{title}</a>

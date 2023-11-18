@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Sidebar from './sidebar';
+import Navbar from './navbar';
 
 export const siteTitle = 'Bryan Brotonel';
 
@@ -25,12 +25,12 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="min-h-screen flex flex-col md:flex-row items-center justify-around">
-        <div>
-          <Sidebar />
+      <div className="min-h-screen flex flex-col xl:flex-row items-center xl:justify-center xl:space-x-24">
+        <div className="xl:md-0 my-5">
+          <Navbar />
         </div>
-        <main className="w-full md:w-2/4">
-          <div className="container">{children}</div>
+        <main className="w-full xl:w-2/4">
+          <div className="md:container mx-auto px-4">{children}</div>
         </main>
       </div>
     </div>
