@@ -5,12 +5,14 @@ import React, { PropsWithChildren, useState, useEffect } from 'react';
 type ActiveLinkProps = LinkProps & {
   className?: string;
   activeClassName: string;
+  activePathnames?: string[];
 };
 
 const ActiveLink = ({
   children,
   activeClassName,
   className,
+  activePathnames,
   ...props
 }: PropsWithChildren<ActiveLinkProps>) => {
   const { asPath, isReady } = useRouter();
@@ -29,10 +31,14 @@ const ActiveLink = ({
       // Using URL().pathname to get rid of query and hash
       const activePathname = new URL(asPath, location.href).pathname;
 
-      const newClassName =
+      let newClassName = className;
+
+      if (
+        (activePathnames && activePathnames.includes(activePathname)) ||
         linkPathname === activePathname
-          ? `${className} ${activeClassName}`.trim()
-          : className;
+      ) {
+        newClassName = `${className} ${activeClassName}`.trim();
+      }
 
       if (newClassName !== computedClassName) {
         setComputedClassName(newClassName);
@@ -46,6 +52,7 @@ const ActiveLink = ({
     activeClassName,
     className,
     computedClassName,
+    activePathnames,
   ]);
 
   return (
