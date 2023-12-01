@@ -25,13 +25,20 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="min-h-screen flex flex-col xl:flex-row items-center xl:justify-center xl:space-x-24">
-        <div className="xl:md-0 my-5">
-          <Navbar />
+      <div className="flex flex-col h-screen">
+        <div className="flex flex-grow flex-col md:flex-row md:justify-center md:gap-16 md:pt-56">
+          <div className="mb-12 md:mb-auto md:sticky md:top-56">
+            <Navbar />
+          </div>
+          <div className="flex-grow md:w-1/2 md:max-w-2xl">
+            <main className="container mx-auto px-4 md:px-0">{children}</main>
+          </div>
         </div>
-        <main className="w-full xl:w-2/4">
-          <div className="md:container mx-auto px-4">{children}</div>
-        </main>
+        <footer className="mt-auto">
+          <div className="mt-12 text-center">
+            <span>Bryan Brotonel</span>
+          </div>
+        </footer>
       </div>
     </div>
   );
