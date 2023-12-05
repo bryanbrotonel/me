@@ -4,15 +4,19 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Layout, { siteTitle } from '../../components/layout';
 import { getAllWork } from '../../lib/api';
-import Date from '../../components/date';
+import WorkItem from '@/components/workItem';
 
 export default function Work({
   allWorkData,
 }: {
   allWorkData: {
-    date: string;
     title: string;
+    blurb: string;
+    date: string;
     slug: string;
+    stack: string[];
+    websiteLink: string;
+    sourceLink: string;
   }[];
 }) {
   return (
@@ -21,26 +25,20 @@ export default function Work({
         <title>{siteTitle}</title>
       </Head>
       <section>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>
-          .)
-        </p>
-      </section>
-      <section>
-        <h2>Work</h2>
-        <ul>
-          {allWorkData.map(({ slug, date, title }) => (
-            <li key={slug}>
-              <Link href={`/work/${slug}`}>{title}</Link>
-              <br />
-              <small>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col items-center space-y-16">
+          {allWorkData.map(
+            ({ slug, title, blurb, stack, websiteLink, sourceLink }) => (
+              <WorkItem
+                key={slug}
+                title={title}
+                description={blurb}
+                stack={stack}
+                websiteLink={websiteLink}
+                sourceLink={sourceLink}
+              />
+            ),
+          )}
+        </div>
       </section>
     </Layout>
   );

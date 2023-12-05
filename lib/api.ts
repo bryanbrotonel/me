@@ -7,6 +7,7 @@ const WORK_GRAPHQL_FIELDS = `
   date
   order
   websiteLink
+  sourceLink
   blurb
   coverImage {
     title
