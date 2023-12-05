@@ -11,6 +11,10 @@ export default function Layout({
   children: React.ReactNode;
   home?: boolean;
 }) {
+  const date = new Date();
+  const year = date.getFullYear();
+  const footerLabel = `Bryan Brotonel © ${year}`;
+
   return (
     <div>
       <Head>
@@ -25,9 +29,9 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen md:px-4 xl:px-0">
         <div className="flex flex-grow flex-col md:flex-row md:justify-center md:gap-16 md:pt-56">
-          <div className="mb-12 md:mb-auto md:sticky md:top-56">
+          <div className="mb-6 md:mb-auto sticky top-0 md:top-56">
             <Navbar />
           </div>
           <div className="flex-grow md:w-1/2 md:max-w-2xl">
@@ -35,8 +39,8 @@ export default function Layout({
           </div>
         </div>
         <footer className="mt-auto">
-          <div className="mt-12 text-center">
-            <span>Bryan Brotonel</span>
+          <div className="mt-12 text-center text-xs text-gray-500">
+            <span>{footerLabel}</span>
           </div>
         </footer>
       </div>
