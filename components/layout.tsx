@@ -27,7 +27,7 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="flex flex-col h-screen md:px-4 xl:px-0">
-        <div className="flex flex-grow flex-col md:flex-row md:justify-center md:gap-20 md:pt-56">
+        <div className="flex flex-grow flex-col md:flex-row md:justify-center md:gap-20 md:pt-48">
           <div className="mb-6 md:mb-auto sticky top-0 md:top-56">
             <Navbar />
           </div>

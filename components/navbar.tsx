@@ -12,8 +12,8 @@ export default function Navbar() {
 
   return (
     <div className="w-auto flex md:flex-col justify-between p-4 md:p-0 md:space-y-4 items-start bg-white border-b-2 border-slate-100 md:border-0">
-      <div className="space-y-1 md:space-y-2 md:p-0">
-        <div className="w-fit">
+      <div className="space-y-1 md:p-0">
+        <div className="w-fit md:mb-5">
           <Link href="/work">
             <h1 className="text-xl md:text-5xl font-bold">BryanBrotonel</h1>
           </Link>
