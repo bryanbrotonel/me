@@ -11,6 +11,7 @@ const WORK_GRAPHQL_FIELDS = `
   blurb
   coverImage {
     title
+    url
   }
   stack
   order

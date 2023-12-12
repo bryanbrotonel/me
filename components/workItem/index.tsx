@@ -1,21 +1,28 @@
 import { LinkOut, GithubFill } from 'akar-icons';
+import ContentfulImage from 'lib/contentful-image';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 export default function WorkItem({
   title,
-  image,
   description,
+  coverImageTitle,
+  coverImageUrl,
   stack,
   websiteLink,
   sourceLink,
 }) {
   return (
     <div className="w-full max-w-sm lg:max-w-3xl flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-4">
-      <div>
-        <div className="w-full lg:w-80 h-60 -z-10 relative overflow-hidden rounded-lg bg-slate-900 text-white">
-          <Image src={image} alt={title} fill={true} className="object-cover" />
+      <div className="group">
+        <div className="w-full lg:w-[22rem] h-60 -z-10 relative overflow-hidden rounded-lg bg-slate-900 text-white">
+          <ContentfulImage
+            src={coverImageUrl}
+            alt={coverImageTitle}
+            fill={true}
+            className="object-cover group-hover:scale-[1.03] transition ease-linear"
+          />
         </div>
       </div>
       <div>

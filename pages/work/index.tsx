@@ -17,6 +17,10 @@ export default function Work({
     stack: string[];
     websiteLink: string;
     sourceLink: string;
+    coverImage: {
+      title: string;
+      url: string;
+    };
   }[];
 }) {
   return (
@@ -27,11 +31,21 @@ export default function Work({
       <section>
         <div className="flex flex-col items-center space-y-16">
           {allWorkData.map(
-            ({ slug, title, blurb, stack, websiteLink, sourceLink }) => (
+            ({
+              slug,
+              title,
+              blurb,
+              stack,
+              websiteLink,
+              sourceLink,
+              coverImage: { url: coverImageUrl, title: coverImageTitle },
+            }) => (
               <WorkItem
                 key={slug}
                 title={title}
                 description={blurb}
+                coverImageUrl={coverImageUrl}
+                coverImageTitle={coverImageTitle}
                 stack={stack}
                 websiteLink={websiteLink}
                 sourceLink={sourceLink}
