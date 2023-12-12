@@ -40,6 +40,10 @@ function extractWork(fetchResponse: any): any {
   return fetchResponse?.data?.workItemCollection?.items?.[0];
 }
 
+function extractBlurb(fetchResponse: any): any {
+  return fetchResponse?.data?.blurbCollection?.items?.[0];
+}
+
 function extractWorkEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.workItemCollection?.items;
 }
@@ -106,4 +110,21 @@ export async function getWorkAndMoreWork(
     work: extractWork(entry),
     moreWork: extractWorkEntries(entries),
   };
+}
+
+export async function getBlurb(title: string): Promise<any> {
+  const entry = await fetchGraphQL(
+    `query   {
+      blurbCollection(where: {title: "${title}"}){
+        items {
+          title
+          content {
+            json
+          }
+        }
+      }
+    }`,
+  );
+
+  return extractBlurb(entry);
 }
