@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from './navbar';
+import Footer from './footer';
 
 export const siteTitle = 'Bryan Brotonel';
 
@@ -11,10 +12,6 @@ export default function Layout({
   children: React.ReactNode;
   home?: boolean;
 }) {
-  const date = new Date();
-  const year = date.getFullYear();
-  const footerLabel = `Bryan Brotonel © ${year}`;
-
   return (
     <div>
       <Head>
@@ -38,11 +35,7 @@ export default function Layout({
             <main className="container mx-auto px-4 md:px-0">{children}</main>
           </div>
         </div>
-        <footer className="mt-auto">
-          <div className="mt-12 text-center text-xs text-gray-500">
-            <span>{footerLabel}</span>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
