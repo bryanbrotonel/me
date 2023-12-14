@@ -3,7 +3,22 @@
 @tailwind utilities;
 
 @layer base {
+  /* Set the base font to font-sans, so that if there is not font specified, it will use font-sans */
+
   body {
     @apply w-screen h-screen;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  p {
+    @apply font-sans;
   }
 }

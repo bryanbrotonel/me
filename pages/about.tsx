@@ -46,7 +46,6 @@ export default function About({
 
 export const getStaticProps: GetStaticProps = async () => {
   const aboutContent = await getBlurb('About');
-  console.log(aboutContent);
   return {
     props: {
       aboutContent,

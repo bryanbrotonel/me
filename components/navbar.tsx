@@ -24,7 +24,7 @@ export default function Navbar() {
               <h1 className="text-xl md:text-5xl font-bold">BryanBrotonel</h1>
             </Link>
           </div>
-          <h2 className="text-sm md:text-lg">
+          <h2 className="font-sans text-sm md:text-lg">
             Web Developer from Vancouver, BC
           </h2>
         </div>
