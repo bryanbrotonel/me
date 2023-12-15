@@ -31,7 +31,6 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-      // next: { tags: ['Work'] },
     },
   ).then((response) => response.json());
 }
@@ -46,20 +45,6 @@ function extractBlurb(fetchResponse: any): any {
 
 function extractWorkEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.workItemCollection?.items;
-}
-
-export async function getPreviewWorkBySlug(slug: string | null): Promise<any> {
-  const entry = await fetchGraphQL(
-    `query {
-      workItemCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
-        items {
-          ${WORK_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    true,
-  );
-  return extractWork(entry);
 }
 
 export async function getAllWork(isDraftMode: boolean): Promise<any[]> {
