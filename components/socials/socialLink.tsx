@@ -10,9 +10,11 @@ type SocialLinkProps = {
 const SocialLink = ({ link, title, icon }: SocialLinkProps) => {
   return (
     <Link href={link}>
-      <div className="flex gap-2">
+      <div className="flex gap-1">
         {icon}
-        <span className="hover:font-medium">{title}</span>
+        <span className="hover:underline hover:underline-offset-4 hover:decoration-2">
+          {title}
+        </span>
       </div>
     </Link>
   );

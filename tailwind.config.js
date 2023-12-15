@@ -14,6 +14,25 @@ module.exports = {
         sans: ['var(--font-inter)'],
         serif: ['var(--font-merriweather)'],
       },
+      animation: {
+        shake: 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
+      },
+      keyframes: {
+        shake: {
+          '10%, 90%': {
+            transform: 'rotate(0.5deg)',
+          },
+          '20%, 80%': {
+            transform: 'rotate(-0.5deg)',
+          },
+          '30%, 50%, 70%': {
+            transform: 'rotate(0.5deg)',
+          },
+          '40%, 60%': {
+            transform: 'rotate(-0.5deg)',
+          },
+        },
+      },
     },
   },
   plugins: [],

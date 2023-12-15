@@ -17,11 +17,13 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="w-auto flex md:flex-col justify-between p-4 md:p-0 md:space-y-4 items-start backdrop-blur-md bg-white/80">
+      <div className="w-auto flex md:flex-col justify-between p-4 md:p-0 md:space-y-4 items-start backdrop-blur-md bg-white/90">
         <div className="space-y-1 md:p-0">
           <div className="w-fit md:mb-5">
             <Link href="/work">
-              <h1 className="text-xl md:text-5xl font-bold">BryanBrotonel</h1>
+              <h1 className="text-xl md:text-5xl font-bold lg:hover:animate-shake">
+                BryanBrotonel
+              </h1>
             </Link>
           </div>
           <h2 className="font-sans text-sm md:text-lg">

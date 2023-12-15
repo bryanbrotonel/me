@@ -20,7 +20,7 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${merriweather.variable} ${inter.variable} font-sans`}>
-      <Component {...pageProps} />{' '}
+      <Component {...pageProps} />
     </main>
   );
 }

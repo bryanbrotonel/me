@@ -15,14 +15,14 @@ const Socials = () => {
       <div>
         <SocialLink
           link="https://linkedin.com/in/bryanbrotonel"
-          title="linkedin.com/in/bryanbrotonel"
+          title="/in/bryanbrotonel"
           icon={<LinkedinBoxFill strokeWidth={2.5} size={24} />}
         />
       </div>
       <div>
         <SocialLink
           link="https://github.com/bryanbrotonel"
-          title="github.com/bryanbrotonel"
+          title="/bryanbrotonel"
           icon={<GithubFill strokeWidth={2.5} size={24} />}
         />
       </div>

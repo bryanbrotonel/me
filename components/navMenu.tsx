@@ -19,7 +19,7 @@ export default function NevMenu({
 
   return (
     <div
-      className={`w-screen h-screen fixed inset-0 space-y-2 bg-black/95 backdrop-blur-md overscroll-none ${className}`}
+      className={`fixed inset-0 space-y-2 bg-black/95 backdrop-blur-md overscroll-none ${className}`}
     >
       <div className="text-right p-4">
         <button onClick={toggle}>
