@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import '@/styles/global.css';
-import { Inter, Merriweather } from '@next/font/google';
+import { Inter, Merriweather } from 'next/font/google';
 
 const merriweather = Merriweather({
   subsets: ['latin-ext'],
