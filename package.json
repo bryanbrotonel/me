@@ -15,7 +15,7 @@
     "@contentful/rich-text-types": "^16.3.0",
     "@next/font": "^14.0.4",
     "akar-icons": "^1.9.30",
-    "contentful-export": "^7.8.16",
+    "contentful-export": "^7.19.101",
     "contentful-import": "^9.4.0",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
