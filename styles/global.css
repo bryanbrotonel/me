@@ -5,10 +5,6 @@
 @layer base {
   /* Set the base font to font-sans, so that if there is not font specified, it will use font-sans */
 
-  body {
-    @apply w-screen h-screen;
-  }
-
   h1,
   h2,
   h3,
