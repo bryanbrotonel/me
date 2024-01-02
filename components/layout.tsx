@@ -1,9 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from './navbar';
-import Footer from './footer';
 
-export const siteTitle = 'Bryan Brotonel';
+export const siteTitle = 'bryan brotonel';
 
 export default function Layout({
   children,

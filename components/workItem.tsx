@@ -31,7 +31,7 @@ export default function WorkItem({
         <p className="mt-1">{description}</p>
         <div className="flex flex-wrap gap-2 mt-2">
           {stack.map((item) => (
-            <span key={item} className="text-gray-500 rounded-lg text-xs">
+            <span key={item} className="opacity-75 rounded-lg text-xs">
               {item}
             </span>
           ))}
@@ -42,7 +42,7 @@ export default function WorkItem({
               href={sourceLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-950 hover:opacity-80"
+              className="text-black-950 hover:opacity-80"
             >
               <GithubFill strokeWidth={2} size={22} />
             </Link>
@@ -52,7 +52,7 @@ export default function WorkItem({
               href={websiteLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-950 hover:opacity-80"
+              className="text-black-950 hover:opacity-80"
             >
               <LinkOut strokeWidth={2} size={22} />
             </Link>
