@@ -14,19 +14,21 @@ export default function WorkItem({
   sourceLink,
 }) {
   return (
-    <div className="w-full max-w-sm lg:max-w-3xl flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-4">
+    <div className="w-full max-w-sm flex flex-col gap-4">
       <div className="group">
-        <div className="w-full lg:w-[22rem] h-60 -z-10 relative overflow-hidden rounded-lg bg-slate-900 text-white">
-          <ContentfulImage
-            src={coverImageUrl}
-            alt={coverImageTitle}
-            fill={true}
-            className="object-cover group-hover:scale-[1.03] transition ease-linear"
-          />
-        </div>
+        <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
+          <div className="w-full h-60 -z-10 relative overflow-hidden rounded-lg text-black">
+            <ContentfulImage
+              src={coverImageUrl}
+              alt={coverImageTitle}
+              fill={true}
+              className="object-cover group-hover:scale-[1.015] transition ease-linear"
+            />
+          </div>
+        </Link>
       </div>
       <div>
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <h3 className="text-xl font-sans font-bold">{title}</h3>
         <p className="mt-1">{description}</p>
         <div className="flex flex-wrap gap-2 mt-2">
           {stack.map((item) => (

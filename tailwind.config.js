@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)'],
-        serif: ['var(--font-merriweather)'],
+        serif: ['var(--font-playfair)'],
       },
       animation: {
         shake: 'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',

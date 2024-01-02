@@ -9,14 +9,16 @@ type SocialLinkProps = {
 
 const SocialLink = ({ link, title, icon }: SocialLinkProps) => {
   return (
-    <Link href={link}>
-      <div className="flex gap-1">
-        {icon}
-        <span className="hover:underline hover:underline-offset-4 hover:decoration-2">
-          {title}
-        </span>
-      </div>
-    </Link>
+    <div className="w-fit">
+      <Link href={link}>
+        <div className="flex gap-2">
+          {icon}
+          <span className="hover:translate-x-1 ease-out duration-200">
+            {title}
+          </span>
+        </div>
+      </Link>
+    </div>
   );
 };
 
