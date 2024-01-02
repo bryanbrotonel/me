@@ -1,13 +1,13 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import '@/styles/global.css';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Merriweather } from 'next/font/google';
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
+const merriweather = Merriweather({
+  subsets: ['latin-ext'],
   weight: ['400', '700', '900'],
   display: 'swap',
-  variable: '--font-playfair',
+  variable: '--font-merriweather',
 });
 
 const inter = Inter({
@@ -19,7 +19,7 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${inter.variable} ${playfair.variable} font-sans`}>
+    <main className={`${merriweather.variable} ${inter.variable} font-sans`}>
       <Component {...pageProps} />
     </main>
   );
