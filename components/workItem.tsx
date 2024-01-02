@@ -27,7 +27,7 @@ export default function WorkItem({
         </Link>
       </div>
       <div>
-        <h3 className="text-xl font-sans font-bold">{title}</h3>
+        <h3 className="text-xl font-sans font-semibold">{title}</h3>
         <p className="mt-1">{description}</p>
         <div className="flex flex-wrap gap-2 mt-2">
           {stack.map((item) => (
