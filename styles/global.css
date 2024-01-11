@@ -11,7 +11,7 @@
   h4,
   h5,
   h6 {
-    @apply font-serif text-black;
+    @apply font-sans text-black;
   }
 
   p,

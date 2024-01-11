@@ -1,14 +1,7 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import '@/styles/global.css';
-import { Inter, Merriweather } from 'next/font/google';
-
-const merriweather = Merriweather({
-  subsets: ['latin-ext'],
-  weight: ['400', '700', '900'],
-  display: 'swap',
-  variable: '--font-merriweather',
-});
+import { Inter } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,7 +12,7 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${merriweather.variable} ${inter.variable} font-sans`}>
+    <main className={`${inter.variable} font-sans`}>
       <Component {...pageProps} />
     </main>
   );

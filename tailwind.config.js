@@ -17,7 +17,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
-        serif: ['var(--font-merriweather)'],
       },
     },
   },
