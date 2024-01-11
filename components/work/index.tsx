@@ -1,9 +1,5 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import WorkItem from '@/components/workItem';
-import { getAllWork } from 'lib/api';
+import WorkItem from './workItem';
 
 export default function Work({
   allWorkData,
@@ -23,7 +19,7 @@ export default function Work({
   }[];
 }) {
   return (
-    <div className="flex flex-col md:flex-row flex-wrap gap-y-10 md:gap-x-16">
+    <div className="flex flex-col space-y-16">
       {allWorkData.map(
         ({
           slug,
@@ -49,12 +45,3 @@ export default function Work({
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const allWorkData = await getAllWork(context.draftMode);
-  return {
-    props: {
-      allWorkData,
-    },
-  };
-};
