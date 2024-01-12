@@ -3,33 +3,30 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Work from '@/components/work';
 import { GetStaticProps } from 'next';
-import { getAllWork } from 'lib/api';
+import { getAllWork, getBlurb } from 'lib/api';
+import { blurbProps, workDataProps } from 'lib/types';
+import { Markdown } from 'lib/markdown';
 
 export default function Home({
-  allWorkData,
+  aboutBlurb,
+  workData,
 }: {
-  allWorkData: {
-    title: string;
-    blurb: string;
-    date: string;
-    slug: string;
-    stack: string[];
-    websiteLink: string;
-    sourceLink: string;
-    coverImage: {
-      title: string;
-      url: string;
-    };
-  }[];
+  aboutBlurb: blurbProps;
+  workData: workDataProps[];
 }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
+      <section className="flex flex-col space-y-14">
         <div>
-          <Work allWorkData={allWorkData} />
+          <h1 className="text-xs text-black/50 mb-1"># About</h1>
+          <Markdown content={aboutBlurb.content} />
+        </div>
+        <div>
+          <h1 className="text-xs text-black/50 mb-1"># Work</h1>
+          <Work workData={workData} />
         </div>
       </section>
     </Layout>
@@ -37,10 +34,12 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  const aboutBlurb = await getBlurb('About');
   const allWorkData = await getAllWork(context.draftMode);
   return {
     props: {
-      allWorkData,
+      aboutBlurb: aboutBlurb,
+      workData: allWorkData,
     },
   };
 };
