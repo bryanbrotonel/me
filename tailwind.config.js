@@ -13,7 +13,11 @@ module.exports = {
       colors: {
         black: '#1A1A19',
         gray: '#333331',
+        lightGray: '#8B8A89',
         white: '#FFFFFF',
+        gmail: '#BB001B',
+        github: '#6E40C9',
+        linkedin: '#0077B5',
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
