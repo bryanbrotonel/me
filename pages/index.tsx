@@ -4,8 +4,9 @@ import Layout, { siteTitle } from '../components/layout';
 import Work from '@/components/work';
 import { GetStaticProps } from 'next';
 import { getAllWork, getBlurb } from 'lib/api';
-import { blurbProps, workDataProps } from 'lib/types';
+import { blurbProps, spotifyListeningProps, workDataProps } from 'lib/types';
 import { Markdown } from 'lib/markdown';
+import { getListeningStatus } from 'lib/spotify';
 
 export default function Home({
   aboutBlurb,
@@ -13,6 +14,7 @@ export default function Home({
 }: {
   aboutBlurb: blurbProps;
   workData: workDataProps[];
+  spotifyListening: spotifyListeningProps;
 }) {
   return (
     <Layout home>
@@ -36,10 +38,13 @@ export default function Home({
 export const getStaticProps: GetStaticProps = async (context) => {
   const aboutBlurb = await getBlurb('About');
   const allWorkData = await getAllWork(context.draftMode);
+  const spotifyListening = await getListeningStatus();
+
   return {
     props: {
       aboutBlurb: aboutBlurb,
       workData: allWorkData,
+      currentListening: spotifyListening,
     },
   };
 };

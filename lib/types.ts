@@ -16,3 +16,15 @@ export type blurbProps = {
   title: string;
   content: any;
 };
+
+export type spotifyListeningProps = {
+  isPlaying: boolean;
+  timestamp: string;
+  song: {
+    title: string;
+    album: string;
+    albumImageUrl: string;
+    artists: string;
+    spotifyUrl: string;
+  };
+};
