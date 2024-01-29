@@ -25,17 +25,11 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="flex flex-col h-screen xl:px-0 container mx-auto px-4 md:px-0">
-        <div className="flex flex-grow flex-col gap-6 pb-16 md:flex-row md:justify-center md:gap-8 md:pt-32">
-          <div className="md:mb-auto md:sticky top-0 md:top-32 pt-2">
-            <Navbar />
-          </div>
-          <div className="h-[0.5px] md:w-[0.5px] md:h-full bg-black/20" />
-          <div className="flex-grow md:w-1/3 md:max-w-xl">
-            <main>{children}</main>
-          </div>
+      <div className="container mx-auto p-8 lg:px-0 w-full max-w-4xl">
+        <div className="mb-7">
+          <Navbar />
         </div>
-        {/* TODO: Add some sort of footer */}
+        <div>{children}</div>
       </div>
     </div>
   );
