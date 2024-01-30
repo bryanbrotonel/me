@@ -27,7 +27,7 @@ export default function Home({
           <Markdown content={aboutBlurb.content} />
         </div>
         <div>
-          <h1 className="font-light text-xs text-white/50 mb-2">Work</h1>
+          <h1 className="font-light text-xs text-white/50 mb-4">Work</h1>
           <Work workData={workData} />
         </div>
       </section>

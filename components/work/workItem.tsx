@@ -1,4 +1,4 @@
-import { GithubFill, Globe } from 'akar-icons';
+import { ArrowUpRight, GithubFill } from 'akar-icons';
 import ContentfulImage from 'lib/contentful-image';
 import Link from 'next/link';
 import React from 'react';
@@ -14,12 +14,11 @@ export default function WorkItem({
   sourceLink,
 }) {
   return (
-    <div className="w-full max-w-sm flex flex-col gap-4">
-      <div>
-        <h3 className="text-xl font-sans font-semibold mb-2">{title}</h3>
+    <div className="w-full flex flex-col md:flex-row gap-4">
+      <div className="w-full flex flex-col md:flex-row gap-6">
         <div className="group">
           <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
-            <div className="w-full h-60 -z-10 relative overflow-hidden rounded-lg text-black">
+            <div className="w-full max-w-md h-56 md:w-60 md:h-36 relative overflow-hidden rounded-lg text-white">
               <ContentfulImage
                 src={coverImageUrl}
                 alt={coverImageTitle}
@@ -29,34 +28,26 @@ export default function WorkItem({
             </div>
           </Link>
         </div>
+        <div className="space-y-2 w-full max-w-sm">
+          <h1 className="text-xl font-medium">{title}</h1>
+          <p className="text-sm text-white/50">{description}</p>
+        </div>
       </div>
-      <div>
-        <p className="text-sm mt-1">{description}</p>
-        {stack && (
-          <div className="flex flex-wrap gap-2 mt-3">
-            {stack.map((item) => (
-              <span key={item} className="opacity-75 rounded-lg text-xs">
-                {item}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-      <div className="flex justify-end gap-2">
-        {sourceLink && (
+      <div className="justify-self-end flex flex-row md:flex-col items-end -ml-[6px] md:ml-0">
+        {websiteLink && (
           <div>
-            <Link href={sourceLink} target="_blank" rel="noopener noreferrer">
-              <ColouredButton colour={'github'} label={'Github'} border>
-                <GithubFill strokeWidth={1} size={18} />
+            <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
+              <ColouredButton colour={'red'}>
+                <ArrowUpRight strokeWidth={2} size={18} />
               </ColouredButton>
             </Link>
           </div>
         )}
-        {websiteLink && (
+        {sourceLink && (
           <div>
-            <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
-              <ColouredButton colour={'red'} label={'Website'} border>
-                <Globe strokeWidth={1} size={18} />
+            <Link href={sourceLink} target="_blank" rel="noopener noreferrer">
+              <ColouredButton colour={'github'}>
+                <GithubFill strokeWidth={1} size={18} />
               </ColouredButton>
             </Link>
           </div>

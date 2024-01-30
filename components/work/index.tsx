@@ -5,8 +5,8 @@ import { workDataProps } from 'lib/types';
 
 export default function Work({ workData }: { workData: workDataProps[] }) {
   return (
-    <div className="w-fit">
-      <div className="flex flex-col space-y-8 items-start">
+    <div>
+      <div className="flex flex-col space-y-16">
         {workData.map(
           ({
             slug,

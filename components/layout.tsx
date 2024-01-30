@@ -25,7 +25,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="container mx-auto p-8 lg:px-0 w-full max-w-4xl">
+      <div className="container mx-auto p-8 lg:px-0 w-full max-w-3xl">
         <div className="mb-7">
           <Navbar />
         </div>
