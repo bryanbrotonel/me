@@ -7,7 +7,6 @@ export async function loadHomeData(context: GetStaticPropsContext) {
   const aboutBlurb = await getBlurb('About');
   const workData = await getAllWork(context.draftMode);
   const spotifyListening = await getListeningStatus();
-  console.log('🚀 ~ loadHomeData ~ spotifyListening:', spotifyListening);
   let currentlyData = [];
 
   if (spotifyListening.song) {
@@ -18,7 +17,8 @@ export async function loadHomeData(context: GetStaticPropsContext) {
       content: {
         title: spotifyListening.song.title,
         author: spotifyListening.song.artists,
-        image: spotifyListening.song.albumImageUrl,
+        image:
+          spotifyListening.song.albumImageUrl ?? '/images/defaultMusic.png',
         source: spotifyListening.song.spotifyUrl,
       },
     };

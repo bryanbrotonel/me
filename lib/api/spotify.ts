@@ -61,21 +61,8 @@ export async function getListeningStatus(): Promise<spotifyListeningProps> {
       .map((_artist: any) => _artist.name)
       .join(', ');
 
-    let spotifyUrl = '';
-    if (
-      recentSong.track.external_urls &&
-      recentSong.track.external_urls.length > 0
-    ) {
-      spotifyUrl = recentSong.track.external_urls.spotify;
-    }
-
-    let albumImageUrl = '';
-    if (
-      recentSong.track.album.images &&
-      recentSong.track.album.images.length > 0
-    ) {
-      albumImageUrl = recentSong.track.album.images[0].url;
-    }
+    let spotifyUrl = recentSong.track.external_urls.spotify ?? null;
+    let albumImageUrl = recentSong.track.album.images[0].url ?? null;
 
     return {
       timestamp,
@@ -97,8 +84,8 @@ export async function getListeningStatus(): Promise<spotifyListeningProps> {
   const artists = song.item.artists
     .map((_artist: any) => _artist.name)
     .join(', ');
-  const spotifyUrl = song.item.external_urls.spotify ?? '';
-  const albumImageUrl = song.item.album.images[0].url ?? '';
+  const spotifyUrl = song.item.external_urls.spotify ?? null;
+  const albumImageUrl = song.item.album.images[0]?.url ?? null;
 
   return {
     song: {
