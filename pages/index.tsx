@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Work from '@/components/work';
 import { GetStaticProps } from 'next';
-import { getAllWork, getBlurb } from 'lib/api';
 import { blurbProps, spotifyListeningProps, workDataProps } from 'lib/types';
 import { Markdown } from 'lib/markdown';
-import { getListeningStatus } from 'lib/spotify';
+import { loadHomeData } from 'lib/pages/home';
 
 export default function Home({
   aboutBlurb,
   workData,
+  spotifyListening,
 }: {
   aboutBlurb: blurbProps;
   workData: workDataProps[];
@@ -36,15 +36,9 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const aboutBlurb = await getBlurb('About');
-  const allWorkData = await getAllWork(context.draftMode);
-  const spotifyListening = await getListeningStatus();
+  const pageData = await loadHomeData(context);
 
   return {
-    props: {
-      aboutBlurb: aboutBlurb,
-      workData: allWorkData,
-      currentListening: spotifyListening,
-    },
+    props: pageData,
   };
 };

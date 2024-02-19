@@ -1,4 +1,5 @@
 import qs from 'querystring';
+import { spotifyListeningProps } from '../types';
 
 const basic = Buffer.from(
   `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
@@ -40,7 +41,7 @@ const getRecentlyPlayed = async (access_token: string) => {
   });
 };
 
-export async function getListeningStatus(): Promise<any> {
+export async function getListeningStatus(): Promise<spotifyListeningProps> {
   const { access_token } = await getAccessToken();
   const nowPlaying = await getNowPlaying(access_token);
 
