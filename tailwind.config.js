@@ -22,6 +22,10 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)'],
       },
+      backgroundImage: {
+        'gradient-edge-overlay':
+          'linear-gradient(to right, #1A1A19 0%, transparent 5%, transparent 95%, #1A1A19 100%)',
+      },
     },
   },
   plugins: [],

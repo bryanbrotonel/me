@@ -1,18 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
 import { currentlyDataProps } from 'lib/types';
-import Link from 'next/link';
 import ConditionalLink from '../conditionalLink';
+import ScrollableText from './scrollableText';
 
 export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
   const { header, title, subtitle, image, source } = item;
 
   return (
-    <div className="max-w-xs">
+    <div className="md:max-w-xs">
       <div>
         <h6 className="font-light text-xs text-white/50 mb-4">{header}</h6>
       </div>
-      <div className="flex flex-row align-top gap-3">
+      <div className="flex flex-row align-top gap-2">
         <ConditionalLink className="group" href={source}>
           <div
             className={`w-16 relative overflow-hidden rounded-md ${
@@ -27,13 +27,15 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
             />
           </div>
         </ConditionalLink>
-        <div className="space-y-1">
+        <div className="space-y-1 overflow-hidden">
           <ConditionalLink className="group" href={source}>
-            <h1 className={`${source && 'group-hover:underline'} line-clamp-2`}>
+            <ScrollableText className={source && 'group-hover:underline'}>
               {title}
-            </h1>
+            </ScrollableText>
           </ConditionalLink>
-          <p className="text-sm text-white/50 line-clamp-2">{subtitle}</p>
+          <ScrollableText className="text-sm text-white/50 text-clip">
+            {subtitle}
+          </ScrollableText>
         </div>
       </div>
     </div>
