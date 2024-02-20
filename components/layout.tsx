@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from './navbar';
+import Footer from './footer';
 
 export const siteTitle = 'bryan brotonel';
 
@@ -25,11 +26,14 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="container mx-auto p-8 lg:px-0 w-full max-w-3xl">
-        <div className="mb-7">
+      <div className="container mx-auto flex flex-col gap-7 p-8 lg:px-0 w-full max-w-3xl">
+        <div>
           <Navbar />
         </div>
         <div>{children}</div>
+        <div>
+          <Footer />
+        </div>
       </div>
     </div>
   );

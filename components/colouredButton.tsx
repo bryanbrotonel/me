@@ -37,7 +37,7 @@ const ColouredButton = ({
       onClick={() => onClick}
     >
       <div
-        className={`flex flex-row gap-1 items-center text-lightGray ${textColourVariants[colour]} text-xs`}
+        className={`flex flex-row gap-1 items-center text-white ${textColourVariants[colour]} text-xs`}
       >
         {children}
         {label && <span className="align-middle">{label}</span>}
