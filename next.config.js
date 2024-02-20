@@ -9,6 +9,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'i.scdn.co',
       },
+      {
+        protocol: 'https',
+        hostname: 'a.ltrbxd.com',
+      },
     ],
   },
 };

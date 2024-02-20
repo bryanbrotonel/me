@@ -38,3 +38,10 @@ export type spotifyListeningProps = {
     spotifyUrl: string;
   };
 };
+
+export type letterboxdRecentProps = {
+  title: string;
+  rating: string;
+  letterboxdUrl: string;
+  imageUrl: string;
+};
