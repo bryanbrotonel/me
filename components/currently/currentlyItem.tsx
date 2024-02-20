@@ -5,10 +5,7 @@ import Link from 'next/link';
 import ConditionalLink from '../conditionalLink';
 
 export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
-  const {
-    header,
-    content: { title, author, image, source },
-  } = item;
+  const { header, title, subtitle, image, source } = item;
 
   return (
     <div className="max-w-xs">
@@ -24,7 +21,7 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
           >
             <Image
               src={image}
-              alt={`${title} by ${author}`}
+              alt={`${title} by ${subtitle}`}
               width={64}
               height={64}
             />
@@ -36,7 +33,7 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
               {title}
             </h1>
           </ConditionalLink>
-          <p className="text-sm text-white/50 line-clamp-2">{author}</p>
+          <p className="text-sm text-white/50 line-clamp-2">{subtitle}</p>
         </div>
       </div>
     </div>

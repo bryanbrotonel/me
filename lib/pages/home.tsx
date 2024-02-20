@@ -36,12 +36,10 @@ function formatSpotifyData(data: spotifyListeningProps): currentlyDataProps {
   if (data.song) {
     return {
       header: data.isPlaying ? 'Currently Playing' : 'Recently Played',
-      content: {
-        title: data.song.title,
-        author: data.song.artists,
-        image: data.song.albumImageUrl ?? '/images/defaultMusic.png',
-        source: data.song.spotifyUrl,
-      },
+      title: data.song.title,
+      subtitle: data.song.artists,
+      image: data.song.albumImageUrl ?? '/images/defaultMusic.png',
+      source: data.song.spotifyUrl,
     };
   }
 
@@ -51,11 +49,9 @@ function formatSpotifyData(data: spotifyListeningProps): currentlyDataProps {
 function formatLetterboxdData(data: letterboxdRecentProps): currentlyDataProps {
   return {
     header: 'Recently Watched',
-    content: {
-      title: data.title,
-      author: data.rating,
-      image: data.imageUrl ?? '/images/defaultMovie.png',
-      source: data.letterboxdUrl,
-    },
+    title: data.title,
+    subtitle: data.rating,
+    image: data.imageUrl ?? '/images/defaultMovie.png',
+    source: data.letterboxdUrl,
   };
 }

@@ -14,12 +14,10 @@ export type workDataProps = {
 
 export type currentlyDataProps = {
   header: string;
-  content: {
-    title: string;
-    author: string;
-    image: string;
-    source: string;
-  };
+  title: string;
+  subtitle: string;
+  image: string;
+  source: string;
 };
 
 export type blurbProps = {
