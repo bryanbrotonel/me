@@ -33,7 +33,7 @@ export default function WorkItem({
           <p className="text-sm text-white/50">{description}</p>
         </div>
       </div>
-      <div className="justify-self-end flex flex-row md:flex-col items-end -ml-[6px] md:ml-0">
+      <div className="justify-self-end flex flex-row md:flex-col items-end -ml-[10px] md:ml-0 md:-mt-[10px]">
         {websiteLink && (
           <div>
             <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
