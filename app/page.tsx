@@ -1,16 +1,24 @@
-import { getAllWork, getBlurb } from 'lib/api/contentfulData';
-import { getRecentlyWatched } from 'lib/api/letterboxd';
-import { getListeningStatus } from 'lib/api/spotify';
+import { Metadata } from 'next';
+import Home from 'app/home-page';
+import { draftMode } from 'next/headers';
 import {
   currentlyDataProps,
   letterboxdRecentProps,
   spotifyListeningProps,
 } from 'lib/types';
-import { GetStaticPropsContext } from 'next';
+import { getRecentlyWatched } from 'lib/api/letterboxd';
+import { getListeningStatus } from 'lib/api/spotify';
+import { getAllWork, getBlurb } from 'lib/api/contentfulData';
 
-export async function loadHomeData(context: GetStaticPropsContext) {
+export const metadta: Metadata = {
+  title: "Bryan's Page Title",
+};
+
+export async function loadHomeData() {
+  const { isEnabled } = draftMode();
+
   const aboutBlurb = await getBlurb('About');
-  const workData = await getAllWork(context.draftMode);
+  const workData = await getAllWork(isEnabled);
   let currentlyData = [];
 
   const spotifyListeningData = await getListeningStatus();
@@ -54,4 +62,22 @@ function formatLetterboxdData(data: letterboxdRecentProps): currentlyDataProps {
     image: data.imageUrl ?? '/images/defaultMovie.png',
     source: data.letterboxdUrl,
   };
+}
+
+async function getData() {
+  const pageData = await loadHomeData();
+
+  return pageData;
+}
+
+export default async function Page() {
+  const pageData = await getData();
+  const { aboutBlurb, workData, currentlyData } = pageData;
+  return (
+    <Home
+      aboutBlurb={aboutBlurb}
+      workData={workData}
+      currentlyData={currentlyData}
+    />
+  );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import Work from '@/components/work';
+import Layout, { siteTitle } from '../app/components/layout';
+import Work from 'app/components/work';
 import { GetStaticProps } from 'next';
 import { blurbProps, currentlyDataProps, workDataProps } from 'lib/types';
 import { Markdown } from 'lib/markdown';
-import { loadHomeData } from 'lib/pages/home';
-import Currently from '@/components/currently';
+import { loadHomeData } from 'lib/api/home';
+import Currently from 'app/components/currently';
 
 export default function Home({
   aboutBlurb,
@@ -46,3 +46,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: pageData,
   };
 };
+
+// Need to use SWR
