@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
-        <div className="container mx-auto flex flex-col gap-7 p-8 lg:px-0 w-full max-w-3xl">
+        <div className="container mx-auto flex flex-col h-full min-h-screen gap-7 p-8 lg:px-0 w-full max-w-3xl">
           <div>
             <Navbar />
           </div>
-          <div>{children}</div>
+          <div className="flex-1">{children}</div>
           <div>
             <Footer />
           </div>
