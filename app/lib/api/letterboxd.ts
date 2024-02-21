@@ -1,5 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
-import { letterboxdRecentProps } from 'lib/types';
+import { letterboxdRecentProps } from 'app/lib/types';
 
 export const getLetterBoxdData = async () => {
   const response = await fetch('https://letterboxd.com/bryanbrotonel/rss/', {
