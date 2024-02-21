@@ -12,9 +12,7 @@ module.exports = {
     extend: {
       colors: {
         black: '#1A1A19',
-        gray: '#333331',
         lightGray: '#8B8A89',
-        white: '#FFFFFF',
         gmail: '#BB001B',
         github: '#6E40C9',
         linkedin: '#0077B5',
@@ -25,6 +23,13 @@ module.exports = {
       backgroundImage: {
         'gradient-edge-overlay':
           'linear-gradient(to right, #1A1A19 0%, transparent 5%, transparent 95%, #1A1A19 100%)',
+      },
+    },
+    keyframes: {
+      shimmer: {
+        '100%': {
+          transform: 'translateX(100%)',
+        },
       },
     },
   },

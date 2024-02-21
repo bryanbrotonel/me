@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
 import { Markdown } from 'app/ui/markdown';
-import { loadHomeData } from './lib/homeData';
 import Currently from 'app/ui/home/currently';
 import Work from 'app/ui/home/work';
+import { Suspense } from 'react';
+import { CurrentlySkeleton } from './ui/skeletons';
+import { getBlurb } from './lib/api/contentfulData';
 
 export const metadta: Metadata = {
   title: "Bryan's Page Title",
 };
 
 export default async function Page() {
-  const pageData = await loadHomeData();
-  const { aboutBlurb, workData, currentlyData } = pageData;
+  const aboutBlurb = await getBlurb('About');
 
   return (
     <div>
@@ -20,11 +21,13 @@ export default async function Page() {
           <Markdown content={aboutBlurb.content} />
         </div>
         <div>
-          <Currently currentlyData={currentlyData} />
+          <Suspense fallback={<CurrentlySkeleton />}>
+            <Currently />
+          </Suspense>
         </div>
         <div>
           <h1 className="font-light text-xs text-white/50 mb-4">Work</h1>
-          <Work workData={workData} />
+          <Work />
         </div>
       </section>
     </div>

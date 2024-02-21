@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import WorkItem from './workItem';
-import { workDataProps } from 'app/lib/types';
+import { loadWorkData } from 'app/lib/homeData';
 
-export default function Work({ workData }: { workData: workDataProps[] }) {
+export default async function Work() {
+  const workData = await loadWorkData();
+
   return (
     <div>
       <div className="flex flex-col space-y-16">

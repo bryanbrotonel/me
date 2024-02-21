@@ -5,14 +5,17 @@ import {
   currentlyDataProps,
   letterboxdRecentProps,
   spotifyListeningProps,
+  workDataProps,
 } from 'app/lib/types';
 import { draftMode } from 'next/headers';
 
-export async function loadHomeData() {
+export async function loadWorkData(): Promise<workDataProps[]> {
   const { isEnabled } = draftMode();
 
-  const aboutBlurb = await getBlurb('About');
-  const workData = await getAllWork(isEnabled);
+  return await getAllWork(isEnabled);
+}
+
+export async function loadCurrentlyData(): Promise<currentlyDataProps[]> {
   let currentlyData = [];
 
   const spotifyListeningData = await getListeningStatus();
@@ -27,11 +30,7 @@ export async function loadHomeData() {
     currentlyData.push(letterboxdData);
   }
 
-  return {
-    aboutBlurb,
-    workData,
-    currentlyData,
-  };
+  return currentlyData;
 }
 
 function formatSpotifyData(data: spotifyListeningProps): currentlyDataProps {
