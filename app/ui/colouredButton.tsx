@@ -1,3 +1,4 @@
+'use client';
 import { ComponentType, PropsWithChildren } from 'react';
 
 type ColouredButtonProps = {

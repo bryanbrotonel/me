@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { currentlyDataProps } from 'lib/types';
-import ConditionalLink from '../conditionalLink';
+import { currentlyDataProps } from 'app/lib/types';
 import ScrollableText from './scrollableText';
+import ConditionalLink from 'app/ui/conditionalLink';
 
 export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
   const { header, title, subtitle, image, source } = item;

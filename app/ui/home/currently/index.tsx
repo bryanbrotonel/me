@@ -1,6 +1,8 @@
-import { currentlyDataProps } from 'lib/types';
+import { currentlyDataProps } from 'app/lib/types';
 import React from 'react';
 import CurrentlyItem from './currentlyItem';
+
+export const dynamic = 'force-dynamic';
 
 export default function Currently({
   currentlyData,

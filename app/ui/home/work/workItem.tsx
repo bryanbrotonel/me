@@ -1,8 +1,8 @@
 import { ArrowUpRight, GithubFill } from 'akar-icons';
-import ContentfulImage from 'lib/contentful-image';
+import ContentfulImage from 'app/ui/contentful-image';
 import Link from 'next/link';
 import React from 'react';
-import ColouredButton from '../colouredButton';
+import ColouredButton from '../../colouredButton';
 
 export default function WorkItem({
   title,

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import WorkItem from './workItem';
-import { workDataProps } from 'lib/types';
+import { workDataProps } from 'app/lib/types';
 
 export default function Work({ workData }: { workData: workDataProps[] }) {
   return (
