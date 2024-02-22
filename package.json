@@ -14,7 +14,7 @@
     "@contentful/rich-text-react-renderer": "^15.18.0",
     "@contentful/rich-text-types": "^16.3.0",
     "akar-icons": "^1.9.30",
-    "contentful-export": "^7.8.16",
+    "contentful-export": "^7.19.124",
     "contentful-import": "^9.4.0",
     "date-fns": "^2.30.0",
     "fast-xml-parser": "^4.3.4",
