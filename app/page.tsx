@@ -6,8 +6,11 @@ import { Suspense } from 'react';
 import { CurrentlySkeleton } from './ui/skeletons';
 import { getBlurb } from './lib/api/contentfulData';
 
-export const metadta: Metadata = {
-  title: "Bryan's Page Title",
+export const metadata: Metadata = {
+  title: {
+    absolute: 'bryan brotonel',
+  },
+  description: 'Home page for Bryan Brotonel.',
 };
 
 export default async function Page() {

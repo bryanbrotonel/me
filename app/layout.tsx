@@ -14,8 +14,25 @@ const inter = Inter({
 });
 
 export const metaData: Metadata = {
-  title: 'bryan brotonel',
+  title: {
+    template: '%s | bryan brotonel',
+    default: 'bryan brotonel',
+  },
   description: 'Personal website for Bryan Brotonel.',
+  generator: 'Next.js',
+  applicationName: 'bryanbrotonel/me',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Next.js',
+    'React',
+    'Typescript',
+    'Bryan',
+    'Brotonel',
+    'bryanbrotonel',
+  ],
+  authors: [{ name: 'Bryan Brotonel' }],
+  creator: 'Bryan Brotonel',
+  publisher: 'Bryan Brotonel',
 };
 
 export default function RootLayout({
