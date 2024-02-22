@@ -2,8 +2,6 @@ import React from 'react';
 import CurrentlyItem from './currentlyItem';
 import { loadCurrentlyData } from 'app/lib/homeData';
 
-export const dynamic = 'force-dynamic';
-
 export default async function Currently() {
   let currentlyData = await loadCurrentlyData();
 

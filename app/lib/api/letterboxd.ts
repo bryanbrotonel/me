@@ -1,9 +1,13 @@
 import { XMLParser } from 'fast-xml-parser';
 import { letterboxdRecentProps } from 'app/lib/types';
+import { timeUntilMidnight } from './helper';
 
 export const getLetterBoxdData = async () => {
   const response = await fetch('https://letterboxd.com/bryanbrotonel/rss/', {
     method: 'GET',
+    next: {
+      revalidate: timeUntilMidnight(),
+    },
   });
 
   const xmlResponse = await response.text();
