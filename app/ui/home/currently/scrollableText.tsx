@@ -2,86 +2,99 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 type ScrollableTextProps = {
+  onLoad?: boolean;
   children: React.ReactNode;
   className?: string;
 };
 
 export default function ScrollableText({
+  onLoad = false,
   children,
   className,
 }: ScrollableTextProps): React.ReactNode {
   const textRef = useRef<HTMLParagraphElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [translateText, setTranslateText] = useState(false);
-  const [animateWidth, setAnimateWidth] = useState(0);
+  const [translateStyle, setTranslateStyle] = useState<React.CSSProperties>({});
+  const [translateWidth, setTranslateWidth] = useState<number>(0);
 
-  const animationDelay = 3000;
-  const animationDuration = 6000;
-  const textLeftPadding = 12;
+  const animationDelay = 1500;
+  const textPadding = 12;
+
+  const isAnimating = Object.keys(translateStyle).length !== 0;
+  const canTranslate = translateWidth > 0;
 
   useEffect(() => {
-    const textWidth = textRef.current.offsetWidth;
-    const containerWidth = containerRef.current.offsetWidth;
+    const textWidth = textRef.current?.offsetWidth || 0;
+    const containerWidth = containerRef.current?.offsetWidth || 0;
+    const widthDifference = textWidth - containerWidth;
 
-    if (textWidth && containerWidth && textWidth > containerWidth) {
-      setAnimateWidth(textWidth - containerWidth + textLeftPadding * 2);
+    if (widthDifference > 0) {
+      const translateDistance = getTranslateDistance(Math.abs(widthDifference));
+      setTranslateWidth(translateDistance);
     }
   }, []);
 
-  const animateText = (delay: number) => {
-    setIsAnimating(true);
+  useEffect(() => {
+    if (onLoad && canTranslate) {
+      animate(translateWidth, 3000);
+    }
+  }, [onLoad, canTranslate, translateWidth]);
 
-    if (animateWidth > 0) {
-      const translateLeft = setTimeout(() => {
-        setIsAnimating(true);
-        setTranslateText(true);
-      }, delay);
+  const animate = (translateWidth: number, delay: number) => {
+    const speed = 1.25; // units per second
+    const animationDuration = (translateWidth / speed) * 100;
 
-      const translateRight = setTimeout(() => {
+    const animationTimeout = setTimeout(() => {
+      setTranslateStyle({
+        transform: `translate(-${translateWidth}px, 0)`,
+        transitionDuration: `${animationDuration}ms`,
+      });
+
+      setTimeout(() => {
+        setTranslateStyle({
+          transform: 'translate(0)',
+          transitionDuration: `${animationDuration}ms`,
+        });
+
         setTimeout(() => {
-          setTranslateText(false);
-        }, animationDelay);
-      }, delay + animationDuration);
+          setTranslateStyle({});
+        }, animationDuration);
+      }, animationDuration + animationDelay);
+    }, delay);
 
-      const clearAnimation = setTimeout(() => {
-        setIsAnimating(false);
-      }, delay + animationDuration + animationDelay + animationDuration);
+    return () => clearTimeout(animationTimeout);
+  };
 
-      return () => {
-        clearTimeout(translateLeft);
-        clearTimeout(translateRight);
-        clearTimeout(clearAnimation);
-      };
-    } else {
-      setIsAnimating(false);
+  const getTranslateDistance = (width: number) => width + textPadding * 2;
+
+  const handleMouseEnter = () => {
+    if (!isAnimating && canTranslate) {
+      animate(translateWidth, 0);
     }
   };
 
   return (
-    <div ref={containerRef} className={'relative'}>
+    <div
+      ref={containerRef}
+      className="relative select-none"
+      onMouseEnter={handleMouseEnter}
+    >
       <div
-        className="whitespace-nowrap group:transition-transform duration-[6000ms] ease-in-out"
-        style={
-          translateText
-            ? { transform: `translate(-${animateWidth}px, 0)` }
-            : { transform: 'translate(0)' }
-        }
+        className="whitespace-nowrap group:transition-transform ease-linear"
+        style={translateStyle}
       >
         <div className="pl-3">
-          <span className={`${className}`} ref={textRef}>
+          <span
+            className={`${className} ${canTranslate ? 'select-all' : ''}`}
+            ref={textRef}
+          >
             {children}
           </span>
         </div>
       </div>
-      {animateWidth > 0 && (
-        <div
-          onMouseEnter={() => {
-            if (!isAnimating) animateText(0);
-          }}
-          className="absolute inset-0 bg-gradient-edge-overlay"
-        />
+      {canTranslate && (
+        <div className="absolute inset-0 bg-gradient-edge-overlay" />
       )}
     </div>
   );

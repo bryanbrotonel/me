@@ -29,11 +29,14 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
         </ConditionalLink>
         <div className="space-y-1 overflow-hidden">
           <ConditionalLink className="group" href={source}>
-            <ScrollableText className={source && 'group-hover:underline'}>
+            <ScrollableText
+              className={source && 'group-hover:underline'}
+              onLoad={true}
+            >
               {title}
             </ScrollableText>
           </ConditionalLink>
-          <ScrollableText className="text-sm text-white/50 text-clip">
+          <ScrollableText className="text-sm text-white/50">
             {subtitle}
           </ScrollableText>
         </div>
