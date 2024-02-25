@@ -77,7 +77,7 @@ export default function ScrollableText({
   return (
     <div
       ref={containerRef}
-      className="relative select-none"
+      className="relative"
       onMouseEnter={handleMouseEnter}
     >
       <div

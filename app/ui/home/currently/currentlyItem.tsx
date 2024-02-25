@@ -36,7 +36,7 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
               {title}
             </ScrollableText>
           </ConditionalLink>
-          <ScrollableText className="text-sm text-white/50">
+          <ScrollableText className="text-sm text-white/50" onLoad={true}>
             {subtitle}
           </ScrollableText>
         </div>
