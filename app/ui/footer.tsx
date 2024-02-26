@@ -21,7 +21,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ColouredButton colour={'github'}>
+          <ColouredButton colour={'linkedin'}>
             <LinkedinBoxFill strokeWidth={2} size={20} />
           </ColouredButton>
         </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ColouredButton colour={'linkedin'}>
+          <ColouredButton colour={'github'}>
             <GithubFill strokeWidth={2} size={20} />
           </ColouredButton>
         </Link>
