@@ -1,8 +1,14 @@
-// Returns seconds until midnight
+// Calculate seconds until midnight
 export function timeUntilMidnight() {
   const now = new Date();
-  const midnight = new Date(now);
-  midnight.setHours(24, 0, 0, 0); // Set to midnight
+  const tonight = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate() + 1,
+  );
+  const secondsUntilMidnight = Math.round(
+    (tonight.getTime() - now.getTime()) / 1000,
+  );
 
-  return Math.floor((midnight.getTime() - now.getTime()) / 1000);
+  return secondsUntilMidnight;
 }
