@@ -1,12 +1,11 @@
 import { XMLParser } from 'fast-xml-parser';
 import { letterboxdRecentProps } from 'app/lib/types';
-import { timeUntilMidnight } from './helper';
 
 export const getLetterBoxdData = async () => {
   const response = await fetch('https://letterboxd.com/bryanbrotonel/rss/', {
     method: 'GET',
     next: {
-      revalidate: timeUntilMidnight(),
+      revalidate: 10800,
     },
   });
 
@@ -18,7 +17,6 @@ export const getLetterBoxdData = async () => {
 
 export async function getRecentlyWatched(): Promise<letterboxdRecentProps> {
   let channelData = await getLetterBoxdData();
-
   let recentlyWatched = channelData.rss.channel.item[0];
 
   const title = recentlyWatched['letterboxd:filmTitle'];
