@@ -30,7 +30,6 @@ const getNowPlaying = async (access_token: string) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    next: { revalidate: 180 },
   });
 };
 
@@ -39,7 +38,6 @@ const getRecentlyPlayed = async (access_token: string) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    next: { revalidate: 3600 },
   });
 };
 

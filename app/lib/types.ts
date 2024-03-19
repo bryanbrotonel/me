@@ -43,3 +43,10 @@ export type letterboxdRecentProps = {
   letterboxdUrl: string;
   imageUrl: string;
 };
+
+export type goodReadsRecentProps = {
+  title: string;
+  author: string;
+  goodReadsLink: string;
+  imageUrl: string;
+};

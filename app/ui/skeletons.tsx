@@ -11,6 +11,9 @@ export function CurrentlySkeleton() {
       <div className="basis-1/3">
         <CurrentlyItemSkeleton />
       </div>
+      <div className="basis-1/3">
+        <CurrentlyItemSkeleton />
+      </div>
     </div>
   );
 }
