@@ -5,7 +5,7 @@ export const getLetterBoxdData = async () => {
   const response = await fetch('https://letterboxd.com/bryanbrotonel/rss/', {
     method: 'GET',
     next: {
-      revalidate: 10800,
+      revalidate: 10800, // 3 hours
     },
   });
 

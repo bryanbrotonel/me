@@ -7,7 +7,7 @@ export const getGoodReadsData = async () => {
     {
       method: 'GET',
       next: {
-        revalidate: 86400,
+        revalidate: 86400, // 24 hours
       },
     },
   );

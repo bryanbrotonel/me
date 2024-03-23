@@ -30,6 +30,7 @@ const getNowPlaying = async (access_token: string) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: 'no-store',
   });
 };
 
@@ -38,6 +39,7 @@ const getRecentlyPlayed = async (access_token: string) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: 'no-store',
   });
 };
 
