@@ -5,8 +5,8 @@ import { Envelope, GithubFill, LinkedinBoxFill } from 'akar-icons';
 
 export default function Footer() {
   return (
-    <div className="flex items-center justify-between mt-10 py-2 border-t-[0.5px] border-lightGray/50">
-      <div className="flex gap-1 -ml-[6px]">
+    <div className="flex items-start justify-between pt-2.5 mt-7 border-t-[0.5px] border-lightGray/50">
+      <div className="flex gap-1 -ml-[6px] -mt-[6px]">
         <Link
           href={'mailto:bryanbrotonel@gmail.com'}
           target="_blank"
@@ -35,7 +35,7 @@ export default function Footer() {
           </ColouredButton>
         </Link>
       </div>
-      <div>
+      <div className="inline-flex">
         <span className="text-xs">
           Bryan Brotonel {new Date().getFullYear()}
         </span>

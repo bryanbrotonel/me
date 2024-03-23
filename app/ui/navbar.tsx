@@ -1,7 +1,3 @@
-import Link from 'next/link';
-import { Envelope, GithubFill, LinkedinBoxFill } from 'akar-icons';
-import ColouredButton from './colouredButton';
-
 export default function Navbar() {
   return (
     <div>
