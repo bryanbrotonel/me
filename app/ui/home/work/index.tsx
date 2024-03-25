@@ -32,15 +32,18 @@ export default async function Work() {
           ),
         )}
       </div>
-      <div className="flex justify-center mt-8 hover:underline text-sm">
-        <Link
-          href={'https://github.com/bryanbrotonel'}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          More Projects
-        </Link>
-        <span className="ml-1">&#8594;</span>
+      <div className="flex justify-center mt-8">
+        <div>
+          <Link
+            href={'https://github.com/bryanbrotonel'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm hover:underline"
+          >
+            More Projects
+            <span className="ml-1">&#8594;</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
