@@ -1,13 +1,16 @@
 import qs from 'querystring';
 import { spotifyListeningProps } from '../types';
 
-const basic = Buffer.from(
-  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
-).toString('base64');
-
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played?limit=1`;
+
+const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } =
+  process.env;
+
+const basic = Buffer.from(
+  `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`,
+).toString('base64');
 
 export const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {
@@ -18,8 +21,11 @@ export const getAccessToken = async () => {
     },
     body: qs.stringify({
       grant_type: 'refresh_token',
-      refresh_token: process.env.SPOTIFY_REFRESH_TOKEN,
+      refresh_token: SPOTIFY_REFRESH_TOKEN,
     }),
+    next: {
+      revalidate: 3600,
+    },
   });
 
   return response.json();
@@ -84,6 +90,13 @@ export async function getListeningStatus(): Promise<spotifyListeningProps> {
       isPlaying: false,
     };
   }
+
+  // Something possibly went wrong, log the errors
+  console.log('getListeningStatus ~ nowPlaying status:', nowPlaying.status);
+  console.log(
+    'getListeningStatus ~ recentlyPlayed status:',
+    recentlyPlayed.status,
+  );
 
   return { isPlaying: false };
 }
