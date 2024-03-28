@@ -24,7 +24,7 @@ export const getAccessToken = async () => {
       refresh_token: SPOTIFY_REFRESH_TOKEN,
     }),
     next: {
-      revalidate: 3600,
+      revalidate: 3300,
     },
   });
 
