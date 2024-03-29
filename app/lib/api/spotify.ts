@@ -24,7 +24,7 @@ export const getAccessToken = async () => {
       refresh_token: SPOTIFY_REFRESH_TOKEN,
     }),
     next: {
-      revalidate: 2700,
+      revalidate: 3600,
     },
   });
 
@@ -32,7 +32,7 @@ export const getAccessToken = async () => {
 };
 
 const getNowPlaying = async (access_token: string) => {
-  return fetch(NOW_PLAYING_ENDPOINT, {
+  return await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
@@ -41,7 +41,7 @@ const getNowPlaying = async (access_token: string) => {
 };
 
 const getRecentlyPlayed = async (access_token: string) => {
-  return fetch(RECENTLY_PLAYED_ENDPOINT, {
+  return await fetch(RECENTLY_PLAYED_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
