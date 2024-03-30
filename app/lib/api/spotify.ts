@@ -67,6 +67,7 @@ async function createSongObject(song: any) {
 
 export async function getListeningStatus(): Promise<spotifyListeningProps> {
   const { access_token } = await getAccessToken();
+  console.log('🚀 ~ getListeningStatus ~ access_token:', access_token);
   const nowPlaying = await getNowPlaying(access_token);
 
   if (nowPlaying.status < 204) {
