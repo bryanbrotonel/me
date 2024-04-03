@@ -23,9 +23,7 @@ export const getAccessToken = async () => {
       grant_type: 'refresh_token',
       refresh_token: SPOTIFY_REFRESH_TOKEN,
     }),
-    next: {
-      revalidate: 3600,
-    },
+    cache: 'no-store',
   });
 
   return response.json();
@@ -36,7 +34,9 @@ const getNowPlaying = async (access_token: string) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: 'no-store',
+    next: {
+      revalidate: 540,
+    },
   });
 };
 
@@ -45,7 +45,9 @@ const getRecentlyPlayed = async (access_token: string) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: 'no-store',
+    next: {
+      revalidate: 1080,
+    },
   });
 };
 
