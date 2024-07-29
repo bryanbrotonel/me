@@ -17,7 +17,7 @@
     "contentful-export": "^7.8.16",
     "contentful-import": "^9.4.0",
     "date-fns": "^2.30.0",
-    "fast-xml-parser": "^4.3.4",
+    "fast-xml-parser": "^4.4.1",
     "gray-matter": "^4.0.3",
     "next": "^13.5.4",
     "prop-types": "^15.8.1",
