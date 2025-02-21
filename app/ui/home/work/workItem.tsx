@@ -14,44 +14,46 @@ export default function WorkItem({
   sourceLink,
 }) {
   return (
-    <div className="w-full flex flex-col md:flex-row gap-4">
-      <div className="w-full flex flex-col md:flex-row gap-6">
-        <div className="group">
-          <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
-            <div className="w-full max-w-md h-56 md:w-60 md:h-36 relative overflow-hidden rounded-lg text-white">
-              <ContentfulImage
-                src={coverImageUrl}
-                alt={coverImageTitle}
-                fill={true}
-                className="object-cover group-hover:scale-[1.015] transition ease-linear"
-              />
-            </div>
-          </Link>
-        </div>
-        <div className="space-y-2 w-full max-w-sm">
-          <h1 className="text-xl font-medium">{title}</h1>
-          <p className="text-sm text-white/50">{description}</p>
-        </div>
+    <div className='max-w-96'>
+      <div className='group'>
+        <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
+          <div className='w-full h-56 relative overflow-hidden rounded-lg text-white shadow-lg group-hover-effect'>
+            <ContentfulImage
+              src={coverImageUrl}
+              alt={coverImageTitle}
+              fill={true}
+              className='object-cover w-full h-full'
+            />
+          </div>
+        </Link>
       </div>
-      <div className="justify-self-end flex flex-row md:flex-col items-end -ml-[6px] md:ml-0 md:-mt-[6px] md:-mr-[6px]">
-        {websiteLink && (
-          <div>
-            <Link href={websiteLink} target="_blank" rel="noopener noreferrer">
-              <ColouredButton colour={'red'}>
-                <ArrowUpRight strokeWidth={2} size={18} />
-              </ColouredButton>
-            </Link>
-          </div>
-        )}
-        {sourceLink && (
-          <div>
-            <Link href={sourceLink} target="_blank" rel="noopener noreferrer">
-              <ColouredButton colour={'github'}>
-                <GithubFill strokeWidth={1} size={18} />
-              </ColouredButton>
-            </Link>
-          </div>
-        )}
+      <div className='py-4 space-y-4'>
+        <div className='space-y-2 w-full max-w-sm'>
+          <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
+            <h1 className='text-xl font-medium'>{title}</h1>
+          </Link>
+          <p className='text-sm text-white/50'>{description}</p>
+        </div>
+        <div className='flex gap-2 -ml-[6px]'>
+          {websiteLink && (
+            <div>
+              <Link
+                href={websiteLink}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <ColouredButton colour={'red'} label='Project' />
+              </Link>
+            </div>
+          )}
+          {sourceLink && (
+            <div>
+              <Link href={sourceLink} target='_blank' rel='noopener noreferrer'>
+                <ColouredButton colour={'red'} label='GitHub' />
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

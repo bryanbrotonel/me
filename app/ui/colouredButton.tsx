@@ -41,7 +41,7 @@ const ColouredButton = ({
         className={`flex flex-row gap-1 items-center text-white ${textColourVariants[colour]} text-xs`}
       >
         {children}
-        {label && <span className="align-middle">{label}</span>}
+        {label && <span className={`align-middle ${textColourVariants[colour]} font-bold`}>{label}</span>}
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export default async function Work() {
 
   return (
     <div>
-      <div className="flex flex-col space-y-16">
+      <div className="grid grid-flow-row md:grid-cols-2 gap-5">
         {workData.map(
           ({
             slug,

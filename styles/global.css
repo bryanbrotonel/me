@@ -21,3 +21,10 @@
     @apply font-sans font-light text-white;
   }
 }
+
+@layer components {
+
+  .group-hover-effect {
+    @apply group-hover:scale-[1.01] group-hover:-translate-y-0.5 transition ease-linear;
+  }
+}
