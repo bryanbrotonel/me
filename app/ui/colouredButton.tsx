@@ -34,14 +34,14 @@ const ColouredButton = ({
     <div
       className={`group w-fit rounded-md p-1.5 ${
         backgroundColourVariants[colour]
-      } transition-all ${border && 'border-[1px] border-lightGray/50'}`}
+      } transition-all ${border && 'border-[1px] border-darkgray'}`}
       onClick={() => onClick}
     >
       <div
-        className={`flex flex-row gap-1 items-center text-white ${textColourVariants[colour]} text-xs`}
+        className={`flex flex-row gap-1 items-center ${textColourVariants[colour]} text-sm`}
       >
         {children}
-        {label && <span className={`align-middle ${textColourVariants[colour]} font-bold`}>{label}</span>}
+        {label && <span className={`align-middle ${textColourVariants[colour]} font-medium`}>{label}</span>}
       </div>
     </div>
   );

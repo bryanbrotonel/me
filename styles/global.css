@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-black text-white selection:bg-red-500/75;
+    @apply bg-white text-black selection:bg-red-200/75;
   }
 
   h1,
@@ -13,18 +13,17 @@
   h4,
   h5,
   h6 {
-    @apply font-sans font-light text-white;
+    @apply font-sans font-light text-black;
   }
 
   p,
   span {
-    @apply font-sans font-light text-white;
+    @apply font-sans font-light;
   }
 }
 
 @layer components {
-
   .group-hover-effect {
-    @apply group-hover:scale-[1.01] group-hover:-translate-y-0.5 transition ease-linear;
+    @apply group-hover:scale-[1.01] group-hover:-translate-y-[1px] transition ease-linear shadow-md shadow-black/10;
   }
 }

@@ -1,7 +1,6 @@
-import { ArrowUpRight, GithubFill } from 'akar-icons';
+import React from 'react';
 import ContentfulImage from 'app/ui/contentful-image';
 import Link from 'next/link';
-import React from 'react';
 import ColouredButton from '../../colouredButton';
 
 export default function WorkItem({
@@ -17,7 +16,7 @@ export default function WorkItem({
     <div className='max-w-96'>
       <div className='group'>
         <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-          <div className='w-full h-56 relative overflow-hidden rounded-lg text-white shadow-lg group-hover-effect'>
+          <div className='w-full h-56 relative overflow-hidden rounded-lg text-white group-hover-effect'>
             <ContentfulImage
               src={coverImageUrl}
               alt={coverImageTitle}
@@ -27,14 +26,14 @@ export default function WorkItem({
           </div>
         </Link>
       </div>
-      <div className='py-4 space-y-4'>
+      <div className='py-4 space-y-2'>
         <div className='space-y-2 w-full max-w-sm'>
           <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
             <h1 className='text-xl font-medium'>{title}</h1>
           </Link>
-          <p className='text-sm text-white/50'>{description}</p>
+          <p className='text-sm text-darkGray'>{description}</p>
         </div>
-        <div className='flex gap-2 -ml-[6px]'>
+        <div className='flex gap-2 -ml-1.5 -my-1.5'>
           {websiteLink && (
             <div>
               <Link

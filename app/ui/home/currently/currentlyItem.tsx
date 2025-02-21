@@ -8,9 +8,9 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
   const { header, title, subtitle, image, source } = item;
 
   return (
-    <div className='md:max-w-xs'>
+    <div>
       <div>
-        <h6 className='font-light text-xs text-white/50 mb-4'>{header}</h6>
+        <h6 className='font-light text-xs mb-4'>{header}</h6>
       </div>
       <div className='flex flex-row align-top gap-2'>
         <ConditionalLink className='group' href={source}>
@@ -27,16 +27,11 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
             />
           </div>
         </ConditionalLink>
-        <div className='space-y-1 overflow-hidden'>
+        <div className='overflow-hidden'>
           <ConditionalLink className='group' href={source}>
-            <ScrollableText
-              className={source && 'group-hover:underline'}
-              onLoad={true}
-            >
-              {title}
-            </ScrollableText>
+            <ScrollableText onLoad={true} className='font-medium'>{title}</ScrollableText>
           </ConditionalLink>
-          <ScrollableText className='text-sm text-white/50' onLoad={true}>
+          <ScrollableText className='text-xs text-darkGray' onLoad={true}>
             {subtitle}
           </ScrollableText>
         </div>
