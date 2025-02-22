@@ -13,12 +13,12 @@
   h4,
   h5,
   h6 {
-    @apply font-sans font-light text-black;
+    @apply font-sans text-black;
   }
 
   p,
   span {
-    @apply font-sans font-light;
+    @apply font-sans;
   }
 }
 

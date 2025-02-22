@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const aboutBlurb = await getBlurb('About');
-  console.log('🚀 ~ Page ~ aboutBlurb:', aboutBlurb.content.json.content[0].content)
 
   return (
     <div>

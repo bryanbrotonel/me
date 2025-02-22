@@ -29,7 +29,7 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
         </ConditionalLink>
         <div className='overflow-hidden'>
           <ConditionalLink className='group' href={source}>
-            <ScrollableText onLoad={true} className='font-medium'>{title}</ScrollableText>
+            <ScrollableText onLoad={true}>{title}</ScrollableText>
           </ConditionalLink>
           <ScrollableText className='text-xs text-darkGray' onLoad={true}>
             {subtitle}

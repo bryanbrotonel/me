@@ -8,7 +8,7 @@ import '@/styles/global.css';
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['300','400', '500', '600'],
   display: 'swap',
   variable: '--font-inter',
 });
@@ -30,9 +30,10 @@ export const metaData: Metadata = {
     'Brotonel',
     'bryanbrotonel',
   ],
-  authors: [{ name: 'Bryan Brotonel' }],
+  authors: [{ name: 'Bryan Brotonel', }],
   creator: 'Bryan Brotonel',
   publisher: 'Bryan Brotonel',
+  themeColor: '#F8FAFC',
 };
 
 export default function RootLayout({
