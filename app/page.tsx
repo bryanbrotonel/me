@@ -8,13 +8,14 @@ import { getBlurb } from './lib/api/contentfulData';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'bryan brotonel',
+    absolute: 'Bryan Brotonel',
   },
   description: 'Home page for Bryan Brotonel.',
 };
 
 export default async function Page() {
   const aboutBlurb = await getBlurb('About');
+  console.log('🚀 ~ Page ~ aboutBlurb:', aboutBlurb.content.json.content[0].content)
 
   return (
     <div>

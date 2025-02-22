@@ -15,8 +15,8 @@ const inter = Inter({
 
 export const metaData: Metadata = {
   title: {
-    template: '%s | bryan brotonel',
-    default: 'bryan brotonel',
+    template: '%s | Bryan Brotonel',
+    default: 'Bryan Brotonel',
   },
   description: 'Personal website for Bryan Brotonel.',
   generator: 'Next.js',
@@ -43,12 +43,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
-        <div className="container mx-auto flex flex-col h-full min-h-screen gap-7 p-8 lg:px-0 w-full max-w-3xl">
-          <div>
+        <div className="container mx-auto flex flex-col h-full min-h-screen gap-10 p-8 lg:px-0 w-full max-w-3xl">
+          <div className=''>
             <Navbar />
           </div>
           <div className="flex-1">{children}</div>
-          <div>
+          <div className=''>
             <Footer />
           </div>
         </div>

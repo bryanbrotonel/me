@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <div className='flex justify-between pt-2.5 mt-7 border-t border-darkgray'>
+    <div className='flex justify-between pt-2.5 border-t border-darkgray'>
       <div className='inline-flex gap-4'>
         <Link
           href={'mailto:bryanbrotonel@gmail.com'}
