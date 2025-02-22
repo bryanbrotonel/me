@@ -29,7 +29,6 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
     {
       method: 'POST',
       headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
         'Content-Type': 'application/json',
         Authorization: `Bearer ${preview
           ? CONTENTFUL_PREVIEW_ACCESS_TOKEN

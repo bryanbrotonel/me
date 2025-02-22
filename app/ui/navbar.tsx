@@ -25,11 +25,6 @@ export default async function Navbar() {
           <h2 className='font-darkGray text-sm'> Web Developer</h2>
         </div>
       </div>
-      <div className='flex row gap-1 items-center'>
-        <span className='text-xs italic text-darkGray'>
-          &quot;Please keep going. You&apos;re so close&quot;
-        </span>
-      </div>
     </div>
   );
 }
