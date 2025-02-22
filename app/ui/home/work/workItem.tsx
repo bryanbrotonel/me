@@ -16,7 +16,7 @@ export default function WorkItem({
     <div className='max-w-96'>
       <div className='group'>
         <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-          <div className='w-full h-56 relative overflow-hidden rounded-lg text-white group-hover-effect'>
+          <div className='w-full h-56 relative overflow-hidden rounded-lg text-black group-hover-effect'>
             <ContentfulImage
               src={coverImageUrl}
               alt={coverImageTitle}

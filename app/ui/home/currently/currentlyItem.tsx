@@ -10,7 +10,7 @@ export default function CurrentlyItem({ item }: { item: currentlyDataProps }) {
   return (
     <div>
       <div>
-        <h6 className='font-light text-xs mb-4'>{header}</h6>
+        <p className='mb-4 text-xs text-darkGray'>{header}</p>
       </div>
       <div className='flex flex-row align-top gap-2'>
         <ConditionalLink className='group' href={source}>

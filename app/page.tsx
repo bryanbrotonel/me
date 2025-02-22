@@ -20,7 +20,7 @@ export default async function Page() {
     <div>
       <section className='flex flex-col space-y-14'>
         <div>
-          <h1 className='font-light text-xs mb-2 text-darkGray'>About</h1>
+          <h1 className='text-xs mb-2 text-darkGray'>About</h1>
           <Markdown content={aboutBlurb.content} />
         </div>
         <div>
@@ -29,7 +29,7 @@ export default async function Page() {
           </Suspense>
         </div>
         <div>
-          <h1 className='font-light text-xs mb-4 text-darkGray'>Work</h1>
+          <h1 className='text-xs mb-4 text-darkGray'>Work</h1>
           <Work />
         </div>
       </section>
