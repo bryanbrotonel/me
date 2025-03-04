@@ -6,7 +6,7 @@ export default function Footer() {
     <div className='flex justify-between pt-2.5 border-t border-darkgray'>
       <div className='inline-flex gap-4'>
         <Link
-          href={'mailto:bryanbrotonel@gmail.com'}
+          href={'mailto:mrbryanbrotonel@gmail.com'}
           target='_blank'
           rel='noopener noreferrer'
           className='inline-flex'
