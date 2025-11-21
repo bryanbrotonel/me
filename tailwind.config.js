@@ -10,14 +10,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        white: '#F8FAFC',
-        black: '#020617',
-        darkGray: '#6B7280',
-        gmail: '#BB001B',
-        github: '#6E40C9',
-        linkedin: '#0077B5',
-      },
       fontFamily: {
         sans: ['var(--font-inter)'],
       },

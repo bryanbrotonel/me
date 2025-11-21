@@ -49,9 +49,6 @@ export default function RootLayout({
             <Navbar />
           </div>
           <div className="flex-1">{children}</div>
-          <div className=''>
-            <Footer />
-          </div>
         </div>
       </body>
     </html>

@@ -1,30 +1,39 @@
-import { getAsset } from 'app/lib/api/contentfulData';
-import { Suspense } from 'react';
-import { ProfileImageSkeleton } from './skeletons';
-import ContentfulImage from './contentful-image';
+import Link from 'next/link';
 
 export default async function Navbar() {
-  const profilePicture = await getAsset('Profile Picture');
-
   return (
-    <div className='flex flex-col md:flex-row justify-between gap-4'>
-      <div className='flex row gap-4'>
-        <div>
-          <Suspense fallback={ProfileImageSkeleton()}>
-            <ContentfulImage
-              src={profilePicture.url}
-              alt={profilePicture.description}
-              width={56}
-              height={56}
-              className='rounded-full grayscale'
-            />
-          </Suspense>
-        </div>
-        <div>
-          <h1 className='text-xl font-bold'>Bryan Brotonel</h1>
-          <h2 className='font-darkGray text-sm'> Web Developer</h2>
-        </div>
+    <nav aria-label='Primary' className='flex flex-row justify-between gap-4'>
+      <div className='space-y-1 whitespace-nowrap'>
+        <h1 className='font-bold'>Bryan Brotonel</h1>
+        <h2 className='text-neutral-400'>Web Developer</h2>
       </div>
-    </div>
+
+      <div>
+        <ul className='inline-flex flex-wrap gap-3' role='list'>
+          {[
+            { href: 'mailto:mrbryanbrotonel@gmail.com', label: 'Email' },
+            {
+              href: 'https://linkedin.com/in/bryanbrotonel',
+              label: 'LinkedIn',
+            },
+            { href: 'https://github.com/bryanbrotonel', label: 'GitHub' },
+          ].map(({ href, label }) => (
+            <li key={label}>
+              <Link
+                href={href}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={label}
+                className='inline-flex text-xs'
+              >
+                <span className='text-neutral-400 hover:text-neutral-50 hover:underline'>
+                  {label}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
 }
