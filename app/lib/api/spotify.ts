@@ -4,13 +4,37 @@ import { spotifyListeningProps } from '../types';
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played?limit=1`;
+const redirect_uri = 'http://localhost:3000/api/callback';
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } =
   process.env;
 
 const basic = Buffer.from(
-  `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`,
+  `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
 ).toString('base64');
+
+export const getRefreshToken =  () => {
+  const url = `https://accounts.spotify.com/authorize?client_id=${SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=${redirect_uri}&scope=user-read-currently-playing%20user-read-recently-played`;
+};
+
+export const getTokens = async (code: string) => {
+  const response = await fetch(TOKEN_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: qs.stringify({
+      grant_type: 'authorization_code',
+      code,
+      redirect_uri,
+      client_id: SPOTIFY_CLIENT_ID,
+      client_secret: SPOTIFY_CLIENT_SECRET,
+    }),
+    cache: 'no-store',
+  });
+
+  return response.json();
+};
 
 export const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {
@@ -97,7 +121,7 @@ export async function getListeningStatus(): Promise<spotifyListeningProps> {
   console.log('getListeningStatus ~ nowPlaying status:', nowPlaying.status);
   console.log(
     'getListeningStatus ~ recentlyPlayed status:',
-    recentlyPlayed.status,
+    recentlyPlayed.status
   );
 
   return { isPlaying: false };
