@@ -6,7 +6,7 @@ export default async function Currently() {
   let currentlyData = await loadCurrentlyData();
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <div className="flex flex-col gap-5">
       {currentlyData.map(({ header, title, subtitle, image, source }) => (
         <div key={header}>
           <CurrentlyItem
