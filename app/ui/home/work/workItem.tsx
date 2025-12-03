@@ -13,44 +13,39 @@ export default function WorkItem({
   sourceLink,
 }) {
   return (
-    <div className='max-w-96'>
-      <div className='group'>
+    <div className='md:flex md:gap-4'>
+      <div className='w-full max-w-80 h-48 relative rounded-lg overflow-hidden'>
         <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-          <div className='w-full h-56 relative overflow-hidden rounded-lg text-black group-hover-effect'>
-            <ContentfulImage
-              src={coverImageUrl}
-              alt={coverImageTitle}
-              fill={true}
-              className='object-cover w-full h-full'
-            />
-          </div>
+          <ContentfulImage
+            src={coverImageUrl}
+            alt={coverImageTitle}
+            fill={true}
+            className='w-full h-full object-cover'
+          />
         </Link>
       </div>
-      <div className='py-4 space-y-2'>
+      <div className='my-4 space-y-2 md:my-0'>
         <div className='space-y-2 w-full max-w-sm'>
           <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-            <h1 className='text-xl font-medium'>{title}</h1>
+            <span className='text-neutral-50 hover:underline'>{title}</span>{' '}
           </Link>
-          <p className='text-sm text-darkGray'>{description}</p>
+          <span className='text-sm'>{description}</span>
         </div>
-        <div className='flex gap-2 -ml-1.5 -my-1.5'>
+        <div className='flex space-x-4'>
           {websiteLink && (
-            <div>
-              <Link
-                href={websiteLink}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <ColouredButton colour={'red'} label='Project' />
-              </Link>
-            </div>
+            <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
+              <span className='text-sm hover:text-neutral-50 hover:underline'>Project</span>
+            </Link>
           )}
           {sourceLink && (
-            <div>
-              <Link href={sourceLink} target='_blank' rel='noopener noreferrer'>
-                <ColouredButton colour={'red'} label='GitHub' />
-              </Link>
-            </div>
+            <Link
+              className='hover:text-neutral-50'
+              href={sourceLink}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <span className='text-sm hover:text-neutral-50 hover:underline'>GitHub</span>
+            </Link>
           )}
         </div>
       </div>

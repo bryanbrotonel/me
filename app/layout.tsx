@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
-        <div className="container mx-auto flex flex-col h-full min-h-screen gap-10 p-8 lg:px-0 w-full max-w-3xl">
+        <div className="container mx-auto flex flex-col h-full min-h-screen gap-10 px-10 py-16 lg:px-0 w-full max-w-3xl">
           <div className=''>
             <Navbar />
           </div>
