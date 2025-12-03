@@ -9,7 +9,7 @@ export const getGoodReadsData = async () => {
       next: {
         revalidate: 86400, // 24 hours
       },
-    },
+    }
   );
 
   const xmlResponse = await response.text();
@@ -19,7 +19,10 @@ export const getGoodReadsData = async () => {
 
 export async function getRecentlyRead(): Promise<goodReadsRecentProps> {
   let channelData = await getGoodReadsData();
-  let recentlyRead = channelData.rss.channel.item[0];
+  let recentlyReadItems = channelData.rss.channel.item;
+  const recentlyRead = Array.isArray(recentlyReadItems)
+    ? recentlyReadItems[0]
+    : recentlyReadItems;
 
   const title = recentlyRead['title'];
   const author = recentlyRead['author_name'];

@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-neutral-950 text-neutral-50 selection:text-red-700;
+    @apply bg-neutral-950 text-neutral-50 selection:text-black selection:bg-neutral-200;
   }
 
   h1,

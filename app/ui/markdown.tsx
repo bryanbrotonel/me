@@ -31,7 +31,7 @@ function RichTextAsset({
   const asset = assets?.find((asset) => asset.sys.id === id);
 
   if (asset?.url) {
-    return <Image src={asset.url} layout="fill" alt={asset.description} />;
+    return <Image src={asset.url} layout='fill' alt={asset.description} />;
   }
 
   return null;
@@ -46,6 +46,11 @@ export function Markdown({ content }: { content: Content }) {
           assets={content.links.assets.block}
         />
       ),
+    },
+    renderText: (text) => {
+      return text.split('\\n').reduce((children, textSegment, index) => {
+        return [...children, index > 0 && <br key={index} />, textSegment];
+      }, []);
     },
   });
 }
