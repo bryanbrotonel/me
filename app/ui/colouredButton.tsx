@@ -17,7 +17,7 @@ const ColouredButton = ({
   children,
 }: PropsWithChildren<ColouredButtonProps>) => {
   const backgroundColourVariants = {
-    red: `hover:bg-red-500/[.125] ${border && 'hover:border-red-500'}`,
+    red: `hover:bg-red-500/12.5 ${border && 'hover:border-red-500'}`,
     gmail: `hover:bg-gmail/[.125] ${border && 'hover:border-gmail'}`,
     github: `hover:bg-github/[.125] ${border && 'hover:border-github'}`,
     linkedin: `hover:bg-linkedin/[.125] ${border && 'hover:border-linkedin'}`,
@@ -34,7 +34,7 @@ const ColouredButton = ({
     <div
       className={`group w-fit rounded-md p-1.5 ${
         backgroundColourVariants[colour]
-      } transition-all ${border && 'border-[1px] border-darkgray'}`}
+      } transition-all ${border && 'border border-darkgray'}`}
       onClick={() => onClick}
     >
       <div

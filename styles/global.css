@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../tailwind.config.js';
+
+@utility group-hover-effect {
+  @apply group-hover:scale-[1.01] group-hover:-translate-y-px transition ease-linear shadow-md shadow-black/10;
+}
 
 @layer base {
   html {
@@ -19,11 +23,5 @@
   p,
   span {
     @apply font-sans text-neutral-400;
-  }
-}
-
-@layer components {
-  .group-hover-effect {
-    @apply group-hover:scale-[1.01] group-hover:-translate-y-[1px] transition ease-linear shadow-md shadow-black/10;
   }
 }
