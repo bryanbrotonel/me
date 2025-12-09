@@ -15,9 +15,12 @@ const WORK_GRAPHQL_FIELDS = `
   websiteLink
   sourceLink
   blurb
-  coverImage {
+  coverMedia {
     title
     url
+    contentType
+    width
+    height
   }
   stack
   order
@@ -30,13 +33,14 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${preview
-          ? CONTENTFUL_PREVIEW_ACCESS_TOKEN
-          : CONTENTFUL_DELIVERY_ACCESS_TOKEN
-          }`,
+        Authorization: `Bearer ${
+          preview
+            ? CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : CONTENTFUL_DELIVERY_ACCESS_TOKEN
+        }`,
       },
       body: JSON.stringify({ query }),
-    },
+    }
   ).then((response) => response.json());
 }
 
@@ -53,49 +57,52 @@ function extractWorkEntries(fetchResponse: any): any[] {
 }
 
 function extractAsset(fetchResponse: any): any[] {
-  return fetchResponse?.data?.assetCollection?.items?.[0]
+  return fetchResponse?.data?.assetCollection?.items?.[0];
 }
 
 export async function getAllWork(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
-      workItemCollection(where: { slug_exists: true }, order: order_ASC, preview: ${isDraftMode ? 'true' : 'false'
-    }) {
+      workItemCollection(where: { slug_exists: true }, order: order_ASC, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
         items {
           ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
-    isDraftMode,
+    isDraftMode
   );
   return extractWorkEntries(entries);
 }
 
 export async function getWorkAndMoreWork(
   slug: string,
-  preview: boolean,
+  preview: boolean
 ): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
-      workItemCollection(where: { slug: "${slug}" }, preview: ${preview ? 'true' : 'false'
+      workItemCollection(where: { slug: "${slug}" }, preview: ${
+      preview ? 'true' : 'false'
     }, limit: 1) {
         items {
           ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
-    preview,
+    preview
   );
   const entries = await fetchGraphQL(
     `query {
-      workItemCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${preview ? 'true' : 'false'
+      workItemCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
+      preview ? 'true' : 'false'
     }, limit: 2) {
         items {
           ${WORK_GRAPHQL_FIELDS}
         }
       }
     }`,
-    preview,
+    preview
   );
   return {
     work: extractWork(entry),
@@ -114,7 +121,7 @@ export async function getBlurb(title: string): Promise<any> {
           }
         }
       }
-    }`,
+    }`
   );
 
   return extractBlurb(entry);
@@ -133,8 +140,8 @@ export async function getAsset(assetTitle: string): Promise<any> {
           description
         }
       }
-    }`,
+    }`
   );
 
-  return extractAsset(asset)
+  return extractAsset(asset);
 }

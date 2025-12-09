@@ -1,14 +1,8 @@
 @import 'tailwindcss';
 
-@config '../tailwind.config.js';
-
-@utility group-hover-effect {
-  @apply group-hover:scale-[1.01] group-hover:-translate-y-px transition ease-linear shadow-md shadow-black/10;
-}
-
 @layer base {
   html {
-    @apply bg-neutral-950 text-neutral-50 selection:text-black selection:bg-neutral-50;
+    @apply bg-neutral-950 text-neutral-50 selection:bg-red-300 selection:text-red-900;
   }
 
   h1,

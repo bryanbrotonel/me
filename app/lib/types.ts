@@ -10,6 +10,13 @@ export type workDataProps = {
     title: string;
     url: string;
   };
+  coverMedia: {
+    title: string;
+    url: string;
+    contentType: string;
+    width: number;
+    height: number;
+  };
 };
 
 export type currentlyDataProps = {

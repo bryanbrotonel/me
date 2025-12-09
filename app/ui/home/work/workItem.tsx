@@ -1,61 +1,52 @@
-import React from 'react';
-import ContentfulImage from 'app/ui/contentful-image';
+'use client';
+
+import React, { useCallback } from 'react';
 import Link from 'next/link';
-import ColouredButton from '../../colouredButton';
+
+interface WorkItemProps {
+  title: string;
+  description: string;
+  link: string;
+  slug: string;
+  state: 'active' | 'inactive' | 'default';
+  setState?: (active: string | null) => void;
+}
 
 export default function WorkItem({
   title,
   description,
-  coverImageTitle,
-  coverImageUrl,
-  stack,
-  websiteLink,
-  sourceLink,
-}) {
+  link,
+  slug,
+  state,
+  setState,
+}: WorkItemProps) {
+  const handleMouseEnter = useCallback(
+    () => setState?.(slug),
+    [slug, setState]
+  );
+  const handleMouseLeave = useCallback(() => setState?.(null), [setState]);
+
+  const isInactive = state === 'inactive';
+
   return (
-    <div className='md:flex md:gap-4'>
-      <div className='w-full max-w-80 h-48 relative rounded-lg overflow-hidden'>
-        <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-          <ContentfulImage
-            src={coverImageUrl}
-            alt={coverImageTitle}
-            fill={true}
-            className='w-full h-full object-cover'
-          />
+    <div className='group'>
+      <div
+        className='inline'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <Link
+          className={`text-neutral-50 transition-colors duration-300 hover:underline font-medium ${
+            isInactive ? 'lg:text-neutral-400' : ''
+          }`}
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {title}{' '}
         </Link>
       </div>
-      <div className='my-4 space-y-2 md:my-0'>
-        <div className='space-y-2 w-full max-w-sm'>
-          <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-            <span className='text-neutral-50 hover:underline'>{title}</span>{' '}
-          </Link>
-          <span className='text-sm'>{description}</span>
-        </div>
-        <div className='flex space-x-4'>
-          {websiteLink && (
-            <Link href={websiteLink} target='_blank' rel='noopener noreferrer'>
-              <span className='text-sm hover:text-neutral-50 hover:underline'>Project</span>
-            </Link>
-          )}
-          {sourceLink && (
-            <Link
-              className='hover:text-neutral-50'
-              href={sourceLink}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <span className='text-sm hover:text-neutral-50 hover:underline'>GitHub</span>
-            </Link>
-          )}
-        </div>
-      </div>
+      <span className='text-sm'>{description}</span>
     </div>
   );
 }
-
-WorkItem.defaultProps = {
-  image: '',
-  stack: [],
-  websiteLink: '',
-  sourceLink: '',
-};

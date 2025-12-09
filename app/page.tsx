@@ -5,6 +5,7 @@ import Work from 'app/ui/home/work';
 import { Suspense } from 'react';
 import { CurrentlySkeleton } from './ui/skeletons';
 import { getBlurb } from './lib/api/contentfulData';
+import { loadWorkData } from './lib/homeData';
 
 export const metadata: Metadata = {
   title: {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const aboutBlurb = await getBlurb('About');
+  const workData = await loadWorkData();
 
   return (
     <div>
@@ -26,7 +28,7 @@ export default async function Page() {
           <Currently />
         </Suspense>
         {/* Work */}
-        <Work />
+        <Work data={workData} />
       </section>
     </div>
   );
