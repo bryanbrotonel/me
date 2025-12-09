@@ -6,19 +6,18 @@ export default async function Currently() {
   let currentlyData = await loadCurrentlyData();
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className='flex flex-col gap-5'>
       {currentlyData.map(({ header, title, subtitle, image, source }) => (
-        <div key={header}>
-          <CurrentlyItem
-            item={{
-              header,
-              title,
-              subtitle,
-              image,
-              source,
-            }}
-          />
-        </div>
+        <CurrentlyItem
+          key={header}
+          item={{
+            header,
+            title,
+            subtitle,
+            image,
+            source,
+          }}
+        />
       ))}
     </div>
   );

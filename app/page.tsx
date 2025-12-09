@@ -20,14 +20,15 @@ export default async function Page() {
 
   return (
     <div>
-      <section className='flex flex-col space-y-14'>
-        {/* About */}
-        <Markdown content={aboutBlurb.content} />
-        {/* Currently */}
+      <section className='flex flex-col space-y-10'>
+        <div className='space-y-3'>
+          <Markdown content={aboutBlurb.content} />
+        </div>
+
         <Suspense fallback={<CurrentlySkeleton />}>
           <Currently />
         </Suspense>
-        {/* Work */}
+
         <Work data={workData} />
       </section>
     </div>

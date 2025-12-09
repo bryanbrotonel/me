@@ -4,10 +4,11 @@ import { Inter } from 'next/font/google';
 import Navbar from 'app/ui/navbar';
 
 import '@/styles/global.css';
+import Footer from './ui/footer';
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300','400', '500', '600'],
+  weight: ['300', '400', '500', '600'],
   display: 'swap',
   variable: '--font-inter',
 });
@@ -29,7 +30,7 @@ export const metaData: Metadata = {
     'Brotonel',
     'bryanbrotonel',
   ],
-  authors: [{ name: 'Bryan Brotonel', }],
+  authors: [{ name: 'Bryan Brotonel' }],
   creator: 'Bryan Brotonel',
   publisher: 'Bryan Brotonel',
   themeColor: '#F8FAFC',
@@ -41,13 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={`${inter.variable} font-sans`}>
-        <div className="container mx-auto flex flex-col h-full min-h-screen gap-10 px-10 py-16 lg:px-0 w-full max-w-2xl">
-          <div className=''>
-            <Navbar />
-          </div>
-          <div className="flex-1">{children}</div>
+        <div className='h-full w-full max-w-2xl container flex flex-col mx-auto px-10 py-10 lg:px-0 gap-10'>
+          <Navbar />
+          <div className='border-0'>{children}</div>
+          <Footer />
         </div>
       </body>
     </html>

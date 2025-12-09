@@ -43,9 +43,9 @@ export default function WorkItem({
           target='_blank'
           rel='noopener noreferrer'
         >
-          {title}{' '}
+          {title}
         </Link>
-      </div>
+      </div>{' '}
       <span className='text-sm'>{description}</span>
     </div>
   );

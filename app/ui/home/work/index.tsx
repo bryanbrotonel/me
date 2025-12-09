@@ -51,28 +51,31 @@ export default function Work({ data }: { data?: workDataProps[] }) {
   );
 
   return (
-    <div className='flex gap-10'>
-      <div className='flex-2 space-y-6'>
-        {data?.map(({ slug, title, blurb, websiteLink }) => (
-          <WorkItem
-            key={slug}
-            title={title}
-            description={blurb}
-            link={websiteLink}
-            slug={slug}
-            state={getItemState(slug)}
-            setState={setCurrentItemSlug}
-          />
-        ))}
-      </div>
-      <div className='hidden lg:block flex-1 relative'>
-        <div
-          className={`absolute -top-3 w-80 h-[110%] flex justify-center transition-opacity duration-200 ${
-            currentItem ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className='h-full flex justify-center'>
-            {currentItem && renderMedia(currentItem.coverMedia)}
+    <div>
+    <h1 className='text-sm text-neutral-400 mb-3 md:mb-5'>Recent Work</h1>
+      <div className='flex gap-10'>
+        <div className='flex-2 space-y-5'>
+          {data?.map(({ slug, title, blurb, websiteLink }) => (
+            <WorkItem
+              key={slug}
+              title={title}
+              description={blurb}
+              link={websiteLink}
+              slug={slug}
+              state={getItemState(slug)}
+              setState={setCurrentItemSlug}
+            />
+          ))}
+        </div>
+        <div className='hidden lg:block flex-1 relative'>
+          <div
+            className={`absolute -top-3 w-80 h-[110%] flex justify-center transition-opacity duration-200 ${
+              currentItem ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <div className='h-full flex justify-center'>
+              {currentItem && renderMedia(currentItem.coverMedia)}
+            </div>
           </div>
         </div>
       </div>

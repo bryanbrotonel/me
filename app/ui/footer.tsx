@@ -3,38 +3,29 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <div className='flex justify-between pt-2.5 border-t border-darkgray'>
-      <div className='inline-flex gap-4'>
-        <Link
-          href={'mailto:mrbryanbrotonel@gmail.com'}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-flex'
-        >
-          <span className='text-xs font-bold'>Email</span>
-        </Link>
-        <Link
-          href={'https://linkedin.com/in/bryanbrotonel'}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-flex'
-        >
-          <span className='text-xs font-bold'>LinkedIn</span>
-        </Link>
-        <Link
-          href={'https://github.com/bryanbrotonel'}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-flex'
-        >
-          <span className='text-xs font-bold'>GitHub</span>
-        </Link>
-      </div>
-      <div className='inline-flex'>
-        <span className='text-xs'>
-          Bryan Brotonel {new Date().getFullYear()}
-        </span>
-      </div>
-    </div>
+    <ul className='w-full inline-flex flex-wrap gap-3 justify-center' role='list'>
+      {[
+        { href: 'mailto:mrbryanbrotonel@gmail.com', label: 'Email' },
+        {
+          href: 'https://linkedin.com/in/bryanbrotonel',
+          label: 'LinkedIn',
+        },
+        { href: 'https://github.com/bryanbrotonel', label: 'GitHub' },
+      ].map(({ href, label }) => (
+        <li key={label}>
+          <Link
+            href={href}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={label}
+            className='inline-flex text-xs'
+          >
+            <span className='text-neutral-400 hover:text-neutral-50 hover:underline'>
+              {label}
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

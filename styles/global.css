@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    @apply bg-neutral-950 text-neutral-50 selection:bg-red-300 selection:text-red-900;
+    @apply bg-neutral-950 text-neutral-50 selection:bg-red-300 selection:text-red-200;
   }
 
   h1,
