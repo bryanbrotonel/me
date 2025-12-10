@@ -13,7 +13,7 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
   title: {
     template: '%s | Bryan Brotonel',
     default: 'Bryan Brotonel',

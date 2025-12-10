@@ -12,7 +12,7 @@ import {
 } from 'app/lib/types';
 
 export async function loadWorkData(): Promise<workDataProps[]> {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
 
   return await getAllWork(isEnabled);
 }
